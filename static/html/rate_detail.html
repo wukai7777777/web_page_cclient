@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalabel=no">
+    <meta name="apple-mobile-web-app-title" content="斗米兼职">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon-precomposed" href="http://sta.doumistatic.com/src/image/logo_doumi.png">
+    <title>职位评价-斗米兼职</title>
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/form.css" rel="stylesheet">
+    <link href="../css/rate.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- page start -->
+    <div class="mod-page mod-header-show">
+        <!-- header start -->
+        <header class="mod-header">
+            <h1>职位评价</h1>
+            <a href="javascript:history.go(-1);" class="back">返回</a>
+        </header>
+        <!-- header end -->
+        <!-- section start -->
+        <section class="mod-content rate">
+            <!-- form start -->
+            <div class="form-widget detail-widget">
+                <h2 class="form-heading">信息录入兼职</h2>
+                <div class="form-group">
+                    <div class="form-field">
+                        <div class="rate-group active">
+                            <div class="rate-item">
+                                <div class="rate-title">职位真实性</div>
+                                <div class="rate-rank">
+                                    <input class="rate-input" type="radio" name="rate-1" id="rate-1-5" value="5" checked>
+                                    <label class="rate-star" for="rate-1-5">5分</label>
+                                    <input class="rate-input" type="radio" name="rate-1" id="rate-1-4" value="4">
+                                    <label class="rate-star" for="rate-1-4">4分</label>
+                                    <input class="rate-input" type="radio" name="rate-1" id="rate-1-3" value="3">
+                                    <label class="rate-star" for="rate-1-3">3分</label>
+                                    <input class="rate-input" type="radio" name="rate-1" id="rate-1-2" value="2">
+                                    <label class="rate-star" for="rate-1-2">2分</label>
+                                    <input class="rate-input" type="radio" name="rate-1" id="rate-1-1" value="1">
+                                    <label class="rate-star" for="rate-1-1">1分</label>
+                                </div>
+                                <div class="rate-score active">非常好</div>
+                            </div>
+                            <div class="rate-item">
+                                <div class="rate-title">服务满意度</div>
+                                <div class="rate-rank">
+                                    <input class="rate-input" type="radio" name="rate-2" id="rate-2-5" value="5">
+                                    <label class="rate-star" for="rate-2-5">5分</label>
+                                    <input class="rate-input" type="radio" name="rate-2" id="rate-2-4" value="4">
+                                    <label class="rate-star" for="rate-2-4">4分</label>
+                                    <input class="rate-input" type="radio" name="rate-2" id="rate-2-3" value="3">
+                                    <label class="rate-star" for="rate-2-3">3分</label>
+                                    <input class="rate-input" type="radio" name="rate-2" id="rate-2-2" value="2">
+                                    <label class="rate-star" for="rate-2-2">2分</label>
+                                    <input class="rate-input" type="radio" name="rate-2" id="rate-2-1" value="1" checked>
+                                    <label class="rate-star" for="rate-2-1">1分</label>
+                                </div>
+                                <div class="rate-score active">非常差</div>
+                            </div>
+                            <div class="rate-item">
+                                <div class="rate-title">工作满意度</div>
+                                <div class="rate-rank">
+                                    <input class="rate-input" type="radio" name="rate-3" id="rate-3-5" value="5">
+                                    <label class="rate-star" for="rate-3-5">5分</label>
+                                    <input class="rate-input" type="radio" name="rate-3" id="rate-3-4" value="4">
+                                    <label class="rate-star" for="rate-3-4">4分</label>
+                                    <input class="rate-input" type="radio" name="rate-3" id="rate-3-3" value="3" checked>
+                                    <label class="rate-star" for="rate-3-3">3分</label>
+                                    <input class="rate-input" type="radio" name="rate-3" id="rate-3-2" value="2">
+                                    <label class="rate-star" for="rate-3-2">2分</label>
+                                    <input class="rate-input" type="radio" name="rate-3" id="rate-3-1" value="1">
+                                    <label class="rate-star" for="rate-3-1">1分</label>
+                                </div>
+                                <div class="rate-score active">一般般</div>
+                            </div>
+                            <div class="rate-labels active">
+                                <span class="rate-label js-touch-stat">虚假职位</span>
+                                <span class="rate-label js-touch-stat">工作内容辛苦</span>
+                                <span class="rate-label js-touch-stat">工资结算慢</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-field extend">
+                        <div class="text-group">这个职位太累，希望下次能有更多的轻松工作。</div>
+                    </div>
+                </div>
+            </div>
+            <!-- form end -->
+        </section>
+        <!-- section end -->
+    </div>
+    <!-- page end -->
+    <!-- toast start -->
+    <div class="mod-toast"><span>评价成功</span></div>
+    <!-- toast end -->
+    <!-- js start -->
+    <script id="v-h5g" src="http://sta.doumistatic.com/sta/g.js?v=150917110933"></script>
+    <script>
+    G.use('com/mobile/lib/widget/widget.js').done(function(widget) {
+        widget.initWidgets();
+    });
+    </script>
+    <!-- js end -->
+</body>
+
+</html>

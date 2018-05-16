@@ -1,0 +1,85 @@
+@charset "utf-8";
+//-----------------------------------------------------
+// setting scss
+//-----------------------------------------------------
+
+// colors
+// The use of the color of the template used in the name of the commonly used color name, the specific color value and the English may be biased
+//-----------------------------------------------------
+$black:                       #000 !default;
+$black-dim:                   #404040 !default;
+$gray:                        #808080 !default;
+$gray-dark:                   #999 !default;
+$gray-dim:                    #ccc !default;
+$gray-light:                  #e5e5e5 !default;
+$white:                       #fff !default;
+$white-gray:                  #f7f7f7 !default;
+$white-light:                 #fcfcfc !default;
+$white-smoke:                 #fafafa !default;
+$red:                         #f60 !default;
+$yellow:                      #fc0 !default;
+$yellow-light:                #ffe500 !default;
+$orange:                      #fb0 !default;
+$blue:                        #456db4 !default;
+
+//colors
+// color function: http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
+// lighten($color, $amount)
+// darken($color, $amount)
+// opacify($color, $amount)
+// mix($color1, $color2[, $amount])
+//-----------------------------------------------------
+$bg-color-base:               $white-gray !default;
+$bg-color-main:               $white !default;
+$bg-color-assist:             $gray !default;
+$bg-color-tiny:               $gray-dark !default;
+$bg-color-touch:              $white-smoke !default;
+$bg-color-disabled:           $gray-light !default;
+$border-color-base:           $black-dim !default;
+$border-color-main:           $gray-light !default;
+$border-color-assist:         $gray !default;
+$border-color-tiny:           $gray-dark !default;
+$text-color-base:             $black-dim !default;
+$text-color-main:             $white !default;
+$text-color-assist:           $gray !default;
+$text-color-tiny:             $gray-dark !default;
+$text-color-warn:             $red !default;
+$text-color-disabled:         $gray-dark !default;
+$link-color-base:             $black-dim !default;
+$link-color-main:             $blue !default;
+$link-color-assist:           $gray !default;
+$link-color-tiny:             $gray-dark !default;
+$icon-color-base:             $yellow-light;
+
+// fonts
+//-----------------------------------------------------
+$font-size-rem:               625% !default;
+$font-size-base:              14px !default;
+$font-size-large:             16px !default;
+$font-size-larger:            18px !default;
+$font-size-small:             12px !default;
+$font-size-smaller:           10px !default;
+$font-family-base:            helvetica neue, helvetica, arial, hiragino sans gb, microsoft yahei, sans-serif !default;
+$font-weight-base:            400 !default;
+$font-weight-bold:            700 !default;
+$line-height-base:            1.42857 !default;
+
+// radius
+//-----------------------------------------------------
+$border-radius-base:          4px !default;
+$border-radius-small:         2px !default;
+$border-radius-large:         8px !default;
+
+// z-index
+//-----------------------------------------------------
+$z-index-base:                1 !default;
+$z-index-high:                99 !default;
+$z-index-higher:              100 !default;
+$z-index-highest:             101 !default;
+$z-index-limit:               999 !default;
+
+// gap
+//-----------------------------------------------------
+$gap-base:                   12px !default;
+$gap-main:                   16px !default;
+$gap-large:                  40px !default;

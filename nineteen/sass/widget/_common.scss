@@ -1,0 +1,83 @@
+/* global
+================================== */
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-size: $font-size-rem;
+}
+
+body {
+    min-width: 320px;
+    background-color: $bg-color-base;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    color: $text-color-base;
+    font: #{$font-size-base} #{$font-family-base};
+}
+
+a {
+    color: $link-color-base;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+::-webkit-input-placeholder {
+    color: $text-color-tiny;
+}
+
+
+/* common
+================================== */
+
+.fl {
+    @include float;
+}
+
+.fr {
+    @include float(right);
+}
+
+.clear {
+    clear: both;
+}
+
+.clearfix {
+    @extend %clearfix;
+}
+
+.hide {
+    @include hide;
+}
+
+.show {
+    @include show;
+}
+
+.disabled {
+    color: $text-color-disabled;
+    cursor: default;
+    pointer-events: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.no-select {
+    @include css3(user-select, none);
+}
+
+/* space
+---------------------------------- */
+.dm-space {
+    margin-top: $gap-base;
+}

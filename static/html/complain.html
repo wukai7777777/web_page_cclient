@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="斗米兼职">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon-precomposed" href="http://sta.doumistatic.com/src/image/logo_doumi.png">
+    <title>投诉职位-斗米兼职</title>
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/form.css" rel="stylesheet">
+    <link href="../css/complain.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- page start -->
+    <div class="mod-page mod-header-show">
+        <!-- header start -->
+        <header class="mod-header">
+            <h1>投诉职位</h1>
+            <a href="javascript:history.go(-1);" class="back">返回</a>
+        </header>
+        <!-- header end -->
+        <!-- section start -->
+        <section class="mod-content complain">
+            <!-- form start -->
+            <div class="form-widget normal">
+                <div class="form-tips">斗米会保护你的个人隐私，请放心投诉</div>
+                <div class="form-group">
+                    <div class="form-field vertical">
+                        <div class="form-item">
+                            <label class="form-label">投诉类型（必填）</label>
+                            <div class="form-control">
+                                <div class="filter-group">
+                                    <div class="filter-tips js-touch-state">请选择投诉类型</div>
+                                    <div class="filter-cont">
+                                        <div class="filter-head">
+                                            <h2 class="filter-title">投诉类型</h2>
+                                            <button class="filter-opt" type="button">取消</button>
+                                            <button class="filter-opt" type="button">确定</button>
+                                        </div>
+                                        <div class="filter-body">
+                                            <div class="filter-wrap iscroll" id="iscroll1">
+                                                <ul class="filter-menu">
+                                                    <li class="js-touch-state active">职位信息虚假</li>
+                                                    <li class="js-touch-state">联系电话虚假</li>
+                                                    <li class="js-touch-state">薪资不符</li>
+                                                    <li class="js-touch-state">变相收费</li>
+                                                    <li class="js-touch-state">拖欠工资</li>
+                                                    <li class="js-touch-state">其他</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mask"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请选择投诉类型</span>
+                        </div>
+                    </div>
+                    <div class="form-field vertical">
+                        <div class="form-item">
+                            <label class="form-label">情况说明（必填）</label>
+                            <div class="form-control">
+                                <label class="textarea-group">
+                                    <textarea class="textarea" cols="" rows="" placeholder="请具体描述你遇见骗子的经历，我们会尽快处理你的投诉信息（字数100字以内）"></textarea>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请输入情况说明</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-text">注意事项：由于斗米兼职并非司法机构，因此我们所能做的只是尽可能的降低您的一切风险，若您在工作中遇到任何问题，欢迎致电斗米客服进行咨询，客服电话：4007-3333-00</div>
+                <div class="form-opt">
+                    <button type="button" class="btn btn-primary btn-large">提交</button>
+                </div>
+                <div class="form-text form-text-center">
+                    <a href="javascript:;" class="fc-blue" data-role="target-succeed">跳转成功</a>
+                    <a href="javascript:;" class="fc-blue" data-role="target-failed">跳转失败</a>
+                </div>
+            </div>
+            <!-- form end -->
+        </section>
+        <!-- section end -->
+    </div>
+    <!-- page end -->
+    <!-- popup start -->
+    <div class="mod-popup popup-dialog" data-role="popup-succeed">
+        <div class="mod-popup-head">Dialog对话框</div>
+        <div class="mod-popup-body">
+            <div class="mod-popup-img mod-popup-img-s"></div>
+            <h3 class="mod-popup-title">投诉成功</h3>
+            <div class="mod-popup-text">
+                <p>感谢你的投诉，我们会尽快处理</p>
+            </div>
+            <div class="mod-popup-btn-box">
+                <button class="btn btn-primary btn-large">确认</button>
+            </div>
+        </div>
+    </div>
+    <div class="mod-popup popup-dialog" data-role="popup-failed">
+        <div class="mod-popup-head">Dialog对话框</div>
+        <div class="mod-popup-body">
+            <div class="mod-popup-img mod-popup-img-f"></div>
+            <h3 class="mod-popup-title">投诉失败</h3>
+            <div class="mod-popup-text">
+                <p>请重新填写投诉信息</p>
+            </div>
+            <div class="mod-popup-btn-box">
+                <button class="btn btn-primary btn-large">确认</button>
+            </div>
+        </div>
+    </div>
+    <div class="mask" data-role="mask"></div>
+    <!-- popup end -->
+    <!-- toast start -->
+    <div class="mod-toast"><span>表单验证提示信息</span></div>
+    <!-- toast end -->
+    <!-- js start -->
+    <script id="v-h5g" src="http://sta.doumistatic.com/sta/g.js?v=150917110933"></script>
+    <script>
+    G.use(['com/mobile/lib/widget/widget.js', 'com/mobile/lib/iscroll/iscroll.js']).done(function(widget) {
+        widget.initWidgets();
+        $('.filter-group').live('tap', function() {
+            addActive(this);
+            iscroll = new window.IScroll('#iscroll1', {
+                mouseWheel: true,
+                tap: true,
+                click: true,
+            });
+            G.util.touchmove.off();
+        });
+        $('.filter-opt').live('tap', function() {
+            removeActive('.filter-group');
+            G.util.touchmove.on();
+            iscroll = null;
+        });
+        $('.form-opt > .btn-primary').live('tap', function() {
+            $('.form-field').first().addClass('active');
+            setTimeout(function() {
+                removeActive('.form-field');
+            }, 1000);
+        });
+        $('[data-role="target-succeed"]').live('tap', function() {
+            addActive('[data-role="popup-succeed"]');
+            addActive('[data-role="mask"]');
+            G.util.touchmove.off();
+        });
+        $('[data-role="target-failed"]').live('tap', function() {
+            addActive('[data-role="popup-failed"]');
+            addActive('[data-role="mask"]');
+            G.util.touchmove.off();
+        });
+        $('[data-role="mask"]').live('tap', function() {
+            removeActive('[data-role="popup-succeed"]');
+            removeActive('[data-role="popup-failed"]');
+            removeActive('[data-role="mask"]');
+            G.util.touchmove.on();
+        });
+        $('.mod-popup-btn-box > .btn-primary').live('tap', function() {
+            removeActive('[data-role="popup-succeed"]');
+            removeActive('[data-role="popup-failed"]');
+            removeActive('[data-role="mask"]');
+            G.util.touchmove.on();
+        });
+
+        function addActive(e) {
+            $(e).addClass('active');
+        }
+
+        function removeActive(e) {
+            $(e).removeClass('active');
+        }
+    });
+    </script>
+    <!-- js end -->
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+@import "./mask";
+
+// mixin
+//-----------------------------------------------------
+@mixin btn($btn-name, $bg-color-base, $text-color-base, $bg-color-touch, $text-color-touch, $bg-color-disabled, $text-color-disabled) {
+    .#{$btn-name} {
+        background-color: $bg-color-base;
+        color: $text-color-base;
+
+        &.touch {
+            background-color: $bg-color-touch;
+            color: $text-color-touch;
+        }
+
+        &.disabled,
+        &.disabled.touch,
+        &[disabled],
+        &[disabled].touch {
+            background-color: $bg-color-disabled;
+            color: $text-color-disabled;
+        }
+    }
+}
+
+@mixin btn-add($add-name) {
+    .#{$add-name} {
+        @content;
+    }
+}
+
+/* actionsheet
+---------------------------------- */
+.dm-actionsheet {
+    @include hide;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $z-index-highest;
+    width: 100%;
+    background-color: $bg-color-main;
+    overflow: hidden;
+
+    &.active {
+        @include show;
+    }
+
+    &-head {
+        @include border(bottom);
+    }
+
+    &-foot {
+        @include flex;
+        position: relative;
+        margin-top: $gap-base;
+
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -$gap-base;
+            left: 0;
+            width: 100%;
+            height: $gap-base;
+            background-color: $bg-color-base;
+        }
+    }
+
+    &-title {
+        color: $text-color-assist;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        line-height: 22px;
+        text-align: center;
+        @extend %text-break;
+        padding: $gap-base $gap-main;
+    }
+
+    &-item {
+        color: $text-color-base;
+        font-size: $font-size-large;
+        font-weight: $font-weight-base;
+        line-height: 24px;
+        text-align: center;
+        @extend %text-break;
+        padding: $gap-base $gap-main;
+
+        &:not(:last-child) {
+            @include border(bottom);
+        }
+    }
+
+    &-btn {
+        display: block;
+        @include flex-item;
+        box-sizing: border-box;
+        background-clip: padding-box;
+        border: 0 none;
+        border-radius: $border-radius-base;
+        font-size: $font-size-large;
+        font-weight: $font-weight-base;
+        line-height: 48px;
+        text-align: center;
+        padding: 0 $gap-base;
+        cursor: pointer;
+        -webkit-appearance: none;
+
+        &.disabled,
+        &[disabled] {
+            pointer-events: none;
+        }
+
+        @at-root {
+            @include btn(dm-actionsheet-btn, transparent, $text-color-base, $bg-color-touch, $text-color-base, $bg-color-disabled, $text-color-disabled);
+        }
+    }
+}

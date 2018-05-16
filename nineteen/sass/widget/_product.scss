@@ -1,0 +1,306 @@
+@import "./icon";
+
+/* icon
+---------------------------------- */
+.dm-icon {
+    &::after {
+        @extend %sprite-icon;
+    }
+}
+
+.icon-danbao {
+    width: 48px;
+    height: 16px;
+
+    &::after {
+        width: 48px;
+        height: 16px;
+        background-position: -35px -100px;
+    }
+}
+
+.icon-renqi,
+.icon-remen,
+.icon-tuijian,
+.icon-jizhao,
+.icon-zhipin,
+.icon-youxian,
+.icon-label {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    width: auto;
+    min-width: 28px;
+    height: 16px;
+    color: transparent;
+    font-size: $font-size-smaller;
+    line-height: 10px;
+    white-space: nowrap;
+    padding: 3px 4px;
+    overflow: hidden;
+
+    &::after {
+        content: attr(title);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        box-sizing: border-box;
+        background-color: transparent;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: $border-radius-small;
+        color: $text-color-assist;
+        font-size: $font-size-smaller * 2;
+        line-height: 20px;
+        text-align: center;
+        padding: 5px 7px;
+
+        @include css3(transform-origin, (0 0));
+        @include css3(transform, (scale(.5)));
+    }
+}
+
+.icon-renqi::after {
+    background-color: #ffe9f4;
+    border-color: #f57a7a;
+    color: #ef6464;
+}
+
+.icon-remen::after {
+    background-color: #fff3f2;
+    border-color: #de958f;
+    color: #de958f;
+}
+
+.icon-tuijian::after {
+    background-color: #f3f8ff;
+    border-color: #69a5ff;
+    color: #72abff;
+}
+
+.icon-jizhao::after {
+    background-color: #fffaed;
+    border-color: #ff8a00;
+    color: #ff8a00;
+}
+
+.icon-zhipin::after {
+    background-color: #f8f2ff;
+    border-color: #bc7fff;
+    color: #bc7fff;
+}
+
+.icon-youxian::after {
+    background-color: #f2fcff;
+    border-color: #43bfbe;
+    color: #43bfbe;
+}
+
+.icon-location-sm,
+.icon-date-sm,
+.icon-tegong-sm {
+    width: 10px;
+    height: 10px;
+
+    &::after {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.icon-location-sm::after {
+    background-position: -80px -20px;
+}
+
+.icon-date-sm::after {
+    background-position: -90px -20px;
+}
+
+.icon-tegong-sm::after {
+    background-position: -90px -30px;
+}
+
+/* product
+---------------------------------- */
+.product {
+    &-info {
+        display: block;
+        position: relative;
+        padding: $gap-base $gap-main;
+        overflow: hidden;
+
+        &.touch {
+            background-color: $bg-color-touch;
+        }
+    }
+
+    &-image {
+        @include hide;
+        margin: 4px $gap-base 4px 0;
+        overflow: hidden;
+
+        img {
+            width: 60px;
+            height: 60px;
+            max-width: 60px;
+            max-height: 60px;
+            border-radius: $border-radius-base;
+        }
+    }
+
+    &-content {
+        overflow: hidden;
+    }
+
+    &-title {
+        height: 24px;
+        font-size: $font-size-large;
+        line-height: 24px;
+        margin-right: 84px;
+        overflow: hidden;
+
+        span {
+            display: inline-block;
+            max-width: 100%;
+            @extend %text-overflow;
+        }
+
+        .dm-icon {
+            @include float(right);
+            margin-top: 5px;
+
+            &:not(.icon-danbao) {
+                margin-left: 4px;
+            }
+        }
+
+        .dm-tag {
+            @include float(right);
+            margin-top: 9px;
+            margin-left: 16px;
+        }
+    }
+
+    &-info:visited &-title,
+    &-info.visited &-title {
+        color: $text-color-assist;
+    }
+
+    &-meta {
+        color: $text-color-assist;
+        font-size: $font-size-small;
+        line-height: 20px;
+        margin-top: 4px;
+        overflow: hidden;
+
+        &-item {
+            @include float;
+            margin-right: $gap-base;
+        }
+
+        .dm-icon {
+            @include float;
+            margin-top: 5px;
+            margin-right: 4px;
+            margin-left: -1px;
+        }
+
+        .icon-danbao,
+        .icon-danbao-qy {
+            @include float(right);
+            margin-top: 2px;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        b {
+            @include float;
+            font-size: $font-size-large;
+            font-weight: $font-weight-bold;
+            margin-right: 2px;
+            margin-top: -0.5px;
+        }
+
+        .line::after {
+            content: "";
+            @include float;
+            width: 1px;
+            height: 8px;
+            background-color: $border-color-assist;
+            margin-top: 6px;
+            margin-right: 8px;
+            @include css3(transform-origin, 0 0);
+            @include css3(transform, scale3d(0.5, 1, 1));
+        }
+    }
+
+    &-area,
+    &-date {
+        @include float;
+        color: $text-color-assist;
+        margin-right: $gap-base;
+    }
+
+    &-location {
+        margin-right: 8px;
+    }
+
+    &-label {
+        margin-top: 4px;
+        overflow: hidden;
+
+        &-item {
+            @include float;
+            @include border(left, $border-color-assist);
+            color: $text-color-base;
+            font-size: $font-size-small;
+            line-height: 20px;
+            padding: 0 8px;
+            margin-top: 4px;
+
+            &::after {
+                top: 50%;
+                height: 8px;
+                margin-top: -4px;
+            }
+        }
+
+        .dm-icon {
+            @include float(right);
+            margin: 4px 0 4px 8px;
+        }
+
+        .icon-danbao,
+        .icon-label {
+            @include float;
+            margin-left: 0;
+            margin-right: 8px;
+        }
+    }
+
+    &-price {
+        position: absolute;
+        top: $gap-base;
+        right: $gap-main;
+        color: $text-color-warn;
+        font-size: $font-size-large;
+        line-height: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+
+        b {
+            display: inline-block;
+            font-size: $font-size-larger;
+            font-weight: $font-weight-bold;
+            line-height: 24px;
+            margin-right: 2px;
+
+            &.mianyi {
+                font-size: $font-size-large;
+                margin-right: 0;
+            }
+        }
+    }
+}

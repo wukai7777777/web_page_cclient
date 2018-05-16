@@ -1,0 +1,24 @@
+/* hr
+---------------------------------- */
+@mixin hr($bgColor: $bg-color-base) {
+    @include border(top);
+    min-height: 2px;
+    text-align: center;
+    @extend %text-hide;
+
+    &::after {
+        top: 50%;
+    }
+
+    &-text {
+        display: inline-block;
+        position: relative;
+        z-index: $z-index-base;
+        background-color: $bgColor;
+        color: $text-color-tiny;
+        font-size: $font-size-small;
+        font-weight: $font-weight-base;
+        line-height: 20px;
+        padding: 0 $gap-main;
+    }
+}

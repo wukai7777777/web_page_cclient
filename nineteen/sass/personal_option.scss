@@ -1,0 +1,56 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/column";
+@import "widget/arrow";
+@import "widget/cell";
+
+/* footbar
+---------------------------------- */
+.dm-footbar {
+    height: 44px;
+    background-color: transparent;
+
+    &::after {
+        @include hide;
+    }
+}
+
+/* menu
+---------------------------------- */
+.menu {
+    .dm-column-head {
+        @include hide;
+    }
+
+    .product-title {
+        font-weight: $font-weight-base;
+        @extend %text-overflow;
+    }
+
+    .product-opt {
+        display: block;
+
+        &.active {
+            color: $text-color-tiny;
+        }
+    }
+
+    .dm-cell-center {
+        .product-title {
+            text-align: center;
+        }
+    }
+}
+
+/* copyright
+---------------------------------- */
+.copyright {
+    display: block;
+    color: $text-color-tiny;
+    font-size: $font-size-small;
+    line-height: 20px;
+    text-align: center;
+    padding: $gap-base $gap-main;
+}

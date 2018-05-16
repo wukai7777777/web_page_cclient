@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="斗米兼职">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon-precomposed" href="http://sta.doumistatic.com/src/image/logo_doumi.png">
+    <title>搜索结果页-斗米兼职</title>
+    <link href="../style/status.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- page start -->
+    <div class="dm-page">
+        <!-- header start -->
+        <header class="dm-header dm-header-fixed">
+            <h1 class="dm-header-title">页面状态</h1>
+            <a href="javascript:history.go(-1);" class="dm-header-back">返回</a>
+        </header>
+        <!-- header end -->
+        <!-- section start -->
+        <section class="dm-content status">
+            <!-- status start -->
+            <div class="dm-status-box">
+                <!-- dm-status-box 在页面某模块中展现
+                     dm-status-page 在整个页面上展现
+                     dm-status 默认隐藏，添加active 表示显示 -->
+                <div class="dm-status active">
+                    <i class="dm-status-icon dm-status-icon-loadfail"></i>
+                    <span class="dm-status-text">服务器开小差，点击重新加载</span>
+                    <button class="dm-status-btn dm-status-btn-primary" type="button">重新加载</button>
+                </div>
+                <div class="dm-status">
+                    <i class="dm-status-icon dm-status-icon-offline"></i>
+                    <span class="dm-status-text">您还木有连接到网络哦，请检查网络</span>
+                </div>
+                <div class="dm-status">
+                    <i class="dm-status-icon dm-status-icon-nothing"></i>
+                    <span class="dm-status-text">还没有内容噢~~</span>
+                </div>
+                <div class="dm-status">
+                    <i class="dm-status-icon dm-status-icon-search"></i>
+                    <span class="dm-status-text">您搜索的职位未找到噢~~</span>
+                </div>
+                <div class="dm-status">
+                    <i class="dm-status-icon dm-status-icon-loading"></i>
+                    <span class="dm-status-text">加载中</span>
+                </div>
+            </div>
+            <!-- status end -->
+        </section>
+        <!-- section end -->
+    </div>
+    <!-- page end -->
+    <!-- js start -->
+    <script id="v-h5g" src="http://sta.doumistatic.com/sta/g.js?v=150917110933"></script>
+    <script>
+    G.use('com/mobile/lib/widget/widget.js').done(function(widget) {
+        widget.initWidgets();
+    });
+    </script>
+    <!-- js end -->
+</body>
+
+</html>

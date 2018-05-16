@@ -1,0 +1,285 @@
+@charset "utf-8";
+
+/* form
+---------------------------------- */
+.pic-group {
+    display: block;
+    padding: 16px 12px;
+}
+
+.pic-group::after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.pic-group .btn-file {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    width: 105px;
+    height: 70px;
+    background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
+}
+
+.pic-group .btn-file::before,
+.pic-group .btn-file::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 30px;
+    background-color: #e5e5e5;
+    margin-top: -15px;
+}
+
+.pic-group .btn-file::after {
+    width: 30px;
+    height: 1px;
+    margin-left: -15px;
+    margin-top: 0;
+}
+
+.pic-group .btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: .00001;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.pic-group img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background-clip: padding-box;
+    overflow: hidden;
+}
+
+.pic-group.loading {
+    pointer-events: none;
+}
+
+.pic-group.loading .btn-file::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-top: 0;
+}
+
+.pic-group.loading .btn-file::after {
+    content: "正在上传...";
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    color: #fff;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: -10px;
+    margin-left: -50%;
+}
+
+.pic-group.loading img {
+    display: block;
+}
+
+.pic-group.active .btn-file::before,
+.pic-group.active .btn-file::after {
+    display: none;
+}
+
+.pic-group.active img {
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.pic-avatar .btn-file {
+    width: auto;
+    height: 64px;
+    background-color: transparent;
+    border: 0 none;
+    padding: 2px;
+}
+
+.pic-avatar .btn-file::before,
+.pic-avatar.active .btn-file::before {
+    content: "上传头像";
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    color: #808080;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: -10px;
+    margin-left: -50%;
+    padding-left: 80px;
+}
+
+.pic-avatar .btn-file::after,
+.pic-avatar.loading .btn-file::after,
+.pic-avatar.active .btn-file::after {
+    content: "";
+    left: auto;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+    border-top: solid 1px #999;
+    border-right: solid 1px #999;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -5px;
+}
+
+.pic-avatar.loading .btn-file::before {
+    content: "正在上传...";
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    color: #808080;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: -10px;
+    margin-left: -50%;
+    padding-left: 96px;
+}
+
+.pic-avatar img {
+    display: block;
+    box-sizing: content-box;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    box-shadow: 0 0 0 2px rgba(229, 229, 229, 0.8);
+}
+
+.pic-avatar.active .btn-file::before {
+    display: block;
+    content: "修改头像";
+}
+
+.pic-avatar.active .btn-file::after {
+    display: block;
+}
+
+/* popup
+---------------------------------- */
+.popup-screen {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0;
+    margin: 0;
+}
+
+.popup-screen .mod-popup-box {
+    display: -webkit-box;
+    display: -ms-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    height: 100%;
+}
+
+.popup-screen .mod-popup-head {
+    height: 26px;
+    max-height: 26px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+    padding: 20px 12px 5px;
+}
+
+.popup-screen .mod-popup-body {
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.popup-screen .mod-popup-body.iscroll {
+    overflow-y: hidden;
+}
+
+.popup-screen .mod-popup-text {
+    line-height: 20px;
+    margin: 18px 12px;
+}
+
+.popup-screen .mod-popup-text:first-child {
+    margin-top: 0;
+}
+
+.popup-screen .mod-popup-text:last-child {
+    margin-bottom: 0;
+    padding-bottom: 9px;
+}
+
+.popup-screen .mod-popup-text p {
+    margin: 6px 0;
+}
+
+.popup-screen .mod-popup-text b {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.popup-screen .mod-popup-bar {
+    height: 48px;
+    max-height: 48px;
+}
+
+.popup-screen .mod-popup-bar .icon-close {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-clip: padding-box;
+    border: 12px solid rgba(255, 255, 255, 0.001);
+    border-radius: 24px;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    box-shadow: inset 0 0 0 1px #404040;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.popup-screen .mod-popup-bar .icon-close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: url(../imgs/icon_form.png) no-repeat 0 -60px;
+    background-size: 100px auto;
+    margin-top: -10px;
+    margin-left: -10px;
+}

@@ -1,0 +1,78 @@
+/* radio
+---------------------------------- */
+.dm-radio {
+    @include flex;
+    @include flex-align(center);
+    position: relative;
+
+    &-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $z-index-base;
+        width: 100%;
+        height: 100%;
+        opacity: .001;
+        -webkit-appearance: none;
+    }
+
+    &-text {
+        display: block;
+        position: relative;
+        @include flex-item;
+        box-sizing: border-box;
+        min-height: 22px;
+        color: $text-color-base;
+        font-size: $font-size-base;
+        line-height: 22px;
+        @extend %text-break;
+        padding-left: 28px;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            background: url(../imgs/icon_form.png) no-repeat -2px -42px;
+            background-size: 100px auto;
+            margin-top: -8px;
+        }
+    }
+
+    &-input:checked + &-text {
+        &::before {
+            background-position: -22px -42px;
+        }
+    }
+
+    &-flip &-text {
+        padding-right: 28px;
+        padding-left: 0;
+
+        &::before {
+            left: auto;
+            right: 0;
+        }
+    }
+
+    &-row {
+        @include flex;
+        @include flex-wrap(wrap);
+        margin-bottom: -8px;
+        overflow: hidden;
+    }
+
+    &-row & {
+        width: 40%;
+        margin-right: 8px;
+        margin-bottom: 8px;
+    }
+
+    &-column & + & {
+        width: auto;
+        margin-top: 8px;
+    }
+}

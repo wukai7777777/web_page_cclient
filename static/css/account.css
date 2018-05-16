@@ -1,0 +1,256 @@
+@charset "utf-8";
+
+/* layout
+---------------------------------- */
+.account {
+    min-height: 100%;
+    background-color: #fff;
+}
+
+.account .nav {
+    display: block;
+    background: url(../imgs/banner_account.png) no-repeat;
+    background-size: cover;
+    padding: 17.6% 40px 0;
+}
+
+.account .nav-item {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.account .nav-item::after {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-top: 9px solid #fff;
+    border-right: 9px solid transparent;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-left: -5px;
+    margin-top: -4px;
+}
+
+.account .nav-info {
+    display: block;
+    line-height: 40px;
+    text-align: center;
+}
+
+.account .nav-item.active::after {
+    display: block;
+}
+
+.account .nav-item.active .nav-info {
+    border-radius: 40px;
+    box-shadow: inset 0 0 1px #ffe500;
+    font-weight: 700;
+}
+
+.account .input-text {
+    height: 66px;
+    text-align: left;
+    padding: 0;
+}
+
+.account .multi-group .btn-info {
+    line-height: 66px;
+    padding: 0 15px;
+}
+
+.account .multi-group .icon-eye {
+    display: block;
+    height: 66px;
+}
+
+.account .form-widget {
+    padding: 5px 40px 32px;
+}
+
+.account .form-widget:first-child {
+    padding-top: 30px;
+}
+
+.account .form-field::after {
+    left: 0;
+}
+
+.account .form-item,
+.account .form-control {
+    display: block;
+}
+
+.account .form-label {
+    display: none;
+}
+
+.account .form-warning {
+    top: 44px;
+    background-color: rgba(255, 102, 0, 0.98);
+    color: #fff;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 6px 12px;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.account .form-warning span {
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 0;
+}
+
+.account .form-text {
+    font-size: 14px;
+    padding-top: 4px;
+}
+
+.account .form-opt,
+.account .form-opt .btn:only-child {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.account .form-opt ~ .form-text {
+    color: #808080;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 0;
+    margin: 28px 0 0;
+}
+
+.account .form-text-bottom {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    right: 40px;
+    text-align: center;
+}
+
+@media only screen and (max-height:568px) {
+    .account .form-text-bottom {
+        position: static;
+    }
+
+}
+
+@media screen and (orientation:landscape) {
+    .account .form-text-bottom {
+        position: static;
+    }
+
+}
+
+/* popup
+---------------------------------- */
+.popup-screen {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0;
+    margin: 0;
+}
+
+.popup-screen .mod-popup-box {
+    display: -webkit-box;
+    display: -ms-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    height: 100%;
+}
+
+.popup-screen .mod-popup-head {
+    height: 26px;
+    max-height: 26px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+    padding: 20px 12px 5px;
+}
+
+.popup-screen .mod-popup-body {
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.popup-screen .mod-popup-body.iscroll {
+    overflow-y: hidden;
+}
+
+.popup-screen .mod-popup-text {
+    line-height: 20px;
+    margin: 18px 12px;
+}
+
+.popup-screen .mod-popup-text:first-child {
+    margin-top: 0;
+}
+
+.popup-screen .mod-popup-text:last-child {
+    margin-bottom: 0;
+    padding-bottom: 9px;
+}
+
+.popup-screen .mod-popup-text p {
+    margin: 6px 0;
+}
+
+.popup-screen .mod-popup-text b {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.popup-screen .mod-popup-bar {
+    height: 48px;
+    max-height: 48px;
+}
+
+.popup-screen .mod-popup-bar .icon-close {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-clip: padding-box;
+    border: 12px solid rgba(255, 255, 255, 0.001);
+    border-radius: 24px;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    box-shadow: inset 0 0 0 1px #404040;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.popup-screen .mod-popup-bar .icon-close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: url(../imgs/icon_form.png) no-repeat 0 -60px;
+    background-size: 100px auto;
+    margin-top: -10px;
+    margin-left: -10px;
+}

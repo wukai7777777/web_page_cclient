@@ -1,0 +1,42 @@
+/* select-group
+---------------------------------- */
+.select-group {
+    display: block;
+    position: relative;
+    padding: $gap-base 36px $gap-base $gap-base;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid $border-color-tiny;
+        border-right: 1px solid $border-color-tiny;
+        margin-top: -8px;
+
+        @include css3(transform, rotate(135deg));
+    }
+
+    select {
+        position: relative;
+        left: -3px;
+        z-index: $z-index-base;
+        width: 100%;
+        height: 20px;
+        background-color: transparent;
+        border: 0 none;
+        outline: 0 none;
+        color: $text-color-base;
+        font-size: $font-size-base;
+        line-height: 20px;
+        -webkit-appearance: none;
+
+        &.disabled,
+        &[disabled] {
+            color: $text-color-disabled;
+            cursor: not-allowed;
+        }
+    }
+}

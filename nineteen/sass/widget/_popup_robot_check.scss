@@ -1,0 +1,71 @@
+/* popup-robot-check
+---------------------------------- */
+.popup-robot-check {
+    margin-top: -158px;
+
+    .robot-avatar {
+        position: relative;
+        height: 104px;
+        background: #ffbf00 url(../imgs/bg_popup.png) no-repeat 0 -210px padding-box;
+        background-size: 266px auto;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .form-tips {
+        text-align: left;
+        padding: 12px 16px;
+    }
+
+    .form-field {
+        margin: 0 16px 16px;
+        padding-bottom: 0;
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .form-item {
+        border: 1px solid $border-color-main;
+    }
+
+    .form-label {
+        display: none;
+    }
+
+    .form-warning {
+        position: static;
+        color: $text-color-warn;
+        font-size: $font-size-small;
+        line-height: 20px;
+        margin: 12px 16px -4px;
+
+        @include css3(transform, translate3d(0, 0, 0));
+    }
+
+    .form-field.active .form-item {
+        border-color: $red;
+    }
+
+    .input-text {
+        text-align: left;
+        padding: 12px;
+    }
+
+    @include mq-ls {
+        & {
+            position: absolute;
+            top: 10%;
+            margin-top: 0 !important;
+        }
+    }
+
+
+    @include mq-sh {
+        & {
+            position: absolute;
+            top: 10%;
+            margin-top: 0 !important;
+        }
+    }
+}

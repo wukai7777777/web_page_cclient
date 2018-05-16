@@ -1,0 +1,22 @@
+/* navbar
+---------------------------------- */
+.dm-navbar {
+    @include flex;
+    @include flex-justify(center);
+
+    &-item {
+        display: block;
+        font-size: $font-size-large;
+        line-height: 44px;
+        text-align: center;
+        white-space: nowrap;
+        margin: 0 20px;
+
+        &.active {
+            font-weight: $font-weight-bold;
+            box-shadow: inset 0 -4px 0 0 $red;
+        }
+
+    }
+
+}

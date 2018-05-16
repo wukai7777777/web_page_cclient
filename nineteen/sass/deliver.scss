@@ -1,0 +1,137 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/column";
+@import "widget/status";
+@import "widget/banner";
+@import "widget/btn";
+@import "widget/icon";
+@import "widget/product";
+@import "widget/adv";
+
+/* icon
+---------------------------------- */
+.icon-wechat,
+.icon-qq,
+.icon-phone {
+    &::after {
+        background: url(../imgs/icon_detail.png) -20px -90px;
+        background-size: 120px auto;
+    }
+}
+
+.icon-wechat {
+    width: 24px;
+
+    &::after {
+        width: 24px;
+        background-position: -60px -90px;
+    }
+}
+
+.icon-qq::after {
+    background-position: -40px -90px;
+}
+
+/* btn
+---------------------------------- */
+@include btn(btn-qq, #1ba4e8, $text-color-main, #0e95d8, $text-color-main, $bg-color-disabled, $text-color-disabled);
+
+@include btn(btn-wechat, #3fcf57, $text-color-main, #34c14c, $text-color-main, $bg-color-disabled, $text-color-disabled);
+
+@include btn(btn-phone, $yellow, $text-color-base, $orange, $text-color-base, $bg-color-disabled, $text-color-disabled);
+
+/* deliver
+---------------------------------- */
+.dm-deliver {
+    background-color: $bg-color-main;
+    padding: $gap-large / 2 $gap-large;
+
+    &-title {
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+        line-height: 24px;
+        text-align: center;
+        @extend %text-break;
+    }
+
+    &-text {
+        font-size: $font-size-larger;
+        font-weight: $font-weight-base;
+        line-height: 26px;
+        text-align: center;
+        @extend %text-break;
+        margin-top: 8px;
+
+        &.text-wechat {
+            color: #3fcf57;
+        }
+
+        &.text-qq {
+            color: #1ba4e8;
+        }
+
+        .dm-icon {
+            margin-right: 8px;
+        }
+    }
+
+    &-btn {
+        margin-top: 20px;
+    }
+
+    &-desc {
+        color: $text-color-tiny;
+        font-size: $font-size-small;
+        line-height: 20px;
+        @extend %text-break;
+        margin-top: 8px;
+    }
+}
+
+/* banner
+---------------------------------- */
+.dm-banner {
+    margin-top: $gap-base;
+}
+
+/* recommend
+---------------------------------- */
+.recommend {
+    background-color: $bg-color-main;
+    margin-top: $gap-base;
+
+    .dm-column-head {
+        @include border(bottom);
+    }
+
+    .dm-column-title {
+        color: $text-color-assist;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        line-height: 22px;
+
+        &::before {
+            @include hide;
+        }
+    }
+
+    .dm-list-item {
+        &:not(:last-child) {
+            @include border(bottom);
+        }
+    }
+
+    .product-content {
+        @include flex;
+    }
+
+    .product-title {
+        @include flex-item;
+        margin-right: 8px;
+    }
+
+    .product-price {
+        position: static;
+    }
+}

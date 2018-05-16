@@ -1,0 +1,11 @@
+/* flex
+---------------------------------- */
+
+.dm-flex {
+    @include flex;
+    &-item {
+        display: block;
+        @include flex-item;
+        width: 100%;
+    }
+}

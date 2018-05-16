@@ -1,0 +1,121 @@
+@import "./mask";
+
+// mixin
+//-----------------------------------------------------
+@mixin btn($btn-name, $bg-color-base, $text-color-base, $bg-color-touch, $text-color-touch, $bg-color-disabled, $text-color-disabled) {
+    .#{$btn-name} {
+        background-color: $bg-color-base;
+        color: $text-color-base;
+
+        &.touch {
+            background-color: $bg-color-touch;
+            color: $text-color-touch;
+        }
+
+        &.disabled,
+        &.disabled.touch,
+        &[disabled],
+        &[disabled].touch {
+            background-color: $bg-color-disabled;
+            color: $text-color-disabled;
+        }
+    }
+}
+
+@mixin btn-add($add-name) {
+    .#{$add-name} {
+        @content;
+    }
+}
+
+/* dialog
+---------------------------------- */
+.dm-dialog {
+    @include hide;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: $z-index-highest;
+    width: 80%;
+    max-width: 266px;
+    background-color: $bg-color-main;
+    background-clip: padding-box;
+    border-radius: 20px;
+    overflow: hidden;
+    @include css3(transform, (translate(-50%, -50%)));
+    @include css3(backface-visibility, hidden);
+    @include css3(font-smoothing, subpixel-antialiased);
+
+    &.active {
+        @include show;
+    }
+
+    &-head {
+        padding: 20px $gap-main 0;
+    }
+
+    &-body {
+        min-height: 22px;
+        padding: 0 $gap-main;
+
+        &:first-child {
+            padding-top: 20px;
+        }
+    }
+
+    &-foot {
+        @include flex;
+        @include flex-direction(row-reverse);
+        padding: 16px 8px 24px;
+    }
+
+    &-title {
+        color: $text-color-base;
+        font-size: $font-size-larger;
+        line-height: 26px;
+        text-align: center;
+        @extend %text-break;
+        padding-bottom: 4px;
+    }
+
+    &-text {
+        font-size: $font-size-base;
+        line-height: 22px;
+        text-align: center;
+        @extend %text-break;
+    }
+
+    &-btn {
+        display: block;
+        @include flex-item;
+        box-sizing: border-box;
+        background-clip: padding-box;
+        border: 0 none;
+        border-radius: $border-radius-base;
+        font-size: $font-size-large;
+        font-weight: $font-weight-base;
+        line-height: 44px;
+        text-align: center;
+        padding: 0 $gap-base;
+        margin: 0 8px;
+        cursor: pointer;
+        -webkit-appearance: none;
+
+        &.disabled,
+        &[disabled] {
+            pointer-events: none;
+        }
+
+        @at-root {
+            @include btn(dm-dialog-btn-primary, $yellow, $text-color-base, $orange, $text-color-base, $bg-color-disabled, $text-color-disabled);
+            @include btn(dm-dialog-btn-common, transparent, $text-color-base, $bg-color-touch, $text-color-base, $bg-color-disabled, $text-color-disabled);
+            @include btn-add(dm-dialog-btn-common) {
+                box-shadow: inset 0 0 1px $gray-dim;
+
+                &.touch {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

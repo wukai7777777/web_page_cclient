@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="斗米兼职">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon-precomposed" href="http://sta.doumistatic.com/src/image/logo_doumi.png">
+    <title>我的简历-斗米兼职</title>
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/form.css" rel="stylesheet">
+    <link href="../css/resume.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- page start -->
+    <div class="mod-page mod-header-show">
+        <!-- header start -->
+        <header class="mod-header">
+            <h1>我的简历</h1>
+            <a href="javascript:history.go(-1);" class="back">返回</a>
+            <a href="javascript:;" class="operate">保存</a>
+        </header>
+        <!-- header end -->
+        <!-- section start -->
+        <section class="mod-content resume">
+            <!-- form start -->
+            <div class="form-widget normal">
+                <div class="form-group">
+                    <div class="form-field extend">
+                        <div class="form-item">
+                            <label class="form-label">头像</label>
+                            <div class="form-control">
+                                <!-- pic-group为默认，上传中加loading，上传后加active  -->
+                                <div class="pic-group pic-avatar">
+                                    <label class="btn-file">
+                                        <input type="file">
+                                        <img src="../imgs/default.png" alt="avatar">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请上传头像</span>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="form-heading">基本信息（必填）</h2>
+                <div class="form-group">
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">姓名</label>
+                            <div class="form-control">
+                                <label class="input-group">
+                                    <input type="text" class="input-text" placeholder="请输入真实姓名">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请输入真实姓名</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">姓名</label>
+                            <div class="form-control">
+                                <span class="text-group disabled">章小妹</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">性别</label>
+                            <div class="form-control">
+                                <div class="multi-group">
+                                    <label class="radio-group">
+                                        <input type="radio" name="sex" value="sex-male">
+                                        <span>男</span>
+                                    </label>
+                                    <label class="radio-group">
+                                        <input type="radio" name="sex" value="sex-female">
+                                        <span>女</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请选择性别</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">性别</label>
+                            <div class="form-control">
+                                <span class="text-group disabled">女</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">出生年份</label>
+                            <div class="form-control">
+                                <div class="filter-group">
+                                    <div class="filter-tips js-touch-state">请选择出生年份</div>
+                                    <div class="filter-cont">
+                                        <div class="filter-head">
+                                            <h2 class="filter-title">出生年份</h2>
+                                            <button class="filter-opt" type="button">取消</button>
+                                            <button class="filter-opt" type="button">确定</button>
+                                        </div>
+                                        <div class="filter-body">
+                                            <div class="filter-wrap iscroll" id="iscroll1">
+                                                <ul class="filter-menu">
+                                                    <li class="js-touch-state active">2015</li>
+                                                    <li class="js-touch-state">2014</li>
+                                                    <li class="js-touch-state">2013</li>
+                                                    <li class="js-touch-state">2012</li>
+                                                    <li class="js-touch-state">2011</li>
+                                                    <li class="js-touch-state">2010</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mask"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请选择出生年份</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">出生年份</label>
+                            <div class="form-control">
+                                <span class="text-group disabled">1990</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">身份</label>
+                            <div class="form-control">
+                                <div class="multi-group">
+                                    <label class="radio-group">
+                                        <input type="radio" name="id" value="id-student">
+                                        <span>学生</span>
+                                    </label>
+                                    <label class="radio-group">
+                                        <input type="radio" name="id" value="id-unstudent">
+                                        <span>非学生</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请选择身份</span>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="form-heading">教育经历</h2>
+                <div class="form-group">
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">学校</label>
+                            <div class="form-control">
+                                <label class="input-group">
+                                    <input type="text" class="input-text" placeholder="请输入学校名称">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请输入学校名称</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">学历</label>
+                            <div class="form-control">
+                                <div class="filter-group">
+                                    <div class="filter-tips js-touch-state">请选择学历</div>
+                                    <div class="filter-cont">
+                                        <div class="filter-head">
+                                            <h2 class="filter-title">学历</h2>
+                                            <button class="filter-opt" type="button">取消</button>
+                                            <button class="filter-opt" type="button">确定</button>
+                                        </div>
+                                        <div class="filter-body">
+                                            <div class="filter-wrap iscroll" id="iscroll2">
+                                                <ul class="filter-menu">
+                                                    <li class="js-touch-state active">初中及以下</li>
+                                                    <li class="js-touch-state">高中</li>
+                                                    <li class="js-touch-state">大专</li>
+                                                    <li class="js-touch-state">本科</li>
+                                                    <li class="js-touch-state">硕士</li>
+                                                    <li class="js-touch-state">博士及以上</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mask"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请选择学历</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">入学年份</label>
+                            <div class="form-control">
+                                <div class="filter-group">
+                                    <div class="filter-tips js-touch-state">请选择入学年份</div>
+                                    <div class="filter-cont">
+                                        <div class="filter-head">
+                                            <h2 class="filter-title">入学年份</h2>
+                                            <button class="filter-opt" type="button">取消</button>
+                                            <button class="filter-opt" type="button">确定</button>
+                                        </div>
+                                        <div class="filter-body">
+                                            <div class="filter-wrap iscroll" id="iscroll3">
+                                                <ul class="filter-menu">
+                                                    <li class="js-touch-state active">2015</li>
+                                                    <li class="js-touch-state">2014</li>
+                                                    <li class="js-touch-state">2013</li>
+                                                    <li class="js-touch-state">2012</li>
+                                                    <li class="js-touch-state">2011</li>
+                                                    <li class="js-touch-state">2010</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mask"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请选择入学年份</span>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="form-heading">详细信息</h2>
+                <div class="form-group">
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">身高</label>
+                            <div class="form-control">
+                                <div class="multi-group">
+                                    <label class="input-group">
+                                        <input type="tel" class="input-text" maxlength="3" placeholder="请输入身高">
+                                    </label>
+                                    <span class="text-group">厘米</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请输入身高</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">体重</label>
+                            <div class="form-control">
+                                <div class="multi-group">
+                                    <label class="input-group">
+                                        <input type="tel" class="input-text" maxlength="3" placeholder="请输入体重">
+                                    </label>
+                                    <span class="text-group">公斤</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请输入体重</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">健康证</label>
+                            <div class="form-control">
+                                <div class="multi-group">
+                                    <label class="radio-group">
+                                        <input type="radio" name="health-card" value="card-yes">
+                                        <span>有</span>
+                                    </label>
+                                    <label class="radio-group">
+                                        <input type="radio" name="health-card" value="card-non">
+                                        <span>无</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请选择健康证</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">居住地点</label>
+                            <div class="form-control">
+                                <div class="filter-group">
+                                    <div class="filter-tips js-touch-state">请选择居住地点</div>
+                                    <div class="filter-cont">
+                                        <div class="filter-head">
+                                            <h2 class="filter-title">居住地点</h2>
+                                            <button class="filter-opt" type="button">取消</button>
+                                            <button class="filter-opt" type="button">确定</button>
+                                        </div>
+                                        <div class="filter-body">
+                                            <div class="filter-wrap iscroll" id="iscroll4">
+                                                <ul class="filter-menu">
+                                                    <li class="js-touch-state active">海淀</li>
+                                                    <li class="js-touch-state">朝阳</li>
+                                                    <li class="js-touch-state">西城</li>
+                                                    <li class="js-touch-state">东城</li>
+                                                    <li class="js-touch-state">宣武</li>
+                                                </ul>
+                                            </div>
+                                            <div class="filter-wrap iscroll" id="iscroll5">
+                                                <ul class="filter-menu">
+                                                    <li class="js-touch-state">回龙观</li>
+                                                    <li class="js-touch-state">中关村</li>
+                                                    <li class="js-touch-state active">五道口</li>
+                                                    <li class="js-touch-state">五棵松</li>
+                                                    <li class="js-touch-state">公主坟</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mask"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请选择居住地点</span>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="form-heading">联系方式</h2>
+                <div class="form-group">
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">微信号</label>
+                            <div class="form-control">
+                                <label class="input-group">
+                                    <input type="text" class="input-text" placeholder="微信号">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请输入微信号</span>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <div class="form-item">
+                            <label class="form-label">QQ号</label>
+                            <div class="form-control">
+                                <label class="input-group">
+                                    <input type="tel" class="input-text" placeholder="请输入QQ号">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-warning">
+                            <span>请输入QQ号</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- form end -->
+        </section>
+        <!-- section end -->
+    </div>
+    <!-- page end -->
+    <!-- toast start -->
+    <div class="mod-toast"><span>表单验证提示信息</span></div>
+    <!-- toast end -->
+    <!-- js start -->
+    <script id="v-h5g" src="http://sta.doumistatic.com/sta/g.js?v=150917110933"></script>
+    <script>
+    G.use(['com/mobile/lib/widget/widget.js', 'com/mobile/lib/iscroll/iscroll.js']).done(function(widget) {
+        widget.initWidgets();
+        $('.filter-group').live('tap', function() {
+            addActive(this);
+            iscroll1 = new window.IScroll('#iscroll1', {
+                mouseWheel: true,
+                tap: true,
+                click: true,
+            });
+            iscroll2 = new window.IScroll('#iscroll2', {
+                mouseWheel: true,
+                tap: true,
+                click: true,
+            });
+            iscroll3 = new window.IScroll('#iscroll3', {
+                mouseWheel: true,
+                tap: true,
+                click: true,
+            });
+            iscroll4 = new window.IScroll('#iscroll4', {
+                mouseWheel: true,
+                tap: true,
+                click: true,
+            });
+            iscroll5 = new window.IScroll('#iscroll5', {
+                mouseWheel: true,
+                tap: true,
+                click: true,
+            });
+            G.util.touchmove.off();
+        });
+        $('.filter-opt').live('tap', function() {
+            removeActive('.filter-group');
+            G.util.touchmove.on();
+            iscroll = null;
+        });
+        $('.operate').live('tap', function() {
+            $('.form-field').first().addClass('active');
+            setTimeout(function() {
+                removeActive('.form-field');
+            }, 1000);
+        });
+
+        function addActive(e) {
+            $(e).addClass('active');
+        }
+
+        function removeActive(e) {
+            $(e).removeClass('active');
+        }
+    });
+    </script>
+    <!-- js end -->
+</body>
+
+</html>

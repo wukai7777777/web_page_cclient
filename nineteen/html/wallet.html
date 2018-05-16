@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="斗米兼职">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon-precomposed" href="http://sta.doumistatic.com/src/image/logo_doumi.png">
+    <title>我的钱包-斗米兼职</title>
+    <link href="../style/wallet.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- page start -->
+    <div class="dm-page">
+        <!-- header start -->
+        <header class="dm-header dm-header-fixed">
+            <h1 class="dm-header-title">我的钱包</h1>
+            <a href="javascript:history.go(-1);" class="dm-header-back">返回</a>
+        </header>
+        <!-- header end -->
+        <!-- section start -->
+        <section class="dm-content wallet">
+            <!-- toptips start -->
+                <a class="dm-toptips" href="javascript:;">你好，我是业务通知！</a>
+                <a class="dm-toptips dm-toptips-warn" href="javascript:;">你好，我是系统通知！</a>
+            <!-- toptips end -->
+            <!-- info start -->
+            <div class="info dm-column">
+                <div class="dm-column-head">
+                    <h2 class="dm-column-title">钱包信息</h2>
+                </div>
+                <div class="dm-column-body">
+                    <div class="product-info">
+                        <h3 class="product-title">余额</h3>
+                        <div class="product-content"><b>360.00</b>元</div>
+                        <button class="dm-btn dm-btn-primary dm-btn-large" type="button"><i class="dm-icon icon-wechat"></i>微信提现</button>
+                        <!-- //其他提现方式
+                        <button class="dm-btn dm-btn-primary dm-btn-large" type="button"><i class="dm-icon icon-alipay"></i>支付宝提现</button>
+                        <button class="dm-btn dm-btn-primary dm-btn-large" type="button"><i class="dm-icon icon-bank"></i>银行卡提现</button>
+                        -->
+                        <p class="product-opt" data-role="target-withdraw">其它方式提现</p>
+                    </div>
+                </div>
+            </div>
+            <!-- info end -->
+            <!-- record start -->
+            <div class="record dm-column">
+                <div class="dm-column-head">
+                    <h2 class="dm-column-title">最近一条交易记录</h2>
+                    <a href="wallet_record.html" class="dm-column-tool dm-column-access">查看全部</a>
+                </div>
+                <div class="dm-column-body">
+                    <div class="product-info">
+                        <div class="product-content">
+                            <h3 class="product-title">新用户上岗3天奖励</h3>
+                            <div class="product-meta">账单类型：伯乐奖励</div>
+                            <p class="product-desc">备注：新用户报名参加首的职位上岗满三天，红包可以提现。</p>
+                        </div>
+                        <div class="product-aside">
+                            <div class="product-price"><b>+50.00元</b></div>
+                            <p class="product-status">(已到账)</p>
+                            <p class="product-desc">06-29</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="wallet_record.html" class="record-guide">查看交易记录</a>
+            <!-- record end -->
+        </section>
+        <!-- section end -->
+    </div>
+    <!-- page end -->
+    <!-- actionsheet start -->
+    <div class="dm-actionsheet" data-role="actionsheet-withdraw">
+        <div class="dm-actionsheet-body">
+            <ul class="dm-actionsheet-list">
+                <li class="dm-actionsheet-item"><i class="dm-icon icon-alipay"></i>支付宝提现</li>
+                <li class="dm-actionsheet-item"><i class="dm-icon icon-bank"></i>银行卡提现</li>
+            </ul>
+        </div>
+        <div class="dm-actionsheet-foot">
+            <button class="dm-actionsheet-btn" type="button" data-role="btn-cancle">取消</button>
+        </div>
+    </div>
+    <div class="dm-mask" data-role="mask"></div>
+    <!-- actionsheet end -->
+    <!-- js start -->
+    <script id="v-h5g" src="http://sta.doumistatic.com/sta/g.js?v=150917110933"></script>
+    <script>
+    G.use('com/mobile/lib/widget/widget.js').done(function(widget) {
+        widget.initWidgets();
+        $('[data-role="target-withdraw"]').live('tap', function() {
+            addActive('[data-role="actionsheet-withdraw"]');
+            addActive('[data-role="mask"]');
+            G.util.touchmove.off();
+        });
+
+        $('[data-role="btn-cancle"]').on('tap', function() {
+            removeActive('[data-role="actionsheet-withdraw"]');
+            removeActive('[data-role="mask"]');
+            G.util.touchmove.on();
+        });
+
+        $('[data-role="mask"]').on('tap', function() {
+            removeActive('[data-role="actionsheet-withdraw"]');
+            removeActive('[data-role="mask"]');
+            G.util.touchmove.on();
+        });
+
+        function addActive(e) {
+            $(e).addClass('active');
+        }
+
+        function removeActive(e) {
+            $(e).removeClass('active');
+        }
+    });
+    </script>
+    <!-- js end -->
+</body>
+
+</html>

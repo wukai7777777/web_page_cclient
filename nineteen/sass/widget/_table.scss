@@ -1,0 +1,13 @@
+/* table
+---------------------------------- */
+.dm-table {
+    display: table;
+    box-sizing: border-box;
+    width: 100%;
+
+    &-cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+}

@@ -1,0 +1,83 @@
+/* rating
+---------------------------------- */
+@mixin rating($size: 24px, $gap: 24px, $range: .5) {
+    display: inline-block;
+    vertical-align: middle;
+
+    &-title {
+        display: inline-block;
+        line-height: $size;
+    }
+
+    &-rank {
+        display: inline-block;
+        position: relative;
+        width: $size * 5 + $gap * 4;
+        height: $size;
+        background-image: url(../imgs/icon_rate.png), url(../imgs/icon_rate.png), url(../imgs/icon_rate.png), url(../imgs/icon_rate.png), url(../imgs/icon_rate.png);
+        background-position: 0 0, ($size + $gap) 0, ($size + $gap) * 2 0, ($size + $gap) * 3 0, ($size + $gap) * 4 0;
+        background-repeat: no-repeat;
+        background-size: $size auto;
+        @extend %text-hide;
+
+        &::after {
+            content: "";
+            @include float;
+            height: $size;
+            background-image: url(../imgs/icon_rate.png), url(../imgs/icon_rate.png), url(../imgs/icon_rate.png), url(../imgs/icon_rate.png), url(../imgs/icon_rate.png);
+            background-position: 0 #{-$size},
+            ($size + $gap) #{-$size},
+            ($size + $gap) * 2 #{-$size},
+            ($size + $gap) * 3 #{-$size},
+            ($size + $gap) * 4 #{-$size};
+            background-repeat: no-repeat;
+            background-size: $size auto;
+        }
+
+        @for $i from 0 through ceil(50 / ($range * 10)) {
+            $i: $i * $range;
+
+            &-#{$i * 10}::after {
+                width: $size * floor($i) + $gap * floor($i) + $size * ($i - floor($i));
+            }
+        }
+    }
+
+    &-label {
+        @extend %text-hide;
+        margin-top: $gap-main;
+
+        &-item {
+            @include border;
+            @include border-radius;
+            display: inline-block;
+            position: relative;
+            box-sizing: border-box;
+            color: $text-color-base;
+            font-size: $font-size-base;
+            line-height: 22px;
+            white-space: nowrap;
+            padding: 5px $gap-base;
+            overflow: hidden;
+
+            &:not(:last-child) {
+                margin-right: $gap-base;
+            }
+        }
+    }
+
+    &-text {
+        background-color: $bg-color-base;
+        color: $text-color-base;
+        font-size: $font-size-base;
+        line-height: 22px;
+        text-align: left;
+        @extend %text-break;
+        padding: $gap-base $gap-main;
+        margin-top: $gap-main;
+    }
+}
+
+.dm-rating {
+    @include rating;
+}

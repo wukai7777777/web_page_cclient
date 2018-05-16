@@ -1,0 +1,59 @@
+/* popup-register-guide
+---------------------------------- */
+.popup-register-guide {
+    position: absolute;
+    margin-top: -150px;
+
+    .dm-popup-head {
+        display: none;
+    }
+
+    .state-registered,
+    .state-unregister {
+        background: url(../imgs/bg_popup.png) no-repeat;
+        background-size: 266px auto;
+    }
+
+    .register-state {
+        position: relative;
+        height: 104px;
+        background-color: #0dabd9;
+        background-clip: padding-box;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .state-registered,
+    .state-unregister {
+        display: block;
+        height: 104px;
+        background-position: 0 0;
+
+        @extend %text-hide;
+    }
+
+    .state-registered {
+        background-position: 0 -105px;
+    }
+
+    .dm-popup-text {
+        text-align: center;
+        margin: 20px 16px;
+    }
+
+    @include mq-ls {
+        & {
+            position: absolute;
+            top: 10%;
+            margin-top: 0 !important;
+        }
+    }
+
+
+    @include mq-sh {
+        & {
+            position: absolute;
+            top: 10%;
+            margin-top: 0 !important;
+        }
+    }
+}

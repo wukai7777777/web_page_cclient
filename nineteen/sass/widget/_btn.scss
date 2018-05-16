@@ -1,0 +1,140 @@
+// mixin
+//-----------------------------------------------------
+@mixin btn($btn-name, $bg-color-base, $text-color-base, $bg-color-touch, $text-color-touch, $bg-color-disabled, $text-color-disabled) {
+    .#{$btn-name} {
+        background-color: $bg-color-base;
+        color: $text-color-base;
+
+        &.touch {
+            background-color: $bg-color-touch;
+            color: $text-color-touch;
+        }
+
+        &.disabled,
+        &.disabled.touch,
+        &[disabled],
+        &[disabled].touch {
+            background-color: $bg-color-disabled;
+            color: $text-color-disabled;
+        }
+    }
+}
+
+@mixin btn-add($add-name) {
+    .#{$add-name} {
+        @content;
+    }
+}
+
+/* btn
+---------------------------------- */
+.dm-btn {
+    display: inline-block;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    border: 0 none;
+    border-radius: $border-radius-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: 32px;
+    text-align: center;
+    padding: 0 $gap-base;
+    cursor: pointer;
+    -webkit-appearance: none;
+
+    &.disabled,
+    &[disabled] {
+        pointer-events: none;
+    }
+
+    @at-root {
+        @include btn(dm-btn-default, $bg-color-main, $text-color-base, $bg-color-touch, $text-color-base, $bg-color-disabled, $text-color-disabled);
+
+        @include btn(dm-btn-primary, $yellow, $text-color-base, $orange, $text-color-base, $bg-color-disabled, $text-color-disabled);
+        @include btn-add(dm-btn-primary) {
+            &.active {
+                background-color: $white-light;
+                color: $text-color-base;
+
+                &.touch {
+                    background-color: $bg-color-touch;
+                    color: $text-color-base;
+                }
+            }
+        }
+
+        @include btn(dm-btn-common, $bg-color-main, $text-color-base, $bg-color-touch, $text-color-base, $bg-color-disabled, $text-color-disabled);
+        @include btn-add(dm-btn-common) {
+            box-shadow: inset 0 0 1px $gray-dim;
+
+            &.touch {
+                box-shadow: none;
+            }
+        }
+
+        @include btn(dm-btn-warn, $red, $text-color-main, #d65600, $text-color-main, $bg-color-disabled, $text-color-disabled);
+
+        @include btn(dm-btn-link, $bg-color-main, $link-color-main, $bg-color-touch, $link-color-main, $bg-color-disabled, $text-color-disabled);
+
+        &-large {
+            width: 100%;
+            font-size: $font-size-large;
+            line-height: 44px;
+        }
+
+        &-desc {
+            display: inline-block;
+            font-size: $font-size-smaller;
+            line-height: inherit;
+            vertical-align: middle;
+            margin-left: $gap-base;
+        }
+
+        &-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        &-row {
+            @include flex;
+        }
+
+        &-row & {
+            display: block;
+            @include flex-item;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &-row-gap {
+            margin-right: 8px;
+            margin-left: 8px;
+        }
+
+        &-row-gap & {
+            margin-right: 8px;
+            margin-left: 8px;
+        }
+
+        &-row-gap &:only-child {
+            margin-right: 32px;
+            margin-left: 32px;
+        }
+
+        &-column & {
+            display: block;
+        }
+
+        &-column & + & {
+            margin-top: $gap-base;
+        }
+
+        &-column-gap {
+            margin-right: 40px;
+            margin-left: 40px;
+        }
+    }
+}

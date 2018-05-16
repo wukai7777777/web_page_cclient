@@ -1,0 +1,33 @@
+/* css sprite
+---------------------------------- */
+%sprite-icon {
+    background: url(../imgs/icon.png) no-repeat;
+    background-size: 100px auto;
+}
+
+%sprite-form {
+    background: url(../imgs/icon_form.png) no-repeat;
+    background-size: 100px auto;
+}
+
+/* icon
+---------------------------------- */
+.dm-icon {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    @extend %text-hide;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        @extend %text-hide;
+        @include css3(transform, translate3d(-50%, -50%, 0));
+    }
+}

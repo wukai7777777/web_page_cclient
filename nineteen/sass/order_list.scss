@@ -1,0 +1,122 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/column";
+@import "widget/status";
+@import "widget/arrow";
+@import "widget/nav";
+@import "widget/tab";
+@import "widget/product";
+
+/* tab
+---------------------------------- */
+.dm-tab {
+    @include mq-min-dw(400px) {
+        & {
+            overflow: hidden;
+        }
+
+        &-list {
+            @include flex;
+            @include flex-justify(around);
+            padding: 0;
+        }
+
+        &-list-item {
+            display: block;
+        }
+    }
+}
+
+/* order-list
+---------------------------------- */
+.order-list {
+    padding-bottom: 32px;
+}
+
+/* product
+---------------------------------- */
+.product {
+    .product-price {
+        @include float;
+        position: static;
+        font-size: $font-size-small;
+        line-height: 20px;
+        margin-top: 8px;
+        margin-right: 8px;
+
+        b {
+            @include float;
+            font-size: $font-size-large;
+            line-height: 20px;
+        }
+    }
+
+    .product-label {
+        @include float;
+
+        .dm-icon {
+            @include hide;
+        }
+    }
+
+    .product-status {
+        position: absolute;
+        top: $gap-base;
+        right: $gap-main;
+        color: $text-color-base;
+        font-size: $font-size-base;
+        line-height: 24px;
+        white-space: nowrap;
+        overflow: hidden;
+
+        &-main {
+            color: $text-color-warn;
+        }
+
+        &-assist {
+            color: $text-color-assist;
+        }
+
+        &-tiny {
+            color: $text-color-tiny;
+        }
+    }
+
+    .product-nav {
+        @include flex;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: $gap-main;
+            right: $gap-main;
+            height: 0;
+            border-top: 1px dotted $border-color-main;
+        }
+
+        .dm-nav-item {
+            @include flex-item;
+            font-size: $font-size-base;
+            line-height: 22px;
+            padding: $gap-base;
+
+            &:not(:first-child) {
+                @include border(left);
+
+                &::after {
+                    top: 50%;
+                    height: 22px;
+                    margin-top: -11px;
+                }
+            }
+        }
+    }
+
+    .dm-list-item {
+        background-color: $bg-color-main;
+        margin-top: $gap-base;
+    }
+}

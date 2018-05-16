@@ -1,0 +1,245 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/column";
+@import "widget/product";
+@import "widget/push";
+
+/* message
+---------------------------------- */
+.message {
+    padding-bottom: $gap-main;
+
+    &-list {
+        .dm-column-head {
+            @include hide;
+        }
+
+        .dm-list-item {
+            margin-top: 4px;
+        }
+    }
+
+    &-meta {
+        display: block;
+        color: $text-color-tiny;
+        font-size: $font-size-smaller;
+        line-height: 18px;
+        text-align: center;
+        padding: $gap-main;
+    }
+
+    &-info {
+        @include border;
+        @include border-radius;
+        background-color: $bg-color-main;
+        background-clip: padding-box;
+        margin: 0 $gap-base;
+    }
+
+    &-title {
+        display: block;
+        color: $text-color-tiny;
+        font-size: $font-size-small;
+        font-weight: $font-weight-base;
+        line-height: 20px;
+        padding: 8px $gap-main;
+    }
+
+    &-push {
+        .product-info {
+            z-index: $z-index-base;
+            border-radius: $border-radius-base;
+
+            &.touch {
+                background-color: transparent;
+                opacity: .5;
+            }
+        }
+
+        .product-title {
+            height: auto;
+            margin-right: 0;
+            @extend %text-break;
+        }
+
+        .product-image {
+            @include show;
+            background-color: $bg-color-tiny;
+            background-position: center top;
+            background-size: cover;
+            margin: 8px 0;
+
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+                max-height: none;
+                border-radius: 0;
+            }
+        }
+
+        .product-desc {
+            color: $text-color-assist;
+            font-size: $font-size-small;
+            line-height: 20px;
+            margin: 4px 0;
+            overflow: hidden;
+            @extend %text-break;
+
+            &:first-child {
+                margin-top: $gap-base;
+            }
+
+            &:last-child {
+                margin-bottom: $gap-base;
+            }
+        }
+
+        .product-opt {
+            @extend %arrow-hollow-tiny;
+            position: relative;
+            font-size: $font-size-small;
+            line-height: 20px;
+            padding: 8px 0;
+            margin-top: 12px;
+            margin-bottom: -12px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: $border-color-main;
+                @include css3(transform-origin,(0 0));
+                @include css3(transform,(scale3d(1, 0.5, 1)));
+            }
+        }
+    }
+
+    &-position {
+        .product-info {
+            @include border(top);
+            z-index: $z-index-base;
+
+            &:last-child {
+                border-radius: 0 0 $border-radius-base $border-radius-base;
+            }
+
+            &.touch {
+                background-color: transparent;
+                opacity: .5;
+            }
+        }
+
+        .product-content {
+            @include flex;
+        }
+
+        .product-title {
+            @include flex-item;
+            margin-right: 8px;
+        }
+
+        .product-price {
+            position: static;
+        }
+    }
+
+    &-topic {
+        .product-info {
+            @include border(bottom);
+            z-index: $z-index-base;
+
+            &::after {
+                left: $gap-main;
+                right: $gap-main;
+                width: auto;
+            }
+
+            &:last-child::after {
+                @include hide;
+            }
+
+            &.touch {
+                background-color: transparent;
+                opacity: .5;
+            }
+
+            &:first-child {
+                border-radius: $border-radius-base $border-radius-base 0 0;
+
+                .product-title {
+                    position: absolute;
+                    bottom: $gap-base;
+                    left: $gap-main;
+                    right: $gap-main;
+                    z-index: $z-index-base;
+                    box-sizing: border-box;
+                    height: auto;
+                    background-color: rgba(0, 0, 0, .6);
+                    color: $text-color-main;
+                    font-weight: $font-weight-base;
+                    padding: 6px $gap-base;
+                    margin-right: 0;
+                    @include text-clamp(2);
+                }
+
+                .product-image {
+                    @include show;
+                    background-color: $bg-color-tiny;
+                    background-position: center top;
+                    background-size: cover;
+                    margin: 4px 0 0;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        max-width: 100%;
+                        max-height: none;
+                        border-radius: 0;
+                    }
+                }
+            }
+
+            &:not(:first-child) {
+                @include flex;
+                @include flex-align(center);
+                border-radius: 0 0 $border-radius-base $border-radius-base;
+
+                .product-title {
+                    @include flex-item;
+                    height: auto;
+                    font-size: $font-size-base;
+                    font-weight: $font-weight-base;
+                    line-height: 22px;
+                    margin-right: $gap-base;
+                    @include text-clamp(2);
+                }
+
+                .product-image {
+                    @include show;
+                    @include flex-item(0);
+                    width: 44px;
+                    height: 44px;
+                    background-color: $bg-color-tiny;
+                    background-position: center top;
+                    background-size: cover;
+                    margin: 0;
+                    overflow: hidden;
+
+                    img {
+                        width: 44px;
+                        height: 44px;
+                        max-width: 44px;
+                        max-height: 44px;
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
+    }
+}

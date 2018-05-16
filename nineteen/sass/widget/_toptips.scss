@@ -1,0 +1,27 @@
+/* toptips
+---------------------------------- */
+.dm-toptips {
+    display: block;
+    color: $text-color-tiny;
+    font-size: $font-size-small;
+    line-height: 20px;
+    text-align: center;
+    padding: $gap-base $gap-main;
+    @extend %text-break;
+
+    &-warn {
+        color: $text-color-warn;
+    }
+
+    &-fixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: $z-index-high;
+    }
+
+    &.touch {
+        background-color: $bg-color-touch;
+    }
+}

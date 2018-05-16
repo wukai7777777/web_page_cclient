@@ -1,0 +1,36 @@
+/* nav
+---------------------------------- */
+.dm-nav {
+    max-width: 100%;
+    overflow: hidden;
+
+    &-item {
+        display: block;
+        color: $text-color-base;
+        font-size: $font-size-small;
+        line-height: 20px;
+        text-align: center;
+        @extend %text-overflow;
+
+        &.touch {
+            background-color: $bg-color-touch;
+        }
+
+        img {
+            width: 60px;
+            height: 60px;
+            max-width: 60px;
+            max-height: 60px;
+            margin: 5px auto 1px;
+            overflow: hidden;
+        }
+    }
+
+    &-list {
+        @include flex;
+
+        &-item {
+            @include flex-item;
+        }
+    }
+}

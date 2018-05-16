@@ -1,0 +1,26 @@
+/* dlist
+---------------------------------- */
+.dm-dlist {
+    @extend %clearfix;
+
+    &-dt,
+    &-dd {
+        color: $text-color-base;
+        font-size: $font-size-base;
+        line-height: 22px;
+        @extend %text-break;
+    }
+
+    &-dt {
+        @include float;
+        white-space: pre-line;
+    }
+
+    &-dd {
+        overflow: hidden;
+    }
+
+    & + & {
+        margin-top: 8px;
+    }
+}

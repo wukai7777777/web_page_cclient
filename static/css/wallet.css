@@ -1,0 +1,317 @@
+@charset "utf-8";
+
+/* icon
+---------------------------------- */
+.icon {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+.icon::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../imgs/icon.png) no-repeat;
+    background-size: 100px auto;
+}
+
+.icon-danbao {
+    width: 28px;
+    height: 15px;
+}
+
+.icon-danbao::after {
+    width: 28px;
+    height: 15px;
+    background-position: 0 0;
+}
+
+/* wallet
+---------------------------------- */
+.wallet-box {
+    position: relative;
+    background-color: #ffc000;
+}
+
+.wallet-info {
+    color: #fff;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    padding: 24px 12px;
+}
+
+.wallet-info b {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 56px;
+    vertical-align: baseline;
+    margin-right: 4px;
+}
+
+.wallet-box .btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    height: 24px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 0 8px;
+}
+
+/* message
+---------------------------------- */
+.mod-message {
+    position: relative;
+}
+
+.mod-message-info {
+    display: block;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.mod-message-info::before {
+    content: "";
+    float: left;
+    width: 14px;
+    height: 14px;
+    background: url(../imgs/icon.png) no-repeat 0 -120px;
+    background-size: 100px auto;
+    margin: 3px 6px 3px 0;
+}
+
+.mod-message-info-s {
+    color: #f60;
+}
+
+.mod-message-info-s::before {
+    background-position: -15px -120px;
+}
+
+/* product
+---------------------------------- */
+.product-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.product-content {
+    display: block;
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.product-aside {
+    text-align: right;
+    margin-left: 12px;
+}
+
+.product-title {
+    height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 4px;
+    overflow: hidden;
+}
+
+.product-meta {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 2px;
+    overflow: hidden;
+}
+
+.product-ds {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 2px 0;
+    overflow: hidden;
+}
+
+.product-meta b {
+    display: block;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+.product-aside .product-meta b {
+    margin-bottom: -2px;
+}
+
+/* footbar
+---------------------------------- */
+.mod-footbar::after {
+    display: none;
+}
+
+.mod-footbar .btn {
+    border-radius: 0;
+}
+
+.mod-footbar .btn .icon {
+    margin-right: 6px;
+}
+
+.mod-footbar .btn-default {
+    max-width: 25%;
+    font-size: 14px;
+}
+
+.mod-footbar .btn-default ~ .btn-default {
+    position: relative;
+}
+
+.mod-footbar .btn-default ~ .btn-default::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    bottom: 10px;
+    width: 1px;
+    background-color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale3d(0.5, 1, 1);
+    -ms-transform: scale3d(0.5, 1, 1);
+    transform: scale3d(0.5, 1, 1);
+}
+
+.mod-footbar .btn-large {
+    height: 50px;
+    line-height: 50px;
+}
+
+/* popup
+---------------------------------- */
+.popup-screen {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0;
+    margin: 0;
+}
+
+.popup-screen .mod-popup-box {
+    display: -webkit-box;
+    display: -ms-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    height: 100%;
+}
+
+.popup-screen .mod-popup-head {
+    height: 26px;
+    max-height: 26px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+    padding: 20px 12px 5px;
+}
+
+.popup-screen .mod-popup-body {
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.popup-screen .mod-popup-body.iscroll {
+    overflow-y: hidden;
+}
+
+.popup-screen .mod-popup-text {
+    line-height: 20px;
+    margin: 18px 12px;
+}
+
+.popup-screen .mod-popup-text:first-child {
+    margin-top: 0;
+}
+
+.popup-screen .mod-popup-text:last-child {
+    margin-bottom: 0;
+    padding-bottom: 9px;
+}
+
+.popup-screen .mod-popup-text p {
+    margin: 6px 0;
+}
+
+.popup-screen .mod-popup-text b {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.popup-screen .mod-popup-bar {
+    height: 48px;
+    max-height: 48px;
+}
+
+.popup-screen .mod-popup-bar .icon-close {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-clip: padding-box;
+    border: 12px solid rgba(255, 255, 255, 0.001);
+    border-radius: 24px;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    box-shadow: inset 0 0 0 1px #404040;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.popup-screen .mod-popup-bar .icon-close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: url(../imgs/icon_form.png) no-repeat 0 -60px;
+    background-size: 100px auto;
+    margin-top: -10px;
+    margin-left: -10px;
+}

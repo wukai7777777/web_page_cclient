@@ -1,0 +1,50 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/column";
+
+/* search-result
+---------------------------------- */
+.search-result {
+    background-color: $bg-color-main;
+}
+
+/* hotwords
+---------------------------------- */
+.hotwords {
+    padding-top: 8px;
+
+    .dm-column-title {
+        color: $text-color-assist;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        line-height: 22px;
+
+        &::before {
+            @include hide;
+        }
+    }
+
+    .product-label {
+        @include clearfix;
+        padding: 0 $gap-main 0 4px;
+
+        &-item {
+            @include float;
+            max-width: 122px;
+            background-color: $bg-color-base;
+            border-radius: $border-radius-base;
+            color: $text-color-base;
+            font-size: $font-size-small;
+            line-height: 20px;
+            padding: $gap-base / 2 $gap-base;
+            margin: 0 0 $gap-base $gap-base;
+            @extend %text-overflow;
+
+            &.touch {
+                opacity: .5;
+            }
+        }
+    }
+}

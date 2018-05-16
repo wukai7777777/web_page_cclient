@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+/* layout
+---------------------------------- */
+.recommend .mod-column-head {
+    padding: 12px;
+}
+
+.recommend .mod-column-title {
+    color: #808080;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.recommend .mod-column-title::before {
+    content: "";
+    display: block;
+    float: left;
+    width: 10px;
+    height: 4px;
+    background-color: #ffe500;
+    background-clip: padding-box;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-right: 6px;
+}
+
+.rule .mod-column-body {
+    padding: 0 28px 8px;
+}
+
+.rule .mod-text {
+    line-height: 22px;
+    padding: 4px 0;
+    margin-top: -8px;
+}
+
+.rule .mod-flexible {
+    padding: 4px 0;
+}
+
+.reward .mod-column-head .btn {
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    height: 28px;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    padding: 0 8px;
+    margin-top: -15px;
+}
+
+.reward .btn.touch {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.reward .mod-column-body {
+    padding: 0 0 0 28px;
+}
+
+.reward .mod-list-item:last-child::after {
+    display: none;
+}
+
+.reward .mod-list-info {
+    line-height: 44px;
+    padding-right: 28px;
+}
+
+.reward .mod-list-info .product-title {
+    font-weight: 400;
+}
+
+.reward .mod-list-info .product-meta {
+    font-size: 12px;
+}
+
+.reward .mod-list-info .product-value {
+    text-align: right;
+}

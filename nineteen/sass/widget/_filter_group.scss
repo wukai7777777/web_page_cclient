@@ -1,0 +1,205 @@
+@import "./mask";
+
+/* filter-group
+---------------------------------- */
+.filter-group {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid $border-color-tiny;
+        border-right: 1px solid $border-color-tiny;
+        margin-top: -5px;
+        @include css3(transform, rotate(45deg));
+    }
+
+    .filter-tips {
+        color: $text-color-tiny;
+        line-height: 20px;
+        padding: $gap-base 36px $gap-base $gap-base;
+
+        &.touch {
+            background-color: $bg-color-touch;
+        }
+
+        &.active {
+            color: $text-color-base;
+        }
+
+    }
+
+    .filter-cont {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: $z-index-highest;
+        width: 100%;
+        background-color: $bg-color-main;
+        @include css3(transform, translate3d(0, 100%, 0));
+        @include css3(transition, all 0.5s ease-out);
+    }
+
+    .filter-head {
+        position: relative;
+        height: 44px;
+        background-color: $white-smoke;
+        z-index: $z-index-base;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $border-color-main;
+            @include css3(transform-origin, 0 100%);
+            @include css3(transform, scale3d(1, 0.5, 1));
+        }
+
+    }
+
+    .filter-title {
+        font-size: $font-size-large;
+        font-weight: $font-weight-base;
+        line-height: 44px;
+        text-align: center;
+        margin: 0 48px;
+        @extend %text-overflow;
+    }
+
+    .filter-opt {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 44px;
+        background-color: transparent;
+        border: 0 none;
+        border-radius: $border-radius-base;
+        color: $text-color-base;
+        font-size: 14px;
+        line-height: 44px;
+        padding: 0 $gap-base;
+
+        &:nth-of-type(2) {
+            left: auto;
+            right: 0;
+        }
+
+        &.touch {
+            border-radius: 0;
+            background-color: $bg-color-touch;
+            opacity: .6;
+        }
+
+    }
+
+    .filter-body {
+        @include flex;
+    }
+
+    .filter-wrap {
+        display: block;
+        position: relative;
+        @include flex-item;
+        width: 100%;
+        min-height: 176px;
+        max-height: 276px;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        &.iscroll {
+            overflow: hidden;
+        }
+
+    }
+
+    &.touch {
+        border-radius: 0;
+    }
+
+    &.active {
+        background-color: $bg-color-touch;
+        z-index: $z-index-higher;
+
+        .filter-cont {
+            display: block;
+            @include css3(transform, translate3d(0, 0, 0));
+        }
+
+        .mask {
+            display: block;
+        }
+
+    }
+
+    &.disabled {
+        &::after {
+            display: none;
+        }
+
+    }
+
+}
+
+.filter-menu {
+    position: relative;
+    width: 100%;
+
+    li {
+        position: relative;
+        color: $text-color-assist;
+        line-height: 20px;
+        text-align: center;
+        padding: $gap-base;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $border-color-main;
+            @include css3(transform-origin, 0 100%);
+            @include css3(transform, scale3d(1, 0.5, 1));
+        }
+
+        &.active {
+            color: $text-color-base;
+            font-size: $font-size-large;
+        }
+
+        &.touch {
+            background-color: $bg-color-touch;
+            color: $text-color-base;
+        }
+
+    }
+
+    @at-root {
+        .filter-radio li,
+        .filter-checkbox li {
+            text-align: left;
+        }
+
+        .filter-radio li:not(:last-child)::after,
+        .filter-checkbox li:not(:last-child)::after {
+            left: $gap-base;
+        }
+
+        .filter-radio .radio-group span,
+        .filter-checkbox .checkbox-group span {
+            text-align: left;
+        }
+
+    }
+
+}

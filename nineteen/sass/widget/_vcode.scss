@@ -1,0 +1,42 @@
+/* vcode
+---------------------------------- */
+.dm-vcode {
+    position: relative;
+    @extend %text-hide;
+
+    &-image {
+        width: 90px;
+        height: 44px;
+        max-width: 90px;
+        max-height: 44px;
+    }
+
+    &-refresh {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: $z-index-base;
+        width: 20px;
+        height: 20px;
+        background: url(../imgs/icon_form.png) no-repeat -40px -20px;
+        background-size: 100px auto;
+        @extend %text-hide;
+    }
+
+    &-btn {
+        display: inline-block;
+        background-color: transparent;
+        border: 0 none;
+        color: $text-color-base;
+        font-size: $font-size-base;
+        line-height: 22px;
+        padding: 0;
+        margin-right: $gap-main;
+
+        &[disabled],
+        &.disabled {
+            color: $text-color-disabled;
+            pointer-events: none;
+        }
+    }
+}

@@ -1,0 +1,624 @@
+@charset "utf-8";
+
+/* layout
+---------------------------------- */
+.product-info {
+    padding: 12px;
+    overflow: hidden;
+}
+
+.product-image {
+    margin: 4px 12px 4px 0;
+    overflow: hidden;
+}
+
+.product-image img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    max-width: 60px;
+    border-radius: 3px;
+}
+
+.product-content {
+    overflow: hidden;
+}
+
+.product-title {
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 1px 0;
+    overflow: hidden;
+}
+
+.product-title span {
+    display: inline-block;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.product-title .icon {
+    float: right;
+    margin-top: 4.5px;
+}
+
+.product-title .icon:not(.icon-danbao) {
+    margin-left: 4px;
+}
+
+.product-meta {
+    font-size: 12px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.product-meta:not(:last-child) {
+    margin: 1px 0 2px;
+}
+
+.product-meta span.fl {
+    margin-right: 10px;
+}
+
+.product-meta .icon {
+    float: left;
+    margin-top: 5px;
+    margin-right: 4px;
+}
+
+.product-meta .icon-danbao {
+    float: right;
+    margin-top: 0;
+    margin-right: 0;
+}
+
+.product-meta b {
+    float: left;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 4px;
+    margin-top: -0.5px;
+}
+
+.product-meta .line::after {
+    content: "";
+    float: left;
+    width: 1px;
+    height: 8px;
+    background-color: #808080;
+    margin-top: 6px;
+    margin-right: 8px;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale3d(0.5, 1, 1);
+    -ms-transform: scale3d(0.5, 1, 1);
+    transform: scale3d(0.5, 1, 1);
+}
+
+.product-detail {
+    margin-bottom: 12px;
+}
+
+.product-detail .product-info {
+    position: relative;
+    padding-right: 120px;
+}
+
+.product-detail .product-title {
+    height: auto;
+    font-size: 22px;
+    line-height: 30px;
+    margin: 8px 0;
+}
+
+.product-detail .product-meta {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 8px 0;
+}
+
+.product-detail .product-meta span.fl {
+    margin-right: 8px;
+}
+
+.product-detail .product-meta .line::after {
+    float: right;
+    height: 10px;
+    margin-right: 0;
+    margin-left: 8px;
+}
+
+.product-detail .product-meta .line:last-child::after {
+    display: none;
+}
+
+@media only screen and (max-width:374px) {
+    .product-detail .product-info {
+        padding-right: 12px;
+    }
+
+    .product-detail .product-title {
+        min-height: 52px;
+        padding-right: 108px;
+    }
+
+}
+
+.product-detail .product-price {
+    position: absolute;
+    top: 24px;
+    right: 0;
+    height: 44px;
+    background-color: #f60;
+    border-radius: 22px 0 0 22px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 44px;
+    vertical-align: text-bottom;
+    padding: 0 12px 0 16px;
+}
+
+.product-detail .product-price b {
+    font-size: 24px;
+    font-weight: 700;
+    margin-right: 2px;
+}
+
+.product-detail .rise {
+    position: relative;
+    z-index: 2;
+}
+
+.product-detail .rise::before,
+.product-detail .rise::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 200px;
+    height: 60px;
+    background: url(../imgs/bg_rise.png) no-repeat right top;
+    background-size: 200px auto;
+}
+
+.product-detail .rise::after {
+    top: auto;
+    bottom: 0;
+    height: 50px;
+    background-position: right bottom;
+}
+
+.product-detail .rise .product-price {
+    box-sizing: border-box;
+    line-height: 1;
+    padding-top: 3px;
+}
+
+.product-detail .rise .product-price del {
+    display: block;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: right;
+    padding-top: 1px;
+}
+
+.product-topic .mod-list-item {
+    position: relative;
+}
+
+.product-topic .mod-list-item::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    bottom: 0;
+    left: 12px;
+    height: 0;
+    border-bottom: 1px dotted #e5e5e5;
+}
+
+.product-topic .mod-list-item:last-child::after {
+    display: none;
+}
+
+.product-topic .mod-list-info {
+    display: block;
+    color: #808080;
+    font-size: 12px;
+    line-height: 40px;
+    padding-left: 12px;
+}
+
+.product-topic .mod-list-info .icon {
+    float: left;
+    margin-top: 12.5px;
+    margin-right: 8px;
+}
+
+.product-pannel {
+    position: relative;
+    padding: 0 28px;
+    margin-bottom: 12px;
+}
+
+.product-pannel:last-child {
+    margin-bottom: 32px;
+}
+
+.product-pannel::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    width: 10px;
+    height: 4px;
+    background-color: #fee333;
+    background-clip: padding-box;
+    border-radius: 4px;
+}
+
+.product-option:last-child::after {
+    display: none;
+}
+
+.product-option,
+.product-dlist,
+.product-dlist-dt {
+    padding: 4px 0;
+}
+
+.product-dlist-dt,
+.product-dlist-dd {
+    font-size: 14px;
+    line-height: 22px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.product-dlist-dd,
+.product-dlist-dd p {
+    padding: 2px 0;
+}
+
+.product-dlist-dt {
+    color: #808080;
+}
+
+.product-dlist.vertical .product-dlist-dt {
+    float: none;
+    display: block;
+}
+
+.product-dlist + .product-dlist {
+    margin-top: -8px;
+}
+
+.product-dlist + .mod-flexible {
+    margin-bottom: 8px;
+}
+
+.product-step .product-option,
+.product-step .product-dlist {
+    padding-bottom: 0;
+}
+
+.product-step .product-dlist-dd {
+    padding: 8px 0 0;
+}
+
+.product-step .mod-list {
+    position: relative;
+    padding-bottom: 16px;
+    margin: 0 -28px;
+    counter-reset: num;
+}
+
+.product-step .mod-list-item {
+    position: relative;
+    padding: 12px 28px 0;
+}
+
+.product-step .mod-list-item::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    bottom: -18px;
+    left: 17px;
+    width: 0;
+    border-left: 1px dotted #e5e5e5;
+}
+
+.product-step .mod-list-item:last-child::before {
+    display: none;
+}
+
+.product-step .mod-list-item::after {
+    content: counter(num) "";
+    counter-increment: num;
+    box-sizing: border-box;
+    position: absolute;
+    top: 18px;
+    left: 12px;
+    width: 10px;
+    height: 10px;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    font-size: 7px;
+    line-height: 10px;
+    text-align: center;
+    padding-top: 1px;
+}
+
+.product-step-title {
+    font-weight: 700;
+}
+
+.product-dlist-dd .product-step-ds {
+    line-height: 20px;
+    padding: 3px 0;
+    margin-top: 6px;
+}
+
+.product-step-opt {
+    overflow: hidden;
+}
+
+.product-step-opt-item {
+    float: left;
+    width: 56px;
+    height: 56px;
+    border: 1px solid #e5e5e5;
+    margin: 6px 6px 0 0;
+}
+
+.product-step-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+
+.product-step-link {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    color: #999;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.product-step-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background: url(../imgs/icon_online.png) no-repeat 0 0;
+    background-size: 100px auto;
+    margin-top: -12px;
+    margin-left: -7px;
+}
+
+.product-step-link.touch {
+    background-color: #f5f5f5;
+}
+
+.product-dlist p + .mod-flexible {
+    margin-top: 6px;
+    margin-bottom: 2px;
+}
+
+.product-remark {
+    background-color: #f7f7f7;
+    color: #808080;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 8px 12px;
+    margin-top: -4px;
+    margin-bottom: 12px;
+}
+
+.product-tag {
+    padding: 0 0 4px;
+    margin-top: -2px;
+    overflow: hidden;
+}
+
+.product-tag:first-child {
+    margin-top: -6px;
+}
+
+.product-tag-item {
+    float: left;
+    background-color: #f7f7f7;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 2px 6px;
+    margin: 12px 12px 0 0;
+}
+
+.product-list .product-option,
+.product-list .product-dlist {
+    padding-bottom: 0;
+}
+
+.product-list .product-dlist-dd {
+    padding: 8px 0 0;
+}
+
+.product-list .mod-list {
+    margin: 0 -28px;
+}
+
+.product-list .mod-list-item:last-child.com-border-bottom::after {
+    display: none;
+}
+
+.product-loading {
+    position: relative;
+    height: 268px;
+    padding: 0;
+}
+
+.product-loading::before {
+    display: none;
+}
+
+.product-loading i {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0;
+    -webkit-animation: lightOpactiy .9s linear infinite;
+    -ms-animation: lightOpactiy .9s linear infinite;
+}
+
+.product-loading i::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 258px;
+    height: 0;
+    overflow-x: hidden;
+    box-shadow: 90px 32px 0 4px #fff, 106px 56px 0 4px #fff, 70px 80px 0 4px #fff, 0 104px 0 4px #fff, 230px 128px 0 4px #fff, 134px 152px 0 4px #fff, 230px 176px 0 4px #fff, 230px 200px 0 4px #fff, 180px 224px 0 4px #fff;
+}
+
+.lightOpactiy {
+    -webkit-animation: lightOpactiy .9s linear infinite;
+    -ms-animation: lightOpactiy .9s linear infinite;
+}
+
+@-webkit-keyframes lightOpactiy {
+    0% {
+        box-shadow: 12px 32px 0 4px #eee, 28px 56px 0 4px #f1f0f0, 28px 80px 0 4px #f3f3f3, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f7f7f7, 28px 152px 0 4px #f7f7f7, 28px 176px 0 4px #f7f7f7, 28px 200px 0 4px #f7f7f7, 28px 224px 0 4px #f7f7f7;
+    }
+
+    11% {
+        box-shadow: 12px 32px 0 4px #f1f0f0, 28px 56px 0 4px #eee, 28px 80px 0 4px #f3f3f3, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f7f7f7, 28px 152px 0 4px #f7f7f7, 28px 176px 0 4px #f7f7f7, 28px 200px 0 4px #f7f7f7, 28px 224px 0 4px #f7f7f7;
+    }
+
+    22% {
+        box-shadow: 12px 32px 0 4px #f3f3f3, 28px 56px 0 4px #f1f0f0, 28px 80px 0 4px #eee, 28px 104px 0 4px #f1f0f0, 28px 128px 0 4px #f3f3f3, 28px 152px 0 4px #f7f7f7, 28px 176px 0 4px #f7f7f7, 28px 200px 0 4px #f7f7f7, 28px 224px 0 4px #f7f7f7;
+    }
+
+    33% {
+        box-shadow: 12px 32px 0 4px #f7f7f7, 28px 56px 0 4px #f3f3f3, 28px 80px 0 4px #f1f0f0, 28px 104px 0 4px #eee, 28px 128px 0 4px #f1f0f0, 28px 152px 0 4px #f3f3f3, 28px 176px 0 4px #f7f7f7, 28px 200px 0 4px #f7f7f7, 28px 224px 0 4px #f7f7f7;
+    }
+
+    44% {
+        box-shadow: 12px 32px 0 4px #f7f7f7, 28px 56px 0 4px #f7f7f7, 28px 80px 0 4px #f3f3f3, 28px 104px 0 4px #f1f0f0, 28px 128px 0 4px #eee, 28px 152px 0 4px #f1f0f0, 28px 176px 0 4px #f3f3f3, 28px 200px 0 4px #f7f7f7, 28px 224px 0 4px #f7f7f7;
+    }
+
+    55% {
+        box-shadow: 12px 32px 0 4px #f7f7f7, 28px 56px 0 4px #f7f7f7, 28px 80px 0 4px #f7f7f7, 28px 104px 0 4px #f3f3f3, 28px 128px 0 4px #f1f0f0, 28px 152px 0 4px #eee, 28px 176px 0 4px #f1f0f0, 28px 200px 0 4px #f3f3f3, 28px 224px 0 4px #f7f7f7;
+    }
+
+    66% {
+        box-shadow: 12px 32px 0 4px #f7f7f7, 28px 56px 0 4px #f7f7f7, 28px 80px 0 4px #f7f7f7, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f3f3f3, 28px 152px 0 4px #f1f0f0, 28px 176px 0 4px #eee, 28px 200px 0 4px #f1f0f0, 28px 224px 0 4px #f3f3f3;
+    }
+
+    77% {
+        box-shadow: 12px 32px 0 4px #f7f7f7, 28px 56px 0 4px #f7f7f7, 28px 80px 0 4px #f7f7f7, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f7f7f7, 28px 152px 0 4px #f3f3f3, 28px 176px 0 4px #f1f0f0, 28px 200px 0 4px #eee, 28px 224px 0 4px #f1f0f0;
+    }
+
+    88% {
+        box-shadow: 12px 32px 0 4px #f3f3f3, 28px 56px 0 4px #f7f7f7, 28px 80px 0 4px #f7f7f7, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f7f7f7, 28px 152px 0 4px #f3f3f3, 28px 176px 0 4px #f1f0f0, 28px 200px 0 4px #eee, 28px 224px 0 4px #f1f0f0;
+    }
+
+    100% {
+        box-shadow: 12px 32px 0 4px #f1f0f0, 28px 56px 0 4px #f3f3f3, 28px 80px 0 4px #f7f7f7, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f7f7f7, 28px 152px 0 4px #f7f7f7, 28px 176px 0 4px #f3f3f3, 28px 200px 0 4px #f1f0f0, 28px 224px 0 4px #eee;
+    }
+
+}
+
+@-ms-keyframes lightOpactiy {
+    0% {
+        box-shadow: 12px 32px 0 4px #eee, 28px 56px 0 4px #f1f0f0, 28px 80px 0 4px #f3f3f3, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f7f7f7, 28px 152px 0 4px #f7f7f7, 28px 176px 0 4px #f7f7f7, 28px 200px 0 4px #f7f7f7, 28px 224px 0 4px #f7f7f7;
+    }
+
+    11% {
+        box-shadow: 12px 32px 0 4px #f1f0f0, 28px 56px 0 4px #eee, 28px 80px 0 4px #f3f3f3, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f7f7f7, 28px 152px 0 4px #f7f7f7, 28px 176px 0 4px #f7f7f7, 28px 200px 0 4px #f7f7f7, 28px 224px 0 4px #f7f7f7;
+    }
+
+    22% {
+        box-shadow: 12px 32px 0 4px #f3f3f3, 28px 56px 0 4px #f1f0f0, 28px 80px 0 4px #eee, 28px 104px 0 4px #f1f0f0, 28px 128px 0 4px #f3f3f3, 28px 152px 0 4px #f7f7f7, 28px 176px 0 4px #f7f7f7, 28px 200px 0 4px #f7f7f7, 28px 224px 0 4px #f7f7f7;
+    }
+
+    33% {
+        box-shadow: 12px 32px 0 4px #f7f7f7, 28px 56px 0 4px #f3f3f3, 28px 80px 0 4px #f1f0f0, 28px 104px 0 4px #eee, 28px 128px 0 4px #f1f0f0, 28px 152px 0 4px #f3f3f3, 28px 176px 0 4px #f7f7f7, 28px 200px 0 4px #f7f7f7, 28px 224px 0 4px #f7f7f7;
+    }
+
+    44% {
+        box-shadow: 12px 32px 0 4px #f7f7f7, 28px 56px 0 4px #f7f7f7, 28px 80px 0 4px #f3f3f3, 28px 104px 0 4px #f1f0f0, 28px 128px 0 4px #eee, 28px 152px 0 4px #f1f0f0, 28px 176px 0 4px #f3f3f3, 28px 200px 0 4px #f7f7f7, 28px 224px 0 4px #f7f7f7;
+    }
+
+    55% {
+        box-shadow: 12px 32px 0 4px #f7f7f7, 28px 56px 0 4px #f7f7f7, 28px 80px 0 4px #f7f7f7, 28px 104px 0 4px #f3f3f3, 28px 128px 0 4px #f1f0f0, 28px 152px 0 4px #eee, 28px 176px 0 4px #f1f0f0, 28px 200px 0 4px #f3f3f3, 28px 224px 0 4px #f7f7f7;
+    }
+
+    66% {
+        box-shadow: 12px 32px 0 4px #f7f7f7, 28px 56px 0 4px #f7f7f7, 28px 80px 0 4px #f7f7f7, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f3f3f3, 28px 152px 0 4px #f1f0f0, 28px 176px 0 4px #eee, 28px 200px 0 4px #f1f0f0, 28px 224px 0 4px #f3f3f3;
+    }
+
+    77% {
+        box-shadow: 12px 32px 0 4px #f7f7f7, 28px 56px 0 4px #f7f7f7, 28px 80px 0 4px #f7f7f7, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f7f7f7, 28px 152px 0 4px #f3f3f3, 28px 176px 0 4px #f1f0f0, 28px 200px 0 4px #eee, 28px 224px 0 4px #f1f0f0;
+    }
+
+    88% {
+        box-shadow: 12px 32px 0 4px #f3f3f3, 28px 56px 0 4px #f7f7f7, 28px 80px 0 4px #f7f7f7, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f7f7f7, 28px 152px 0 4px #f3f3f3, 28px 176px 0 4px #f1f0f0, 28px 200px 0 4px #eee, 28px 224px 0 4px #f1f0f0;
+    }
+
+    100% {
+        box-shadow: 12px 32px 0 4px #f1f0f0, 28px 56px 0 4px #f3f3f3, 28px 80px 0 4px #f7f7f7, 28px 104px 0 4px #f7f7f7, 28px 128px 0 4px #f7f7f7, 28px 152px 0 4px #f7f7f7, 28px 176px 0 4px #f3f3f3, 28px 200px 0 4px #f1f0f0, 28px 224px 0 4px #eee;
+    }
+
+}
+
+/* footbar
+---------------------------------- */
+.mod-footbar .btn {
+    border-radius: 0;
+}
+
+.mod-footbar .btn .icon {
+    margin-right: 6px;
+}
+
+.mod-footbar .btn-default {
+    max-width: 25%;
+    font-size: 14px;
+}
+
+.mod-footbar .btn-default ~ .btn-default {
+    position: relative;
+}
+
+.mod-footbar .btn-default ~ .btn-default::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    bottom: 10px;
+    width: 1px;
+    background-color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scale3d(0.5, 1, 1);
+    -ms-transform: scale3d(0.5, 1, 1);
+    transform: scale3d(0.5, 1, 1);
+}
+
+.mod-footbar .btn-large {
+    height: 50px;
+    line-height: 50px;
+}

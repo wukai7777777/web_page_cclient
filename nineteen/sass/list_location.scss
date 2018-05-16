@@ -1,0 +1,57 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/location";
+@import "widget/column";
+@import "widget/product";
+@import "widget/adv";
+
+/* location
+---------------------------------- */
+.dm-filter {
+    height: 44px;
+    background-color: $bg-color-main;
+    line-height: 44px;
+    text-align: center;
+}
+
+/* product
+---------------------------------- */
+.product {
+    margin-top: $gap-base;
+
+    .dm-column-head {
+        @include hide;
+    }
+
+    .dm-list-item {
+        background-color: $bg-color-main;
+
+        &:not(:last-child) {
+            @include border(bottom);
+        }
+    }
+
+    .product-content {
+        @include flex;
+    }
+
+    .product-title {
+        @include flex-item;
+        margin-right: 8px;
+    }
+
+    .product-price {
+        position: static;
+    }
+
+    .dm-adv {
+        background-color: $bg-color-base;
+        padding: $gap-base 0;
+
+        &-close {
+            top: $gap-base;
+        }
+    }
+}

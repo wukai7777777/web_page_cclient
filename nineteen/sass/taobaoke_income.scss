@@ -1,0 +1,111 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/toptips";
+@import "widget/column";
+@import "widget/btn";
+
+/* product
+---------------------------------- */
+.product {
+    .dm-column-head {
+        @include hide;
+    }
+
+    .dm-list-item {
+        background-color: $bg-color-main;
+        margin-top: $gap-base;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &-info {
+        position: relative;
+        padding: $gap-base $gap-main 0 $gap-main;
+        overflow: hidden;
+    }
+
+    &-title {
+        font-size: $font-size-base;
+        font-weight: $font-weight-bold;
+        line-height: 22px;
+        margin-right: 60px;
+        margin-bottom: 4px;
+        @include text-overflow;
+    }
+
+    &-price {
+        position: relative;
+        color: $red;
+        font-size: $font-size-base;
+        line-height: 22px;
+
+        .label {
+            color: $text-color-assist;
+        }
+
+        b {
+            display: inline-block;
+            font-size: $font-size-large;
+            font-weight: $font-weight-base;
+            margin-right: 2px;
+            @include css3(transform, translateY(.5px));
+        }
+    }
+
+    &-ds {
+        position: relative;
+        color: $text-color-tiny;
+        font-size: $font-size-small;
+        line-height: 20px;
+        padding: 8px 0;
+        margin-top: $gap-base;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-top: 1px dotted $border-color-main;
+            @include css3(transform-origin, 0 0);
+            @include css3(transform, scale3d(1, .5, 1));
+        }
+    }
+
+    &-status {
+        position: absolute;
+        top: $gap-base;
+        right: $gap-main;
+        font-size: $font-size-base;
+        line-height: 22px;
+
+        &-main {
+            color: $text-color-warn;
+        }
+
+        &-assist {
+            color: $text-color-assist;
+        }
+
+        &-tiny {
+            color: $text-color-tiny;
+        }
+    }
+}
+
+/* footbar
+---------------------------------- */
+.dm-footbar {
+    .dm-btn {
+        border-radius: 0;
+    }
+
+    .dm-btn-large {
+        height: 50px;
+        line-height: 50px;
+    }
+}

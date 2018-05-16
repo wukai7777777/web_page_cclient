@@ -1,0 +1,60 @@
+/* arrow
+---------------------------------- */
+@mixin arrow-hollow ($direction:right, $class:base) {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 6px;
+        height: 12px;
+        background: url(data:image/png;base64,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) no-repeat;
+        background-size: 24px auto;
+
+        @if $class == base {
+            background-position: 0 0;
+        }
+
+        @else if $class == main {
+            background-position: -6px 0;
+        }
+
+        @else if $class == assist {
+            background-position: 0 -12px;
+        }
+
+        @else if $class == tiny {
+            background-position: -6px -12px;
+        }
+
+        @else if $class == large {
+            width: 12px;
+            height: 24px;
+            background-position: -12px 0;
+        }
+
+        @include css3(transform, translate3d(0, -50%, 0));
+    }
+}
+
+%arrow-hollow-base {
+    @include arrow-hollow (right, base);
+}
+
+%arrow-hollow-main {
+    @include arrow-hollow (right, main);
+}
+
+%arrow-hollow-assist {
+    @include arrow-hollow (right, assist);
+}
+
+%arrow-hollow-tiny {
+    @include arrow-hollow (right, tiny);
+}
+
+%arrow-hollow-large {
+    @include arrow-hollow (right, large);
+}

@@ -1,0 +1,99 @@
+/* multi-group
+---------------------------------- */
+.multi-group {
+    @include flex;
+    position: relative;
+
+    .input-group,
+    .select-group {
+        display: block;
+        @include flex-item;
+        width: 100%;
+    }
+
+    .select-group::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 1px;
+        height: 16px;
+        background-color: $border-color-main;
+        @include css3(transform-origin, (100% 0));
+        @include css3(transform, scale3d(0.5, 1, 1));
+        margin-top: -8px;
+    }
+
+    .select-group:last-child::before {
+        display: none;
+    }
+
+    .dm-btn-default {
+        display: block;
+        position: relative;
+        font-size: $font-size-base;
+        line-height: 44px;
+        padding: 0 $gap-base;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -1px;
+            width: 1px;
+            height: 24px;
+            background-color: $border-color-main;
+            @include css3(transform-origin, 0 0);
+            @include css3(transform, translate3d(0, -50%, 0) scale3d(0.5, 1, 1));
+        }
+
+    }
+
+    .code-group {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+    }
+
+    .icon-eye {
+        display: block;
+        position: relative;
+        width: 20px;
+        height: 44px;
+        margin-left: $gap-base;
+        @extend %text-hide;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: url(../imgs/icon_form.png) no-repeat 0 0;
+            background-size: 100px auto;
+            margin-top: -10px;
+            margin-left: -10px;
+        }
+
+        &.active::after {
+            background-position: -20px 0;
+        }
+
+    }
+
+    .active .icon-eye::after {
+        background-position: -20px 0;
+    }
+
+    .radio-group,
+    .checkbox-group {
+        width: 30%;
+        margin: $gap-base;
+    }
+
+    .pic-group {
+        margin-right: 0;
+    }
+}

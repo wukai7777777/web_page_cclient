@@ -1,0 +1,50 @@
+@import "./arrow";
+
+/* column
+---------------------------------- */
+.dm-column {
+    overflow: hidden;
+
+    &-head {
+        position: relative;
+        padding: $gap-base $gap-main;
+        overflow: hidden;
+    }
+
+    &-title {
+        @include float;
+
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+        line-height: 24px;
+
+        &::before {
+            content: "";
+
+            @include float;
+
+            width: 4px;
+            height: 16px;
+            background-color: $icon-color-base;
+            background-clip: padding-box;
+            border-radius: 0;
+            margin: 4px 16px 0 -#{$gap-main};
+        }
+    }
+
+    &-tool {
+        @include float(right);
+
+        color: $text-color-tiny;
+        font-size: $font-size-small;
+        font-weight: $font-weight-base;
+        line-height: 20px;
+        padding: 2px 0;
+        overflow: hidden;
+    }
+
+    &-access {
+        @extend %arrow-hollow-tiny;
+        padding-right: 14px;
+    }
+}

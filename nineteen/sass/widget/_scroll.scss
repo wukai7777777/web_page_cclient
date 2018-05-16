@@ -1,0 +1,25 @@
+/* scroll
+---------------------------------- */
+.dm-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        @include hide;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden;
+    }
+
+    &-wrap {
+        font-size: 0;
+        line-height: 0;
+        white-space: nowrap;
+    }
+
+    &-item {
+        display: inline-block;
+    }
+}

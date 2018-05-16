@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="斗米兼职">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon-precomposed" href="http://sta.doumistatic.com/src/image/logo_doumi.png">
+    <title>提现申请-斗米兼职</title>
+    <link href="../style/withdraw.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- page start -->
+    <div class="dm-page">
+        <!-- header start -->
+        <header class="dm-header dm-header-fixed">
+            <h1 class="dm-header-title">提现申请</h1>
+            <a href="javascript:history.go(-1);" class="dm-header-back">返回</a>
+            <a href="withdraw_edit.html" class="dm-header-operate">编辑</a>
+        </header>
+        <!-- header end -->
+        <!-- section start -->
+        <section class="dm-content withdraw">
+            <!-- cell start -->
+            <div class="dm-cells mode">
+                <a class="dm-cell dm-cell-access" href="withdraw_account.html">
+                    <div class="dm-cell-head">
+                        <i class="dm-icon icon-wechat"></i>
+                    </div>
+                    <div class="dm-cell-body">
+                        <p class="product-desc">提现到微信账户</p>
+                        <h3 class="product-title">张大钱</h3>
+                    </div>
+                    <div class="dm-cell-foot">更换微信账户</div>
+                </a>
+                <a class="dm-cell dm-cell-access" href="withdraw_account.html">
+                    <div class="dm-cell-head">
+                        <i class="dm-icon icon-alipay"></i>
+                    </div>
+                    <div class="dm-cell-body">
+                        <p class="product-desc">提现到支付宝账户</p>
+                        <h3 class="product-title">15201215688</h3>
+                    </div>
+                    <div class="dm-cell-foot">更换支付宝</div>
+                </a>
+                <a class="dm-cell dm-cell-access" href="withdraw_account.html">
+                    <div class="dm-cell-head">
+                        <i class="dm-icon icon-bank"></i>
+                    </div>
+                    <div class="dm-cell-body">
+                        <p class="product-desc">提现到银行卡账户</p>
+                        <h3 class="product-title">招商银行(尾号3535)</h3>
+                    </div>
+                    <div class="dm-cell-foot">更换银行卡</div>
+                </a>
+            </div>
+            <div class="dm-cells input">
+                <div class="dm-cell dm-cell-column dm-cell-input">
+                    <div class="dm-cell-head">
+                        <label class="dm-cell-label">提现金额</label>
+                    </div>
+                    <div class="dm-cell-body">
+                        <label class="dm-input"><input class="dm-input-text" type="number" placeholder="最低提现金额50元" /></label>
+                    </div>
+                </div>
+                <div class="dm-cell dm-cell-vcode">
+                    <div class="dm-cell-body">
+                        <p class="dm-text">可提现金额：23.00元</p>
+                    </div>
+                    <div class="dm-cell-foot">
+                        <div class="dm-vcode">
+                            <button class="dm-vcode-btn" type="button">全部提现</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="dm-cell dm-cell-column dm-cell-input">
+                    <div class="dm-cell-head">
+                        <label class="dm-cell-label">提现金额</label>
+                    </div>
+                    <div class="dm-cell-body">
+                        <label class="dm-input active"><input class="dm-input-text" type="number" placeholder="最低提现金额50元" value="120" /></label>
+                    </div>
+                </div>
+                <div class="dm-cell dm-cell-vcode">
+                    <div class="dm-cell-body">
+                        <p class="dm-text dm-text-warn">金额已超过可提现余额</p>
+                    </div>
+                    <div class="dm-cell-foot">
+                        <div class="dm-vcode">
+                            <button class="dm-vcode-btn" type="button">全部提现</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dm-cells">
+                <div class="dm-cell dm-cell-vcode">
+                    <div class="dm-cell-head">
+                        <label class="dm-cell-label">验证码</label>
+                    </div>
+                    <div class="dm-cell-body">
+                        <label class="dm-input"><input class="dm-input-text" type="tel" placeholder="请输入6位验证码" maxlength="6" /></label>
+                    </div>
+                    <div class="dm-cell-foot">
+                        <div class="dm-vcode">
+                            <button class="dm-vcode-btn" type="button">获取验证码</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dm-cells-btn">
+                <button class="dm-btn dm-btn-primary dm-btn-large" type="button" disabled>提现</button>
+            </div>
+            <div class="dm-cells-btn">
+                <button class="dm-btn dm-btn-primary dm-btn-large" type="button">提现</button>
+            </div>
+            <div class="dm-cells-text">
+                <span class="fr" data-role="target-code">无法获取验证码？</span>
+            </div>
+            <!-- cell end -->
+        </section>
+        <!-- section end -->
+    </div>
+    <!-- page end -->
+    <!-- popup start -->
+    <div class="dm-popup" data-role="popup-code">
+        <div class="dm-popup-head">
+            <h2 class="dm-popup-title">无法获取验证码</h2>
+        </div>
+        <div class="dm-popup-body">
+            <div class="dm-popup-text">
+                <p><b>你可以尝试下列方式解决：</b></p>
+                <p>1、短信可能有2-10分钟延迟，可以稍等一下。</p>
+                <p>2、查看是否误设短信拦截。</p>
+                <p>3、确认手机已缴费且服务正常。</p>
+                <p>4、联系手机号运营商解除黑名单。</p>
+            </div>
+            <div class="dm-popup-text">
+                <p>如上述方法无法解决,</p>
+                <p>请拨打 <a href="tel:010-57977077">010-57977077</a> 获取帮助!</p>
+            </div>
+        </div>
+        <div class="dm-popup-foot">
+            <button class="dm-popup-btn" type="button" data-role="btn-close"><i class="dm-icon icon-close"></i></button>
+        </div>
+    </div>
+    <!-- popup end -->
+    <!-- js start -->
+    <script id="v-h5g" src="http://sta.doumistatic.com/sta/g.js?v=150917110933"></script>
+    <script>
+    G.use(['com/mobile/lib/widget/widget.js', 'com/mobile/lib/iscroll/iscroll.js']).done(function(widget) {
+        widget.initWidgets();
+        $('[data-role="target-code"]').live('tap', function() {
+            addActive('[data-role="popup-code"]');
+            G.util.touchmove.off();
+        });
+        $('[data-role="btn-close"]').on('tap', function() {
+            removeActive('[data-role="popup-code"]');
+            G.util.touchmove.on();
+        });
+        $('[data-role="flexible"]').on('tap', function() {
+            removeActive(this);
+            $('[data-role="flexible-body"]').removeClass('dm-flexible-body');
+        });
+
+        function addActive(e) {
+            $(e).addClass('active');
+        }
+
+        function removeActive(e) {
+            $(e).removeClass('active');
+        }
+    });
+    </script>
+    <!-- js end -->
+</body>
+
+</html>

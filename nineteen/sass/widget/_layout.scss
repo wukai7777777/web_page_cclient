@@ -1,0 +1,113 @@
+/* page
+---------------------------------- */
+.dm-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* header
+---------------------------------- */
+.dm-header {
+    position: relative;
+    height: 44px;
+    background-color: $bg-color-main;
+    overflow: hidden;
+
+    &-title {
+        font-size: $font-size-larger;
+        font-weight: $font-weight-bold;
+        line-height: 44px;
+        text-align: center;
+        margin: 0 64px;
+        @extend %text-overflow;
+    }
+
+    &-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding-right: $gap-base;
+        padding-left: 32px;
+        @extend %text-hide;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            width: 9px;
+            height: 16px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAgCAMAAAAootjDAAAAV1BMVEUAAAD///9EREZEQ0VHQkdFQ0VEQ0RERERFQ0VGRkZDQkREQkVFQkVHR0dFRUVFQ0VEQkVDQkP///9DQ0NFQkVDQ0RDQ0VEREtEQkRGQ0ZEREdDQ0VDQkQy+pIIAAAAHHRSTlMAAIDxNn7wOG8h/q26JFlc8/MBtrW7gSJ/WF6uzoouTgAAAFFJREFUeF7Vz7cVgDAQBNEVVsJ7e/3XiQj3bQMw4c8GTgLX135iyc2sE7FNJG1Fys9II7KIhCrK8ArTmNH+bLGCbVVD8gvb1Q6IneCu2wNOegA79A6Xq/qOMwAAAABJRU5ErkJggg==) no-repeat 0 0;
+            background-size: 9px auto;
+            margin-top: -8px;
+        }
+
+        &.touch {
+            opacity: .5;
+        }
+    }
+
+    &-operate {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        font-size: $font-size-base;
+        line-height: 44px;
+        padding: 0 $gap-main;
+        overflow: hidden;
+
+        &.touch {
+            opacity: .5;
+        }
+    }
+
+    @at-root {
+        &-fixed {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: $z-index-high;
+        }
+    }
+}
+
+/* content
+---------------------------------- */
+.dm-content {
+    box-sizing: border-box;
+    min-height: 100%;
+
+    @at-root {
+        .dm-header-fixed ~ & {
+            padding-top: 44px;
+        }
+    }
+}
+
+/* footbar
+---------------------------------- */
+.dm-footbar {
+    @include border(top);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: $z-index-high;
+    width: 100%;
+    height: 50px;
+    background-color: $bg-color-main;
+    overflow: hidden;
+
+    @at-root {
+        &-show {
+            box-sizing: border-box;
+            padding-bottom: 50px;
+        }
+    }
+}

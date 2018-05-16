@@ -1,0 +1,62 @@
+/* push
+---------------------------------- */
+.dm-push {
+    position: relative;
+    background-color: #fecd06;
+    padding-left: 34px;
+    overflow: hidden;
+
+    &-close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 34px;
+        height: 100%;
+        background-color: rgba($black, 0.001);
+        @extend %text-hide;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1px;
+            height: 12px;
+            background-color: $black-dim;
+            margin-top: -6px;
+            @include css3(transform, rotate(-45deg));
+        }
+
+        &::after {
+            @include css3(transform, rotate(45deg));
+        }
+    }
+
+    &-info {
+        display: block;
+        line-height: 44px;
+        @extend %text-overflow;
+    }
+
+    &-btn {
+        @include float(right);
+        @include border(all, $border-color-base);
+        @include border-radius;
+        box-sizing: border-box;
+        width: auto;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        padding: 0 8px;
+        margin: 8px 12px;
+        overflow: hidden;
+    }
+
+    @include mq-max-dw(320px) {
+        &-info,
+        &-btn {
+            font-size: $font-size-small;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+/* subject
+---------------------------------- */
+.subject {
+    overflow: hidden;
+
+    .dm-list {
+        @include clearfix();
+    }
+
+    .dm-list-item {
+        @include float;
+        width: 50%;
+
+        &.dm-border-right:nth-child(2n)::after {
+            display: none;
+        }
+
+    }
+
+    .dm-list-info {
+        @include flex;
+        @include flex-align(center);
+        @include flex-justify(center);
+        max-width: 100%;
+        height: 64px;
+        overflow: hidden;
+
+        &.touch {
+            background-color: transparent;
+        }
+
+        img {
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+    }
+
+    .list-three {
+        .dm-list-item:first-child {
+            width: 45%;
+        }
+
+        .dm-list-item:first-child .dm-list-info {
+            height: 128px;
+        }
+
+        .dm-list-item:not(:first-child) {
+            width: 55%;
+        }
+
+    }
+
+}

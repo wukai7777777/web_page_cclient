@@ -1,0 +1,185 @@
+@import "./arrow";
+
+/* cell
+---------------------------------- */
+.dm-cell {
+    @include flex;
+    @include flex-align(center);
+    @include border(bottom);
+    background-color: $bg-color-main;
+    padding: $gap-base $gap-main;
+
+    &::after {
+        left: $gap-main;
+        right: 0;
+        width: auto;
+    }
+
+    &:last-child::after {
+        @include hide;
+    }
+
+    &.touch {
+        background-color: $bg-color-touch;
+    }
+
+    &-head {
+        @include flex-item(0);
+        color: $text-color-base;
+        font-size: $font-size-base;
+        line-height: 22px;
+        @extend %text-break;
+    }
+
+    &-body {
+        @include flex-item;
+        line-height: 22px;
+        overflow: hidden;
+        @extend %text-break;
+    }
+
+    &-foot {
+        @include flex-item(0);
+        position: relative;
+        color: $text-color-base;
+        font-size: $font-size-base;
+        line-height: 22px;
+        text-align: right;
+        @extend %text-break;
+        padding-left: $gap-base;
+    }
+
+    &-icon {
+        width: 14px;
+        height: 14px;
+        max-width: 14px;
+        max-height: 14px;
+        margin-right: $gap-base;
+    }
+
+    &-label {
+        display: block;
+        width: 88px;
+        white-space: nowrap;
+
+        b {
+            display: inline-block;
+            color: $text-color-warn;
+            margin-left: 4px;
+        }
+    }
+
+    &-vcode {
+        min-height: 44px;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    &-access &-foot {
+        @extend %arrow-hollow-tiny;
+        padding-right: 14px;
+
+        &:empty {
+            padding-left: 8px;
+        }
+    }
+
+    &-column {
+        @include flex-align(start);
+        padding-top: 42px;
+    }
+
+    &-column &-head {
+        width: 100%;
+        position: relative;
+        top: -30px;
+        margin-right: -100%;
+    }
+
+    &s {
+        position: relative;
+        margin-bottom: $gap-base;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-title {
+            color: $text-color-assist;
+            font-size: $font-size-base;
+            font-weight: $font-weight-base;
+            line-height: 22px;
+            padding: $gap-base $gap-main;
+        }
+
+        & + &-title {
+            margin-top: -$gap-base;
+        }
+
+        &-btn {
+            @include flex;
+            margin: 32px $gap-main / 2 0;
+
+            &::after {
+                @include hide;
+            }
+
+            .dm-btn {
+                @include flex-item;
+                margin: 0 $gap-main / 2;
+
+                &:only-child {
+                    margin-right: $gap-large - $gap-main / 2;
+                    margin-left: $gap-large - $gap-main / 2;
+                }
+            }
+        }
+
+        &-text {
+            display: block;
+            color: $text-color-assist;
+            font-size: $font-size-small;
+            line-height: 20px;
+            @extend %text-break;
+            margin: 0 $gap-main $gap-base;
+            @extend %clearfix;
+
+            a {
+                color: $link-color-assist;
+            }
+        }
+
+        &-text + &-btn {
+            margin-top: 28px;
+        }
+
+        &-btn ~ &-text {
+            margin: 24px 40px 0;
+        }
+
+        &-btn ~ &-text-center {
+            text-align: center;
+        }
+
+        &-btn ~ &-text-fixed {
+            position: fixed;
+            bottom: 28px;
+            left: 0;
+            right: 0;
+            text-align: center;
+
+            a {
+                color: $link-color-main;
+            }
+
+            @include mq-max-dh(568px) {
+                position: static;
+            }
+
+            @include mq-ls {
+                position: static;
+            }
+        }
+    }
+}

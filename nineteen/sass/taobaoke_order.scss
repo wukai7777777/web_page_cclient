@@ -1,0 +1,134 @@
+@charset "utf-8";
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/column";
+@import "widget/tab";
+
+/* product
+---------------------------------- */
+.product {
+    .dm-column-head {
+        background-color: $bg-color-main;
+        padding: 0 24px 0 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 20px;
+            width: 4px;
+            height: 100%;
+            background: url(../imgs/bg_tab.png) no-repeat;
+            background-size: 4px auto;
+        }
+    }
+
+    .dm-column-body {
+        .dm-list-item {
+            margin-top: $gap-base;
+        }
+    }
+
+    &-info {
+        @include flex;
+        @include flex-align(start);
+        background-color: $bg-color-main;
+        padding: $gap-base $gap-main 0 $gap-main;
+        overflow: hidden;
+    }
+
+    &-image {
+        @include show;
+        margin-right: $gap-base;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 62px;
+            height: 62px;
+            max-width: 62px;
+            overflow: hidden;
+        }
+    }
+
+    &-content {
+        @include flex-item;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &-title {
+        font-size: $font-size-small;
+        font-weight: $font-weight-base;
+        line-height: 20px;
+        margin-bottom: 2px;
+        @extend %text-overflow;
+    }
+
+    &-meta {
+        color: $text-color-assist;
+        font-size: $font-size-small;
+        line-height: 20px;
+        overflow: hidden;
+
+        .label {
+            min-width: 60px;
+            color: $text-color-assist;
+        }
+    }
+
+    &-price {
+        position: relative;
+        color: $red;
+        font-size: $font-size-base;
+        line-height: 22px;
+        padding: 9px 0;
+        margin-top: 8px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-top: 1px dotted $border-color-main;
+
+            @include css3(transform-origin, 0 0);
+            @include css3(transform, scale3d(1, .5, 1));
+        }
+
+        .label {
+            color: $text-color-assist;
+        }
+
+        b {
+            display: inline-block;
+            font-size: $font-size-large;
+            font-weight: $font-weight-base;
+            margin-right: 2px;
+            @include css3(transform, translateY(.5px));
+        }
+    }
+
+    &-status {
+        position: absolute;
+        right: 0;
+        bottom: 9px;
+        font-size: $font-size-base;
+        line-height: 22px;
+
+        &-main {
+            color: $text-color-warn;
+        }
+
+        &-assist {
+            color: $text-color-assist;
+        }
+
+        &-tiny {
+            color: $text-color-tiny;
+        }
+    }
+}

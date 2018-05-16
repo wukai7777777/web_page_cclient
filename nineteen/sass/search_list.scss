@@ -1,0 +1,150 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/column";
+@import "widget/status";
+@import "widget/product";
+@import "widget/toptips";
+
+/* icon
+---------------------------------- */
+.icon-sad {
+    width: 14px;
+    height: 14px;
+
+    &::after {
+        width: 14px;
+        height: 14px;
+        background-position: -30px -135px;
+    }
+}
+
+/* toptips
+---------------------------------- */
+.dm-toptips {
+    color: $text-color-assist;
+    font-size: $font-size-base;
+    line-height: 22px;
+    padding: 20px $gap-main;
+    overflow: hidden;
+
+    p {
+        margin: 8px 0;
+    }
+
+    .dm-icon {
+        vertical-align: -2px;
+        margin-right: 4px;
+    }
+}
+
+/* filter
+---------------------------------- */
+.dm-filter {
+    height: 44px;
+    background-color: $bg-color-main;
+    line-height: 44px;
+    text-align: center;
+}
+
+/* status
+---------------------------------- */
+.dm-status-search {
+    background-color: $bg-color-main;
+    font-size: 0;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    .dm-status-icon-search {
+        display: inline-block;
+        width: 80px;
+        height: 50px;
+        background-position: 0 -320px;
+        background-size: 80px auto;
+        vertical-align: top;
+        margin: 0 8px 0 0;
+    }
+
+    .dm-status-text {
+        display: inline-block;
+        width: 50%;
+        min-width: 160px;
+        max-width: 220px;
+        color: $text-color-assist;
+        font-size: $font-size-base;
+        text-align: left;
+        @include css3(transform, translateY(3px));
+    }
+}
+
+/* product
+---------------------------------- */
+.product {
+    .dm-column-head {
+        @include hide;
+    }
+
+    .dm-list {
+        background-color: $bg-color-main;
+    }
+
+    .dm-list-item {
+        &:not(:last-child) {
+            @include border(bottom);
+        }
+    }
+
+    .product-content {
+        @include flex;
+    }
+
+    .product-title {
+        @include flex-item;
+        margin-right: 8px;
+    }
+
+    .product-price {
+        position: static;
+    }
+}
+
+/* recommend
+---------------------------------- */
+.recommend {
+    background-color: $bg-color-main;
+    margin-top: $gap-base;
+
+    .dm-column-head {
+        @include border(bottom);
+    }
+
+    .dm-column-title {
+        color: $text-color-assist;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        line-height: 22px;
+
+        &::before {
+            @include hide;
+        }
+    }
+
+    .dm-list-item {
+        &:not(:last-child) {
+            @include border(bottom);
+        }
+    }
+
+    .product-content {
+        @include flex;
+    }
+
+    .product-title {
+        @include flex-item;
+        margin-right: 8px;
+    }
+
+    .product-price {
+        position: static;
+    }
+}

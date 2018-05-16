@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/* layout
+---------------------------------- */
+.list .mod-column-head {
+    display: none;
+}
+
+.list .mod-list-item {
+    line-height: 1;
+    padding: 16px 12px;
+    overflow: hidden;
+}
+
+.product-info h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.product-info p,
+.product-meta {
+    font-size: 12px;
+}
+
+.product-info p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-meta {
+    margin-left: 20px;
+}
+
+.product-meta span {
+    display: block;
+    text-align: right;
+}
+
+.product-meta .money b {
+    font-size: 15px;
+    font-weight: 700;
+    margin-right: 2px;
+}
+
+.product-meta .money {
+    margin-bottom: 12px;
+}
+
+.mod-footbar .btn {
+    height: 50px;
+    line-height: 50px;
+    border-radius: 0;
+}

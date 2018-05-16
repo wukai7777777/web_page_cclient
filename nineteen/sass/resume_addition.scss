@@ -1,0 +1,23 @@
+@charset "utf-8";
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/cell";
+@import "widget/input";
+@import "widget/radio";
+@import "widget/picker";
+@import "widget/upload";
+@import "widget/btn";
+
+/* cells
+---------------------------------- */
+.dm-cells:first-child {
+    margin-top: $gap-base;
+}
+
+/* resume-addition
+---------------------------------- */
+.resume-addition {
+    padding-bottom: 32px;
+}

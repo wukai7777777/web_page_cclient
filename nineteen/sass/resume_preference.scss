@@ -1,0 +1,20 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/toptips";
+@import "widget/cell";
+@import "widget/btn";
+@import "widget/picker";
+
+/* cells
+---------------------------------- */
+.dm-cells:first-child {
+    margin-top: $gap-base;
+}
+
+/* resume-info
+---------------------------------- */
+.resume-preference {
+    padding-bottom: 32px;
+}

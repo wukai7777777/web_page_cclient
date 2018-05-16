@@ -1,0 +1,107 @@
+@charset "utf-8";
+
+/* popup
+---------------------------------- */
+.popup-screen {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 0;
+    margin: 0;
+}
+
+.popup-screen .mod-popup-box {
+    display: -webkit-box;
+    display: -ms-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    height: 100%;
+}
+
+.popup-screen .mod-popup-head,
+.popup-screen .mod-popup-body,
+.popup-screen .mod-popup-bar {
+    display: block;
+    -webkit-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+    height: 1px;
+    max-height: 100%;
+}
+
+.popup-screen .mod-popup-head {
+    height: 26px;
+    max-height: 26px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+    padding: 20px 12px 14px;
+}
+
+.popup-screen .mod-popup-body {
+    overflow-y: auto;
+}
+
+.popup-screen .mod-popup-text {
+    margin: 16px 12px;
+}
+
+.popup-screen .mod-popup-text:first-child {
+    margin-top: 0;
+}
+
+.popup-screen .mod-popup-text b {
+    display: inline-block;
+    font-weight: 700;
+    padding-bottom: 4px;
+}
+
+.popup-screen .mod-popup-bar {
+    height: 44px;
+    max-height: 44px;
+}
+
+.popup-screen .mod-popup-bar .icon-close {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background-clip: padding-box;
+    border: 10px solid rgba(255, 255, 255, 0.001);
+    border-radius: 24px;
+    color: #404040;
+    font-size: 0;
+    line-height: 0;
+    text-align: center;
+    box-shadow: inset 0 0 0 1px #404040;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.popup-screen .mod-popup-bar .icon-close::before,
+.popup-screen .mod-popup-bar .icon-close::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 16px;
+    background-color: #404040;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin-top: -8px;
+}
+
+.popup-screen .mod-popup-bar .icon-close::after {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}

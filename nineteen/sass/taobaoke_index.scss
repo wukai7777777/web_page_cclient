@@ -1,0 +1,387 @@
+@charset "utf-8";
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/nav";
+@import "widget/slider";
+@import "widget/tab";
+@import "widget/column";
+@import "widget/icon";
+
+/* css sprite
+---------------------------------- */
+%sprite-taobaoke {
+    background: url(../imgs/icon_taobaoke.png) no-repeat;
+    background-size: 120px auto;
+}
+
+/* icon
+---------------------------------- */
+.dm-icon {
+    &::after {
+        @extend %sprite-form;
+    }
+}
+
+.icon-search {
+    &::after {
+        background-position: 0 -80px;
+    }
+}
+
+/* tag
+---------------------------------- */
+.tag-coupon {
+    display: inline-block;
+    height: 13px;
+    color: $red;
+    vertical-align: middle;
+    overflow: hidden;
+
+    &::before {
+        content: "券";
+        @include float;
+        box-sizing: border-box;
+        width: 34px;
+        height: 26px;
+        @extend %sprite-taobaoke;
+        background-position: -120px 0;
+        background-size: 240px auto;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        @include css3(transform-origin, (0 0));
+        @include css3(transform, scale(.5));
+        margin-right: -17px;
+    }
+
+    b {
+        @include float;
+        box-sizing: border-box;
+        width: 60px;
+        height: 26px;
+        @extend %sprite-taobaoke;
+        background-position: right 0;
+        background-size: 240px auto;
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        white-space: nowrap;
+        padding-right: 6px;
+        margin-right: -30px;
+        @include css3(transform-origin, (0 0));
+        @include css3(transform, scale(.5));
+    }
+}
+
+/* menu
+---------------------------------- */
+.menu {
+    background-color: $bg-color-main;
+
+    .dm-nav-list-item {
+        &:not(:last-child) {
+            @include border(right);
+
+            &::after {
+                top: 50%;
+                height: 32px;
+                margin-top: -16px;
+            }
+        }
+    }
+
+    .dm-nav-item {
+        position: relative;
+        font-size: $font-size-base;
+        line-height: 22px;
+        text-align: center;
+        padding: $gap-main;
+    }
+
+    .dm-nav-item b {
+        color: $red;
+        font-size: $font-size-large;
+        font-weight: $font-weight-bold;
+        margin-right: 4px;
+    }
+
+    &-title {
+        display: block;
+    }
+
+    &-value {
+        @extend %arrow-hollow-tiny;
+        display: inline-block;
+        color: $red;
+        margin-top: 2px;
+        padding-right: 14px;
+    }
+}
+
+/* slider
+---------------------------------- */
+.dm-slider {
+    background-color: $bg-color-main;
+    padding-top: $gap-main;
+
+    img {
+        border-radius: 4px;
+    }
+
+    &-list {
+        .list-item {
+            padding: 0 $gap-main;
+        }
+    }
+
+    &-index {
+        bottom: 9px;
+    }
+
+    .menu + & {
+        padding-top: 0;
+    }
+}
+
+/* nav
+---------------------------------- */
+.nav {
+    background-color: $bg-color-main;
+
+    .dm-nav-item {
+        padding: $gap-base;
+
+        img {
+            width: 35px;
+            height: 35px;
+            max-width: 35px;
+            max-height: 35px;
+            margin: 4px auto;
+            overflow: hidden;
+        }
+    }
+}
+
+/* product
+---------------------------------- */
+.product {
+    margin-top: $gap-base;
+
+    .dm-column-head {
+        @include flex;
+        @include border(bottom);
+        background-color: $bg-color-main;
+        padding: 0;
+    }
+
+    .dm-tab {
+        @include flex-item;
+    }
+
+    .dm-search-guide {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -4px;
+            width: 4px;
+            height: 100%;
+            background: url(../imgs/bg_tab.png) no-repeat;
+            background-size: 4px auto;
+        }
+
+        .icon-search {
+            margin: 14px $gap-main;
+        }
+    }
+
+    .dm-column-body {
+        .dm-list-item {
+            @include border(bottom);
+            background-color: $bg-color-main;
+
+            &:last-child::after {
+                @include hide;
+            }
+        }
+    }
+
+    .product-info {
+        @include flex;
+        @include flex-align(start);
+        padding: $gap-base $gap-main;
+        overflow: hidden;
+    }
+
+    .product-image {
+        @include show;
+        margin-right: $gap-base;
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 84px;
+            height: 84px;
+            max-width: 84px;
+            max-height: 84px;
+            overflow: hidden;
+        }
+    }
+
+    .touch .product-image {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .04);
+        }
+    }
+
+    .product-content {
+        @include flex-item;
+        position: relative;
+        min-height: 62px;
+        overflow: hidden;
+    }
+
+    .product-title {
+        height: 44px;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        line-height: 22px;
+        margin-right: 72px;
+        @include text-clamp(2);
+    }
+
+    .product-meta {
+        color: $text-color-assist;
+        font-size: $font-size-small;
+        line-height: 20px;
+        margin-right: 72px;
+        overflow: hidden;
+
+        b {
+            color: $red;
+        }
+
+        .sale {
+            text-decoration: line-through;
+        }
+
+        .tag-coupon {
+            position: relative;
+            top: 3px;
+            vertical-align: top;
+            margin-left: 4px;
+        }
+    }
+
+    .product-title + .product-meta {
+        margin-top: 2px;
+    }
+
+    .product-opt {
+        @include border(all, $border-color-tiny);
+        @include border-radius;
+        position: absolute;
+        top: 21px;
+        right: 0;
+        box-sizing: border-box;
+        width: 52px;
+        height: 24px;
+        color: $text-color-base;
+        font-size: $font-size-small;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    .product-price {
+        position: absolute;
+        top: 49px;
+        right: 0;
+        color: $red;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold;
+        line-height: 20px;
+
+        b {
+            display: inline-block;
+            font-size: $font-size-base;
+            font-weight: $font-weight-bold;
+            margin: 0 2px;
+            @include css3(transform, translateY(.5px));
+        }
+    }
+
+    &-infix {
+        position: relative;
+        z-index: $z-index-base;
+        margin-top: -1px;
+        background-color: $bg-color-base;
+
+        h4 {
+            position: relative;
+            font-size: $font-size-base;
+            font-weight: $font-weight-bold;
+            line-height: 22px;
+            text-align: center;
+            padding-top: $gap-base;
+            padding-bottom: 6px;
+
+            &::before,
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                @extend %sprite-taobaoke;
+                background-position: -60px -20px;
+                vertical-align: middle;
+                margin: 0 4px;
+            }
+
+            &::after {
+                background-position: -80px -20px;
+            }
+        }
+
+        .dm-nav {
+            position: relative;
+            background-color: transparent;
+            padding: 0 10px 10px;
+            margin-bottom: 0;
+
+            &-item {
+                @include border;
+                @include border-radius;
+                background-color: $bg-color-main;
+                padding: 6px;
+
+                &.touch {
+                    opacity: .5;
+                }
+            }
+
+            &-list {
+                display: block;
+                @extend %clearfix;
+
+                &-item {
+                    @include float;
+                    box-sizing: border-box;
+                    width: 25%;
+                    padding: 6px;
+                }
+            }
+        }
+    }
+}

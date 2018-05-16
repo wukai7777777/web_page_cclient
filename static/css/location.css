@@ -1,0 +1,137 @@
+@charset "utf-8";
+
+/* location
+---------------------------------- */
+.location {
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 12px 44px 12px 12px;
+    overflow: hidden;
+}
+
+.location span {
+    float: left;
+    color: #808080;
+}
+
+.location b {
+    font-weight: 400;
+}
+
+.location .icon-refresh {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+}
+
+.location .icon-refresh::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background: url(../imgs/icon.png) no-repeat -45px -120px;
+    background-size: 100px auto;
+    margin: -7px 0 0 -7px;
+}
+
+.location .icon-refresh.active::after {
+    -webkit-animation: spinnerRotate 1s infinite linear;
+    -ms-animation: spinnerRotate 1s infinite linear;
+    animation: spinnerRotate 1s infinite linear;
+}
+
+@-webkit-keyframes spinnerRotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(-360deg);
+    }
+
+}
+
+@-ms-keyframes spinnerRotate {
+    from {
+        -ms-transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(-360deg);
+    }
+
+}
+
+@keyframes spinnerRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+
+}
+
+.location-status {
+    display: none;
+    margin: 76px 40px 32px;
+}
+
+.location-status.active {
+    display: block;
+}
+
+.location-status p {
+    color: #808080;
+    line-height: 22px;
+    text-align: center;
+}
+
+.location-status .btn {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    background-clip: padding-box;
+    border: 0 none;
+    border-radius: 4px;
+    font: normal 16px/44px helvetica neue, helvetica, arial, hiragino sans gb, microsoft yahei, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    padding: 0;
+    margin-top: 28px;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.location-status .btn-primary {
+    background-color: #fc0;
+    color: #404040;
+}
+
+.location-status .btn-primary.touch {
+    background-color: #fb0;
+}
+
+.location-list .product-info {
+    position: relative;
+}
+
+.location-list .product-title {
+    margin-right: 64px;
+}
+
+.location-list .product-ds {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 12px;
+    line-height: 20px;
+}

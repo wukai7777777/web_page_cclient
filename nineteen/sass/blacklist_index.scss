@@ -1,0 +1,105 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/column";
+@import "widget/status";
+@import "widget/icon";
+
+/* icon
+---------------------------------- */
+.icon-search {
+    &::after {
+        background: url(../imgs/icon_index.png) no-repeat;
+        background-size: 120px auto;
+        background-position: 0 0;
+    }
+}
+
+/* footbar
+---------------------------------- */
+.dm-footbar {
+    &::after {
+        @include hide;
+    }
+}
+
+/* blacklist-guide
+---------------------------------- */
+.blacklist-index {
+    background-color: $bg-color-main;
+}
+
+/* guide
+---------------------------------- */
+.guide {
+    .dm-column-head {
+        @include hide;
+    }
+
+    .porduct-info {
+        position: relative;
+        background: url(../imgs/bg_blacklist.png) no-repeat center top;
+        background-size: 178px auto;
+        padding: 178px $gap-main 20px;
+    }
+
+    .product-title {
+        color: $text-color-base;
+        font-size: 24px;
+        font-weight: $font-weight-bold;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .product-desc {
+        color: $text-color-base;
+        font-size: $font-size-large;
+        font-weight: $font-weight-base;
+        line-height: 24px;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .product-status {
+        display: block;
+        color: $text-color-base;
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        line-height: 22px;
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .product-opt {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: rgba(242, 242, 242, .96);
+        border: 0 none;
+        border-radius: $border-radius-small;
+        color: $text-color-assist;
+        font-size: $font-size-base;
+        line-height: 22px;
+        text-align: left;
+        padding: $gap-base $gap-main;
+        margin-top: 20px;
+        overflow: hidden;
+
+        .dm-icon {
+            @include float;
+            margin: 1px 8px 1px 0;
+        }
+    }
+}
+
+/* notice
+---------------------------------- */
+.notice {
+    display: block;
+    color: $text-color-assist;
+    text-align: center;
+
+    a {
+        color: $link-color-main;
+    }
+}

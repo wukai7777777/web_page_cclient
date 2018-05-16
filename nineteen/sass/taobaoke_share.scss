@@ -1,0 +1,160 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/scroll";
+@import "widget/column";
+@import "widget/toptips";
+@import "widget/checkbox";
+@import "widget/btn";
+@import "widget/gallery";
+
+/* css sprite
+---------------------------------- */
+%sprite-taobaoke {
+    background: url(../imgs/icon_taobaoke.png) no-repeat;
+    background-size: 120px auto;
+}
+
+/* picture
+---------------------------------- */
+.picture {
+    @include border(bottom);
+    background-color: $bg-color-main;
+
+    .dm-column-head {
+        padding-top: 20px;
+    }
+
+    .dm-column-title::before {
+        @include hide;
+    }
+
+    .dm-column-title::after {
+        content: "";
+        display: block;
+        width: 27px;
+        height: 3px;
+        background-color: #f5f5f5;
+        margin: 12px 0 0;
+    }
+
+    .product-content {
+        width: 100%;
+        height: 84px;
+
+        .dm-list {
+
+            &-item {
+                padding-left: $gap-main / 2;
+
+                &:first-child {
+                    padding-left: $gap-main;
+                }
+
+                &:last-child {
+                    padding-right: $gap-main;
+                }
+            }
+        }
+    }
+
+    .product-info {
+        display: block;
+        position: relative;
+    }
+
+    .product-image {
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 84px;
+            height: 84px;
+            max-width: 84px;
+            max-height: 84px;
+            overflow: hidden;
+        }
+    }
+
+    .touch .product-image {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .04);
+        }
+    }
+
+    .dm-checkbox {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .dm-checkbox-text {
+        width: 32px;
+        height: 32px;
+        padding-left: 32px;
+
+        &::before {
+            left: 8px;
+            @extend %sprite-taobaoke;
+            background-position: 0 -20px;
+        }
+    }
+
+    .dm-checkbox-input:checked + .dm-checkbox-text::before {
+        @extend %sprite-taobaoke;
+        background-position: -20px -20px;
+    }
+
+    .dm-btn-row {
+        margin: $gap-main $gap-large 20px;
+    }
+}
+
+/* taokouling
+---------------------------------- */
+.taokouling {
+    @include border(bottom);
+    background-color: $bg-color-main;
+    margin-top: $gap-base;
+
+    .dm-column-head {
+        padding-top: 20px;
+    }
+
+    .dm-column-title::before {
+        @include hide;
+    }
+
+    .dm-column-title::after {
+        content: "";
+        display: block;
+        width: 27px;
+        height: 3px;
+        background-color: #f5f5f5;
+        margin: 12px 0 0;
+    }
+
+    .product-text {
+        @include border(all, $gray-dim);
+        @include border-radius;
+        color: $text-color-assist;
+        font-size: $font-size-base;
+        line-height: 22px;
+        @include text-break;
+        padding: $gap-base;
+        margin: 4px $gap-main 0;
+    }
+
+    .dm-btn-row {
+        margin: 10px $gap-large;
+    }
+}

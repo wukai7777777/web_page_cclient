@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/* layout
+---------------------------------- */
+.form-tips:first-child {
+    background-color: #f5f5f5;
+    color: #999;
+    padding: 12px;
+}
+
+.form-field::after {
+    left: 0;
+}
+
+.vertical .form-label {
+    background-color: #faf8ee;
+    padding-bottom: 12px;
+}
+
+.vertical .textarea-group textarea {
+    height: 100px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.form-opt + .form-text {
+    margin: 28px 40px 8px;
+}
+
+.form-text-center {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.form-text-center a {
+    display: inline-block;
+}
+
+.form-text-bottom {
+    text-align: center;
+    margin-top: 28px;
+}

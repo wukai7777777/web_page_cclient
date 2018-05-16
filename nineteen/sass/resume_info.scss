@@ -1,0 +1,122 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/column";
+@import "widget/cell";
+@import "widget/btn";
+@import "widget/input";
+@import "widget/radio";
+@import "widget/picker";
+@import "widget/upload";
+
+/* cells
+---------------------------------- */
+.dm-cells:first-child {
+    margin-top: $gap-base;
+}
+
+/* resume-info
+---------------------------------- */
+.resume-info {
+    padding-bottom: 32px;
+}
+
+/* certification
+---------------------------------- */
+.certification {
+    background-color: $bg-color-main;
+    margin-bottom: $gap-base;
+
+    &::after {
+        left: $gap-main;
+        right: 0;
+        width: auto;
+    }
+
+    .dm-column-head {
+        @include hide;
+    }
+
+    .product-info {
+        box-sizing: border-box;
+        height: 100px;
+        background: url(../imgs/bg_renzheng.png) no-repeat right center;
+        background-size: contain;
+        border-radius: $border-radius-base;
+        box-shadow: 0 2px 8px 0 rgba(0,0,0,.08);
+        padding: 20px 0 0 $gap-main;
+        margin: $gap-base $gap-main 4px;
+    }
+
+    .product-title {
+        font-size: 24px;
+        font-weight: $font-weight-bold;
+        line-height: 32px;
+        @extend %text-break;
+    }
+
+    .product-meta {
+        color: $text-color-tiny;
+        font-size: $font-size-large;
+        line-height: 24px;
+        @extend %text-break;
+        margin-top: 4px;
+        overflow: hidden;
+
+        &-item {
+            @include float;
+            margin-right: 10px;
+        }
+    }
+
+    .product-desc {
+        color: $text-color-tiny;
+        font-size: $font-size-small;
+        line-height: 20px;
+        margin: $gap-base $gap-main;
+
+        a {
+            display: inline-block;
+            color: $link-color-main;
+            margin-left: 4px;
+        }
+    }
+}
+
+/* upload-avatar
+---------------------------------- */
+.upload-avatar {
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+
+    &::before {
+        top: 0;
+        right: 0;
+        left: auto;
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        background: url(../imgs/avatar_female.png) no-repeat 0 0;
+        background-size: 40px auto;
+        margin-left: 0;
+    }
+
+    &::after {
+        @include hide;
+    }
+
+    .dm-upload-image {
+        @include float(right);
+        width: 40px;
+        max-width: 40px;
+        border-radius: 40px;
+    }
+}
+
+/* upload
+---------------------------------- */
+.dm-cell-column .dm-upload-cols {
+    margin-top: 4px;
+}

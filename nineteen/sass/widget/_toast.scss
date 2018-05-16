@@ -1,0 +1,30 @@
+/* toast
+---------------------------------- */
+.dm-toast {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: $z-index-highest;
+    text-align: center;
+    @include css3(transform, translate3d(0, -50%, 0));
+
+    span {
+        display: inline-block;
+        box-sizing: border-box;
+        max-width: 80%;
+        background-color: rgba($black, 0.8);
+        background-clip: padding-box;
+        border-radius: $border-radius-base * 2;
+        color: $white;
+        font-size: $font-size-base;
+        line-height: 22px;
+        padding: 8px 16px;
+    }
+
+    &.active {
+        display: block;
+    }
+
+}

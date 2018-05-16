@@ -1,0 +1,54 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/column";
+@import "widget/cell";
+@import "widget/product";
+
+/* address
+---------------------------------- */
+.address {
+    background-color: $bg-color-main;
+
+    .dm-column-head {
+        @include hide;
+    }
+
+    .product-info {
+        @include flex;
+
+        &::after {
+            left: 0;
+        }
+    }
+
+    .product-title {
+        height: auto;
+        margin-right: 0;
+    }
+
+    .product-info:visited .product-title {
+        color: $text-color-base;
+    }
+
+    .product-meta {
+        font-size: $font-size-base;
+        line-height: 22px;
+    }
+
+    .product-meta-item {
+        margin-right: 8px;
+
+        &:not(:first-child) {
+            @include border(left, $border-color-tiny);
+            padding-left: 8px;
+
+            &::after {
+                top: 50%;
+                height: 10px;
+                margin-top: -5px;
+            }
+        }
+    }
+}

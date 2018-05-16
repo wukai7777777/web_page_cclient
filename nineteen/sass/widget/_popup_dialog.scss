@@ -1,0 +1,71 @@
+/* popup-dialog
+---------------------------------- */
+.popup-dialog {
+    margin-top: -132px;
+
+    .dm-popup-head {
+        display: none;
+    }
+
+    .dm-popup-img {
+        background: url(../imgs/bg_popup.png) no-repeat;
+        background-size: 266px auto;
+    }
+
+    .dm-popup-img {
+        position: relative;
+        height: 104px;
+        background-color: $yellow;
+        background-position: 0 -315px;
+        background-clip: padding-box;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .dm-popup-img-s {
+        background-position: 0 -420px;
+    }
+
+    .dm-popup-img-f {
+        background-position: 0 -525px;
+    }
+
+    .dm-popup-title {
+        font-size: $font-size-larger;
+        font-weight: $font-weight-bold;
+        line-height: 26px;
+        text-align: center;
+        margin: 20px 16px 4px;
+    }
+
+    .dm-popup-text {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .dm-popup-title + .dm-popup-text {
+        margin-top: 4px;
+    }
+
+    .dm-popup-title + .dm-popup-btn-box,
+    .dm-popup-text + .dm-popup-btn-box {
+        margin-top: 20px;
+    }
+
+    @include mq-ls {
+        & {
+            position: absolute;
+            top: 10%;
+            margin-top: 0 !important;
+        }
+
+    }
+
+    @include mq-sh {
+        & {
+            position: absolute;
+            top: 10%;
+            margin-top: 0 !important;
+        }
+
+    }
+}

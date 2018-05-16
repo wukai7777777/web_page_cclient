@@ -1,0 +1,22 @@
+/* textarea
+---------------------------------- */
+.dm-textarea {
+    display: block;
+    overflow: hidden;
+
+    .textarea {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100px;
+        background-color: transparent;
+        border: 0 none;
+        color: $text-color-base;
+        font-size: $font-size-base;
+        line-height: 22px;
+        padding: 0;
+        overflow: auto;
+        resize: none;
+        -webkit-appearance: none;
+    }
+}

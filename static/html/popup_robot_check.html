@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="斗米兼职">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon-precomposed" href="http://sta.doumistatic.com/src/image/logo_doumi.png">
+    <title>POPUP-斗米兼职</title>
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/form.css" rel="stylesheet">
+    <link href="../css/account.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- page start -->
+    <div class="mod-page">
+        <!-- header start -->
+        <header class="mod-header">
+            <h1>POPUP</h1>
+            <a href="javascript:history.go(-1);" class="back">返回</a>
+        </header>
+        <!-- header end -->
+        <!-- section start -->
+        <section class="mod-content account">
+        </section>
+        <!-- section end -->
+    </div>
+    <!-- page end -->
+    <!-- popup start -->
+    <div class="mod-popup popup-robot-check active">
+        <div class="mod-popup-head hide">确认你不是机器人</div>
+        <div class="mod-popup-body">
+            <div class="robot-avatar"></div>
+            <div class="form-tips">请输入图片验证码确认你不是机器人：</div>
+            <div class="form-field active">
+                <div class="form-item">
+                    <label class="form-label">验证码</label>
+                    <div class="form-control">
+                        <div class="multi-group">
+                            <label class="input-group">
+                                <input type="text" class="input-text" maxlength="4" placeholder="请输入验证码">
+                            </label>
+                            <div class="code-group"><img id="verify_code_image" src="http://www.doumi.com/api/v1/client/showCkCode" alt=""><i class="icon-refresh">刷新</i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-warning">请输入正确的图片验证码</div>
+            </div>
+            <div class="mod-popup-btn-box">
+                <button class="btn btn-primary btn-large">确认</button>
+                <button class="btn btn-link btn-large">取消</button>
+            </div>
+        </div>
+    </div>
+    <div class="mask active" data-role="mask"></div>
+    <!-- popup end -->
+    <!-- js start -->
+    <script id="v-h5g" src="http://sta.doumistatic.com/sta/g.js?v=150917110933"></script>
+    <script>
+        G.use('com/mobile/lib/widget/widget.js').done(function(widget) {
+            widget.initWidgets();
+        });
+    </script>
+    <!-- js end -->
+</body>
+
+</html>

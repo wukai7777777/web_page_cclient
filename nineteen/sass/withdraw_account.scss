@@ -1,0 +1,80 @@
+@import "base/base";
+@import "widget/common";
+@import "widget/layout";
+@import "widget/status";
+@import "widget/cell";
+@import "widget/icon";
+@import "widget/toptips";
+@import "widget/btn";
+
+/* css sprite
+---------------------------------- */
+%sprite-wallet {
+    background: url(../imgs/icon_wallet.png) no-repeat;
+    background-size: 80px auto;
+}
+
+/* icon
+---------------------------------- */
+.icon-wechat,
+.icon-alipay,
+.icon-bank {
+    width: 40px;
+    height: 40px;
+
+    &::after {
+        width: 40px;
+        height: 40px;
+        @extend %sprite-wallet;
+    }
+}
+
+.icon-wechat {
+    &::after {
+        background-position: 0 -48px;
+    }
+}
+
+.icon-alipay {
+    &::after {
+        background-position: -40px -48px;
+    }
+}
+
+.icon-bank {
+    &::after {
+        background-position: 0 -88px;
+    }
+}
+
+/* withdraw-account
+---------------------------------- */
+.withdraw-account {
+    padding-bottom: 32px;
+}
+
+/* account
+---------------------------------- */
+.account {
+    .product-title {
+        font-size: $font-size-base;
+        font-weight: $font-weight-base;
+        line-height: 22px;
+        @extend %text-overflow
+    }
+
+    .product-desc {
+        color: $text-color-assist;
+        font-size: $font-size-small;
+        line-height: 20px;
+        @extend %text-overflow;
+    }
+
+    .dm-icon {
+        margin-right: $gap-base;
+    }
+
+    .dm-btn {
+        padding: 0;
+    }
+}

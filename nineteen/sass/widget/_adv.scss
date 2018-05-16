@@ -1,0 +1,38 @@
+/* adv
+---------------------------------- */
+.dm-adv {
+    position: relative;
+    overflow: hidden;
+
+    &-info {
+        display: block;
+        overflow: hidden;
+    }
+
+    &-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 34px;
+        height: 34px;
+        background-color: rgba($black, 0.001);
+        @extend %text-hide;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1px;
+            height: 12px;
+            background-color: $black-dim;
+            margin-top: -6px;
+            @include css3(transform, rotate(-45deg));
+        }
+
+        &::after {
+            @include css3(transform, rotate(45deg));
+        }
+    }
+}

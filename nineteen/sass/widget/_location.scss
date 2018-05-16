@@ -1,0 +1,89 @@
+/* location
+---------------------------------- */
+.dm-location {
+    &-box {
+        @include flex;
+        @include flex-align(center);
+        background-color: $bg-color-main;
+        padding: $gap-base $gap-main;
+    }
+
+    &-label {
+        display: block;
+        color: $text-color-assist;
+        line-height: 22px;
+    }
+
+    &-value {
+        @include flex-item;
+        font-weight: $font-weight-base;
+        line-height: 22px;
+        @extend %text-overflow;
+    }
+
+    &-refresh {
+        display: block;
+        position: relative;
+        width: 22px;
+        height: 22px;
+        @extend %text-hide;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 14px;
+            height: 14px;
+            background: url(../imgs/icon.png) no-repeat -45px -120px;
+            background-size: 100px auto;
+            margin: -7px 0 0 -7px;
+        }
+
+        &.active::after {
+            @include css3(animation, spinnerRotate 1s infinite linear);
+        }
+
+        @include keyframes(spinnerRotate) {
+            from {
+                @include css3(transform, rotate(0deg));
+            }
+            to {
+                @include css3(transform, rotate(360deg));
+            }
+        }
+    }
+
+    &-status {
+        margin: 76px $gap-large 32px;
+
+        &-text {
+            color: $text-color-assist;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        &-btn {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            background-color: $yellow;
+            background-clip: padding-box;
+            border: 0 none;
+            border-radius: $border-radius-base;
+            color: $text-color-base;
+            font-size: $font-size-large;
+            font-weight: $font-weight-base;
+            line-height: 44px;
+            text-align: center;
+            padding: 0;
+            margin-top: 28px;
+            cursor: pointer;
+            -webkit-appearance: none;
+
+            &.touch {
+                background-color: $orange;
+            }
+        }
+    }
+}

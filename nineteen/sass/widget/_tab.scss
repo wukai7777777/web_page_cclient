@@ -1,0 +1,68 @@
+/* tab
+---------------------------------- */
+.dm-tab {
+    width: 100%;
+    background-color: $bg-color-main;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        @include hide;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden;
+    }
+
+    &-list {
+        font-size: 0;
+        line-height: 0;
+        white-space: nowrap;
+        padding: 0 6px;
+
+        &-item {
+            display: inline-block;
+        }
+    }
+
+    &-item {
+        display: block;
+        font-size: $font-size-large;
+        line-height: 24px;
+        text-align: center;
+        white-space: nowrap;
+        padding: $gap-base 10px;
+    }
+
+    &-flex {
+        overflow: hidden;
+    }
+
+    &-flex &-list {
+        @include flex;
+        @include flex-justify(around);
+        padding: 0;
+    }
+
+    &-flex &-list-item {
+        display: block;
+    }
+
+    .active &-item {
+        position: relative;
+        font-weight: $font-weight-bold;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 20px;
+            height: 4px;
+            background-color: #fa0;
+            background-clip: padding-box;
+            border-radius: $border-radius-base;
+            margin-left: -10px;
+        }
+    }
+}

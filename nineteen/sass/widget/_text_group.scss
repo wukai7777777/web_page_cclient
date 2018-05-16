@@ -1,0 +1,21 @@
+/* text-group
+---------------------------------- */
+.text-group {
+    display: block;
+    line-height: 20px;
+    padding: $gap-base;
+    overflow: hidden;
+
+    & + .input-group {
+        margin-left: -$gap-base;
+    }
+
+    .pic-group + &,
+    .multi-group + & {
+        clear: both;
+        color: $text-color-tiny;
+        font-size: $font-size-small;
+        margin-top: -16px;
+    }
+
+}

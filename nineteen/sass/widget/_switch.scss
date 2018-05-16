@@ -1,0 +1,44 @@
+/* switch-group
+---------------------------------- */
+.switch-group {
+    @include flex;
+
+    @include flex-justify(end);
+
+    margin-right: 6px;
+
+    li {
+        display: block;
+        width: 60px;
+        background-clip: padding-box;
+        border: 1px solid $border-color-assist;
+        border-radius: $border-radius-small;
+        font-size: $font-size-small;
+        line-height: 30px;
+        text-align: center;
+        margin: 0 6px;
+
+        &.touch {
+            background-color: $bg-color-touch;
+        }
+    }
+
+    .active {
+        background-color: $yellow;
+        border-color: $yellow;
+        color: $white;
+
+        &.touch {
+            background-color: $orange;
+            border-color: $orange;
+        }
+    }
+
+    a {
+        display: block;
+    }
+
+    .active a {
+        color: $white;
+    }
+}

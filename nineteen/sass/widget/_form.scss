@@ -1,0 +1,269 @@
+/* form
+---------------------------------- */
+.form-widget {
+    &:last-child {
+        padding-bottom: 32px;
+    }
+}
+
+.form-heading {
+    position: relative;
+    background-color: $bg-color-base;
+    color: $text-color-assist;
+    line-height: 20px;
+    font-weight: $font-weight-base;
+    padding: $gap-base;
+    overflow: hidden;
+    @include border(bottom);
+}
+
+.form-group {
+    position: relative;
+    background-color: $bg-color-main;
+    margin-bottom: $gap-base;
+
+    & + .form-heading {
+        margin-top: -$gap-base;
+    }
+}
+
+.form-field {
+    position: relative;
+    padding-bottom: 1px;
+    @include border(bottom);
+
+    &::after {
+        right: 0;
+        left: $gap-base;
+        width: auto;
+    }
+
+    &:last-child::after {
+        left: 0;
+    }
+
+    &.active::after {
+        background-color: $red;
+    }
+}
+
+.form-item {
+    display: table;
+    width: 100%;
+}
+
+.form-label,
+.form-control {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.form-label {
+    position: relative;
+    width: 70px;
+    line-height: 20px;
+    vertical-align: top;
+    white-space: nowrap;
+    padding: $gap-base 0 $gap-base $gap-base;
+
+    b {
+        position: relative;
+        top: 2px;
+        left: 4px;
+        color: $text-color-warn;
+    }
+
+}
+
+.extend {
+    .form-item,
+    .form-control {
+        @include show;
+        overflow: hidden;
+    }
+
+    .form-label {
+        @include hide;
+    }
+
+}
+
+.vertical {
+    .form-item,
+    .form-label,
+    .form-control {
+        @include show;
+        overflow: hidden;
+    }
+
+    .form-label {
+        width: auto;
+        white-space: normal;
+        padding-right: $gap-base;
+        padding-bottom: 0;
+        margin-bottom: -3px;
+    }
+
+}
+
+.form-text {
+    color: $text-color-assist;
+    font-size: $font-size-small;
+    line-height: 20px;
+    margin: 8px $gap-base;
+    overflow: hidden;
+
+    @at-root {
+        .form-group + & {
+            margin-top: -4px;
+        }
+
+        .form-opt + & {
+            margin: 28px $gap-large 8px;
+        }
+
+        .form-text-center {
+            text-align: center;
+        }
+    }
+}
+
+.form-opt {
+    @include flex;
+    margin: 32px 6px 0;
+
+    .dm-btn {
+        display: block;
+        @include flex-item;
+        width: 100%;
+        margin: 0 6px;
+
+        &:only-child {
+            margin: 0 34px;
+        }
+
+        .dm-icon {
+            margin-right: 10px;
+        }
+
+    }
+
+    @at-root .form-text + & {
+        margin-top: 28px;
+    }
+
+}
+
+.form-tips {
+    position: relative;
+    color: $text-color-tiny;
+    font-size: $font-size-small;
+    line-height: 20px;
+    text-align: center;
+    padding: $gap-base;
+    overflow: hidden;
+}
+
+.form-warning {
+    @include hide;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: $z-index-highest;
+    text-align: center;
+    @include css3(transform, translate3d(0, -50%, 0));
+
+    span {
+        display: inline-block;
+        box-sizing: border-box;
+        max-width: 80%;
+        background-color: rgba(0, 0, 0, 0.8);
+        background-clip: padding-box;
+        border-radius: $border-radius-large;
+        color: $white;
+        line-height: 22px;
+        text-align: center;
+        padding: 8px 16px;
+    }
+
+    &.active {
+        @include show;
+    }
+
+    @at-root .form-field.active & {
+        @include show;
+
+        &.hide {
+            @include hide;
+        }
+
+    }
+
+}
+
+.form-deliver {
+    position: relative;
+    background-color: $bg-color-main;
+    padding: 28px $gap-large;
+    @include border(bottom);
+
+    &-title {
+        font-size: $font-size-larger;
+        font-weight: $font-weight-bold;
+        line-height: 26px;
+        text-align: center;
+
+        .icon-status {
+            display: block;
+            position: relative;
+            width: 120px;
+            height: 120px;
+            line-height: 999em;
+            margin: -6px auto 20px;
+            overflow: hidden;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 120px;
+                height: 120px;
+                background: url(../imgs/icon_deliver.png) no-repeat;
+                background-size: 120px auto;
+                margin-top: -60px;
+                margin-left: -60px;
+            }
+
+        }
+
+        .icon-succeed::after {
+            background-position: 0 0;
+        }
+
+        .icon-failed::after {
+            background-position: 0 -120px;
+        }
+    }
+
+    &-tips {
+        line-height: 22px;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    &-ds {
+        color: $text-color-tiny;
+        font-size: $font-size-small;
+        line-height: 20px;
+        text-align: center;
+        margin-top: $gap-base;
+    }
+}
+
+.detail-widget {
+    .text-group {
+        text-align: right;
+    }
+}

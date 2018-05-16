@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="斗米兼职">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="apple-touch-icon-precomposed" href="http://sta.doumistatic.com/src/image/logo_doumi.png">
+    <title>账号绑定-斗米兼职</title>
+    <link href="../style/withdraw_binding.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- page start -->
+    <div class="dm-page">
+        <!-- header start -->
+        <header class="dm-header dm-header-fixed">
+            <h1 class="dm-header-title">账号绑定</h1>
+            <a href="javascript:history.go(-1);" class="dm-header-back">返回</a>
+        </header>
+        <!-- header end -->
+        <!-- section start -->
+        <section class="dm-content withdraw-binding">
+            <!-- toptips start -->
+            <p class="dm-toptips">你还没绑定支付宝账号，请先绑定一个支付宝账号再提现</p>
+            <!-- toptips end -->
+            <!-- cell start -->
+            <div class="dm-cells">
+                <div class="dm-cell">
+                    <div class="dm-cell-head">
+                        <label class="dm-cell-label">支付宝账号</label>
+                    </div>
+                    <div class="dm-cell-body">
+                        <label class="dm-input"><input class="dm-input-text" type="text" placeholder="请输入支付宝账号" /></label>
+                    </div>
+                </div>
+                <div class="dm-cell">
+                    <div class="dm-cell-head">
+                        <label class="dm-cell-label">真实姓名</label>
+                    </div>
+                    <div class="dm-cell-body">
+                        <label class="dm-input"><input class="dm-input-text" type="text" placeholder="请输入支付宝账号绑定的姓名" /></label>
+                    </div>
+                </div>
+            </div>
+            <!-- cell end -->
+            <!-- toptips start -->
+            <p class="dm-toptips">你还没绑定银行卡账号，请先绑定一个银行卡账号再提现</p>
+            <!-- toptips end -->
+            <!-- cell start -->
+            <div class="dm-cells">
+                <div class="dm-cell">
+                    <div class="dm-cell-head">
+                        <label class="dm-cell-label">真实姓名</label>
+                    </div>
+                    <div class="dm-cell-body">
+                        <label class="dm-input"><input class="dm-input-text" type="text" placeholder="请输入持卡人姓名" /></label>
+                    </div>
+                </div>
+                <div class="dm-cell dm-cell-access js-touch-state">
+                    <div class="dm-cell-head">
+                        <label class="dm-cell-label">开户银行</label>
+                    </div>
+                    <div class="dm-cell-body">
+                        <div class="dm-picker-text">请选择开户银行</div>
+                    </div>
+                    <div class="dm-cell-foot"></div>
+                </div>
+                <div class="dm-cell dm-cell-access js-touch-state">
+                    <div class="dm-cell-head">
+                        <label class="dm-cell-label">开户银行</label>
+                    </div>
+                    <div class="dm-cell-body">
+                        <div class="dm-picker-text active">招商银行</div>
+                    </div>
+                    <div class="dm-cell-foot"></div>
+                </div>
+                <div class="dm-cell">
+                    <div class="dm-cell-head">
+                        <label class="dm-cell-label">银行卡号</label>
+                    </div>
+                    <div class="dm-cell-body">
+                        <label class="dm-input"><input class="dm-input-text" type="tel" placeholder="请正确填写银行卡号" /></label>
+                    </div>
+                </div>
+            </div>
+            <div class="dm-cells-btn">
+                <button class="dm-btn dm-btn-primary dm-btn-large" type="button" disabled>确认</button>
+            </div>
+            <!-- cell end -->
+        </section>
+        <!-- section end -->
+    </div>
+    <!-- page end -->
+    <!-- js start -->
+    <script id="v-h5g" src="http://sta.doumistatic.com/sta/g.js?v=150917110933"></script>
+    <script>
+    G.use('com/mobile/lib/widget/widget.js').done(function(widget) {
+        widget.initWidgets();
+    });
+    </script>
+    <!-- js end -->
+</body>
+
+</html>
