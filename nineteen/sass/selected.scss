@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import "base/base";
 @import "widget/common";
 @import "widget/layout";
@@ -11,362 +12,549 @@
 /* css sprite
 ---------------------------------- */
 %sprite-index {
-    background: url(../imgs/icon_index.png) no-repeat;
-    background-size: 120px auto;
+   background: url(../imgs/icon_index.png) no-repeat;
+   background-size: 120px auto;
 }
 
 .icon-switch {
-    &::after {
-        @extend %sprite-index;
-        background-position: -20px 0;
-    }
+   &::after {
+       @extend %sprite-index;
+       background-position: -20px 0;
+   }
 }
 
 /* nav
 ---------------------------------- */
-.dm-nav {
-    background-color: $white;
-    padding: 0 12.5px;
-    &-list{
-        overflow: hidden;
-        width: 100%;
-        &-item{
-            float: left;
-            box-sizing: border-box;
-            margin-top: 3.5px;
-            .bg-image{
-                display: block;
-                width: 100%;
-                padding-top: 50%;
-                border-radius: $border-radius-base;
-                background: red;
-            }
-        }
-        .big{
-            width: 50%;
-            padding:0 3.5px;
-            .bg-image{
-                padding-top: 100%;
-            }
-        }
-        .middle{
-            width: 50%;
-            padding:0 3.5px;
-        }
-        .small{
-            width: 25%;
-            padding:0 3.5px;
-            .bg-image{
-                padding-top: 100%;
-            }
-        }
-    }
+.dm-selected {
+   background-color: $white;
+   padding: 0 12.5px;
+   &-list{
+       overflow: hidden;
+       width: 100%;
+       &-item{
+           float: left;
+           box-sizing: border-box;
+           margin-top: 3.5px;
+           .bg-image{
+               display: block;
+               width: 100%;
+               padding-top: 50%;
+               border-radius: $border-radius-base;
+               background: #cccccc;
+           }
+       }
+       .big{
+           width: 50%;
+           padding:0 3.5px;
+           .bg-image{
+               padding-top: 100%;
+           }
+       }
+       .middle{
+           width: 50%;
+           padding:0 3.5px;
+       }
+       .small{
+           width: 25%;
+           padding:0 3.5px;
+           .bg-image{
+               padding-top: 100%;
+           }
+       }
+   }
 }
 
-/* 小编推荐
+/* 今日最热
 ---------------------------------- */
 .hottoday {
-    margin-top: $gap-base;
-    .dm-column-head{
-        background-color: $white;
-        .dm-column-title::before{
-            display: none;
-        }
-    }
+   margin-top: $gap-base;
+   .dm-column-head{
+       background-color: $white;
+       .dm-column-title::before{
+           display: none;
+       }
+   }
 }
-.recommend-list{
-    padding:0 16px;
-    background: $white;
-    .item{
-        width: 100%;
-        &-href{
-            display: block;
-            background-color:#cccccc;
-            color: $white;
-            padding: 12px;
-            position: relative;
-            .product-tit, .count-down, .tag, .des-txt, .btn, .apply-wrap{
-            }
-            .product-tit {
-                margin-top: 4px;
-                font-size: 18px;
-                line-height: 26px;
-                width: 70%;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            .count-down {
-                position: absolute;
-                width: 104px;
-                height: 20px;
-                top: -8px;
-                right: -8px;
-                left: auto;
-                background: url(../imgs/down-count.png) no-repeat;
-                background-size: 106px auto;
-                .time{
-                    display: inline-block;
-                    vertical-align: top;
-                    font-size: 12px;
-                    color: #AF39FB;
-                    line-height: 16px;
-                }
-            }
-            .tag_chaojianzhi{
-                background: url(../imgs/tag_cjz.png) top right no-repeat;
-            }
-            .tag_datifenqian{
-                background: url(../imgs/tag_datfq.png) top right no-repeat;
-            }
-            .tag_guandianbianxian{
-                background: url(../imgs/tag_gdbx.png) top right no-repeat;
-            }
-            .tag_doumixuetang{
-                background: url(../imgs/tag_dmxt.png) top right no-repeat;
-            }
-            .tag_gaoxingquanzhi{
-                background: url(../imgs/tag_gxqz.png) top right no-repeat;
-            }
-            .tag_taobaoke{
-                background: url(../imgs/tag_tbk.png) top right no-repeat;
-            }
-            .tag_zaixianzhonbao{
-                background: url(../imgs/tag_zxzb.png) top right no-repeat;
-            }
-            .tag_biaoqian{
-                position: absolute;
-                top: 15px;
-                right: 0;
-                width: 64px;
-                height: 16px;
-                background-size: auto 16px;
-            }
-            .des-txt{
-                margin-top: 4px;
-                font-size: $font-size-base;
-                line-height: 20px;
-            }
-            .btn_apply{
-                display: inline-block;
-                width: 70px;
-                height: 22px;
-                line-height: 22px;
-                font-size: $font-size-base;
-                text-align: center;
-                background: none;
-                @include border(all, #ffffff);
-                margin-top: 24px;
-            }
-            .apply-wrap{
-                position: absolute;
-                width: 52px;
-                height: 36px;
-                right: 12px;
-                bottom: 12px;
-                color: $white;
-                background-color: rgba($color: $black, $alpha: 0.3);
-                .apy{
-                    display: block;
-                    font-size: 10px;
-                    line-height: 14px;
-                    margin-top: 2px;
-                    text-align: center;
-                }
-                .apply-count{
-                    font-size: $font-size-base;
-                    margin-top: 0px;
-                    line-height: 20px;
-                }
-            }
-        }
-    }
+@import "widget/nav";
+/* 小编推荐
+---------------------------------- */
+.dm-recommend-list{
+   padding:0 16px;
+   padding-bottom: 48px;
+   background: $white;
+   .dm-list{
+       .bg-white-shadow{
+           background: $white;
+           box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.14);
+           -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.14);
+       }
+       .zhiwei-opacity{
+           background: url(../imgs/bg_detail_banner.png) no-repeat;
+           background-size: cover;
+           &::before{
+               position: absolute;
+               content: "";
+               width: 100%;
+               height: 100%;
+               background: rgba(0, 0, 0, 0.4)
+           }
+       }
+       &-item{
+           width: 100%;
+           margin-bottom: $gap-base;
+           background-color:#cccccc;
+           position: relative;
+           &-href{
+               position: absolute;
+               display: block;
+               color: $white;
+               padding: 12px;
+               position: relative;
+               .product-tit {
+                   margin-top: 4px;
+                   font-size: 18px;
+                   line-height: 26px;
+                   width: 85%;
+                   overflow: hidden;
+                   text-overflow: ellipsis;
+                   white-space: nowrap;
+               }
+               .count-down {
+                   position: absolute;
+                   width: 104px;
+                   height: 30px;
+                   top: -8px;
+                   right: -8px;
+                   left: auto;
+                   background: url(../imgs/down-count.png) no-repeat;
+                   background-size: auto 24px;
+                   &-list {
+                       float: right;
+                       margin-right: 2px;
+                       &-item {
+                           display: inline-block;
+                           vertical-align: top;
+                           height: 12px;
+                           margin: 4px 2px 4px;
+                           padding: 0 1.5px;
+                           border-radius: $border-radius-small;
+                           background: $white;
+                           font-size: 12px;
+                           line-height: 12px;
+                           color: #AF39FB;
+                       }
+                   }
+               }
+               .tag_chaojianzhi{
+                   background: url(../imgs/tag_cjz.png) top right no-repeat;
+               }
+               .tag_datifenqian{
+                   background: url(../imgs/tag_datfq.png) top right no-repeat;
+               }
+               .tag_guandianbianxian{
+                   background: url(../imgs/tag_gdbx.png) top right no-repeat;
+               }
+               .tag_doumixuetang{
+                   background: url(../imgs/tag_dmxt.png) top right no-repeat;
+               }
+               .tag_gaoxingquanzhi{
+                   background: url(../imgs/tag_gxqz.png) top right no-repeat;
+               }
+               .tag_taobaoke{
+                   background: url(../imgs/tag_tbk.png) top right no-repeat;
+               }
+               .tag_zaixianzhonbao{
+                   background: url(../imgs/tag_zxzb.png) top right no-repeat;
+               }
+               .tag_biaoqian{
+                   position: absolute;
+                   top: 15px;
+                   right: 0;
+                   width: 64px;
+                   height: 16px;
+                   background-size: auto 16px;
+                   .tag-image {
+                       height: 16px;
+                       width: auto;
+                   }
+               }
+               .des-txt{
+                   margin-top: 4px;
+                   font-size: $font-size-base;
+                   line-height: 20px;
+               }
+               .btn_apply{
+                   display: inline-block;
+                   width: 70px;
+                   height: 22px;
+                   line-height: 22px;
+                   font-size: $font-size-base;
+                   text-align: center;
+                   background: none;
+                   @include border(all, #ffffff);
+                   margin-top: 24px;
+               }
+               .apply-wrap{
+                   position: absolute;
+                   width: 52px;
+                   height: 36px;
+                   right: 12px;
+                   bottom: 12px;
+                   color: $white;
+                   background-color: rgba($color: $black, $alpha: 0.3);
+                   .apy{
+                       display: block;
+                       font-size: 10px;
+                       line-height: 14px;
+                       margin-top: 2px;
+                       text-align: center;
+                   }
+                   .apply-count {
+                       font-size: $font-size-base;
+                       margin-top: 0px;
+                       line-height: 20px;
+                   }
+               }
+               /* 答题分钱 观点变现
+---------------------------------- */
+               .datifenqian {
+                   width: 100%;
+                   text-align: center;
+                   color: $black-dim;
+               }
+               .dm-nav-list{
+                   margin-top: 12px;
+               }
+               .tabs-dati{
+                   height: 28px;
+                   color: $black-dim;
+                   font-size: 14px;
+                   line-height: 28px;
+                   text-align: center;
+                   position: relative;
+                   &.touch{
+                      background: #ededed!important;
+                   }
+               }
+               .tabs-dati:nth-child(2)::before, .tabs-dati:nth-child(3)::before {
+                   position: absolute;
+                   content: "";
+                   width: 4px;
+                   height: 100%;
+                   background: $white;
+                   transform: skewX(-11deg);
+                   -webkit-transform: skewX(-11deg);
+                   left: -2px;
+               }
+               .tabs-dati:nth-child(1) {
+                   border-radius: 14px 0 0 14px;
+                   background: linear-gradient(75deg, #FEE72A 0%, #FFC829 100%);
+                   background: -webkit-linear-gradient(75deg, #FEE72A 0%, #FFC829 100%);
+               }
+               .tabs-dati:nth-child(2) {
+                   background:linear-gradient(-129deg, #FEE72A 0%, #FFC829 100%);
+                   background: -webkit-linear-gradient(-129deg, #FEE72A 0%, #FFC829 100%);
+               }
+               .tabs-dati:nth-child(3) {
+                   border-radius: 0 14px 14px 0;
+                   background: linear-gradient(-239deg, #FEE72A 0%, #FFC829 100%);
+                   background: -webkit-linear-gradient(-239deg, #FEE72A 0%, #FFC829 100%);
+               }
+
+               .dm-bianxian-list{
+                   margin-top: 4px;
+                   @include flex;
+                   @include flex-align(center);
+                   &::after {
+                       @include hide;
+                   }
+                   
+                   &-item:nth-child(1){
+                       background: url(../imgs/yellow_face.png) no-repeat;
+                       &.touch{
+                           background: url(../imgs/yellow_face_gray.png) no-repeat;
+                       }
+                   }
+                   &-item:nth-child(3){
+                       background: url(../imgs/cyan_face.png) no-repeat;
+                       &.touch{
+                           background: url(../imgs/cyan_face_gray.png) no-repeat;
+                       }
+                   }
+                   &-item:nth-child(1), &-item:nth-child(3){
+                       width: 42px;
+                       height: 42px;
+                       background-size: cover;
+                       &.touch{
+                           background-size: cover;
+                       }
+                   }
+                   &-item:nth-child(2){
+                       @include flex-item;
+                       overflow: hidden;
+                       .answer{
+                           overflow: hidden;
+                           padding: 0px 10px;
+                           &-item{
+                               width: 50%;
+                               float: left;
+                               &-txt{
+                                   float: left;
+                                   width: 100%;
+                                   color: $black-dim;
+                                   font-size: 14px;
+                                   line-height: 22px;
+                                   box-sizing: border-box;
+                                   box-sizing: border-box;
+                                   padding: 2px 3.720930233% 2px 3.720930233%;
+                               }
+                               &-prog{
+                                   float: left;
+                                   width: 100%;
+                                   height: 8px;
+                                   background: url(../imgs/progress_left.png) no-repeat;
+                                   background-size: 100% 100%;
+                                //    background: linear-gradient(90deg, #FEEB00 0%, #FFD630 100%);
+                                //    background: -webkit-linear-gradient(90deg, #FEEB00 0%, #FFD630 100%);
+                                   border-radius: 4px 0 0 4px;
+                                   margin-left: 3.720930233%;
+                                   overflow: hidden;
+                               }
+                               .touch{
+                                    background: url(../imgs/progress_left_gray.png) no-repeat;
+                                    background-size: 100% 100%;
+                               }
+                           }
+                           &-item:nth-child(2){
+                               .answer-item-txt{
+                                   text-align: right;
+                               }
+                               .answer-item-prog{
+                                //    background: linear-gradient(-90deg, #00FAC1 0%, #2DCDE3 100%);
+                                //    background: -webkit-linear-gradient(-90deg, #00FAC1 0%, #2DCDE3 100%);
+                                   background: url(../imgs/progress_right.png) no-repeat;
+                                   background-size: 100% 100%;
+                                   margin-left: -3.720930233%;
+                                   border-radius: 0 4px 4px 0;
+                               }
+                               .touch{
+                                    background: url(../imgs/grogress_right_gray.png) no-repeat;
+                                    background-size: 100% 100%;
+                                }
+                           }
+                       }
+                   }
+               }
+               .dm-guess{
+                   margin-top: 8px;
+                   text-align: center;
+                   &-guandian{
+                       margin-top: 2px;
+                   }
+                   &-item{
+                       display: inline-block;
+                       padding: 0 4px;
+                       line-height: 20px;
+                       color: #B3B3B3;
+                       font-size: 12px;
+                   }
+               }
+           }
+       }
+       /* 广告运营位推广
+---------------------------------- */
+       .banner-adv{
+           background: url(../imgs/bg_detail_banner.png) no-repeat;
+           background-size: cover;
+           min-height: 124px;
+       }
+   }
 }
 
 /* card
 ---------------------------------- */
 .card {
-    background-color: $bg-color-main;
+   background-color: $bg-color-main;
 
-    .dm-column-head {
-        @include hide;
-    }
+   .dm-column-head {
+       @include hide;
+   }
 
-    .dm-list {
-        @include flex;
-        @include flex-justify(between);
-        padding: 0 14px 16px;
-        overflow: hidden;
+   .dm-list {
+       @include flex;
+       @include flex-justify(between);
+       padding: 0 14px 16px;
+       overflow: hidden;
 
-        &-item {
-            @include flex-item(0);
-            margin: 0 2px;
-        }
-    }
+       &-item {
+           @include flex-item(0);
+           margin: 0 2px;
+       }
+   }
 
-    .product-info {
-        padding: 0;
+   .product-info {
+       padding: 0;
 
-        &.touch {
-            opacity: .5;
-        }
-    }
+       &.touch {
+           opacity: .5;
+       }
+   }
 
-    .product-image {
-        @include show;
-        margin: 0;
+   .product-image {
+       @include show;
+       margin: 0;
 
-        img {
-            width: 80px;
-			height: 62px;
-			max-width: 80px;
-			max-height: 62px;
-            border-radius: 0;
-        }
+       img {
+           width: 80px;
+height: 62px;
+max-width: 80px;
+max-height: 62px;
+           border-radius: 0;
+       }
 
-        @include mq-max-dw(374px) {
-		  	img {
-		    	width: 68px;
-		    	height: 52px;
-		    	max-width: 68px;
-		    	max-height: 52px;
-		    }
-		}
-    }
+       @include mq-max-dw(374px) {
+ 	img {
+   	width: 68px;
+   	height: 52px;
+   	max-width: 68px;
+   	max-height: 52px;
+   }
+}
+   }
 
-    .product-title {
-        @include hide;
-        @extend %text-overflow;
-        margin-right: 4px;
-    }
+   .product-title {
+       @include hide;
+       @extend %text-overflow;
+       margin-right: 4px;
+   }
 
-    .product-ds {
-        @include hide;
-        color: $text-color-base;
-        font-size: $font-size-small;
-        line-height: 20px;
-        @extend %text-overflow;
-        margin-right: 4px;
-    }
+   .product-ds {
+       @include hide;
+       color: $text-color-base;
+       font-size: $font-size-small;
+       line-height: 20px;
+       @extend %text-overflow;
+       margin-right: 4px;
+   }
 }
 
 /* youxuan
 ---------------------------------- */
 .youxuan {
-    overflow: hidden;
-    background-color: $bg-color-main;
+   overflow: hidden;
+   background-color: $bg-color-main;
 
-    // .dm-nav + & ,
-    // .card + & {
-    //     margin-top: -16px;
-    // }
+   // .dm-nav + & ,
+   // .card + & {
+   //     margin-top: -16px;
+   // }
 
-    .dm-column-title {
-        &::before {
-            @include hide;
-        }
-    }
+   .dm-column-title {
+       &::before {
+           @include hide;
+       }
+   }
 
-    .dm-column-tool {
-        color: $text-color-base;
-        font-size: $font-size-base;
-        overflow: hidden;
+   .dm-column-tool {
+       color: $text-color-base;
+       font-size: $font-size-base;
+       overflow: hidden;
 
-        .dm-icon {
-            vertical-align: top;
-            margin-right: 1px;
-        }
+       .dm-icon {
+           vertical-align: top;
+           margin-right: 1px;
+       }
 
-        &.touch {
-            opacity: .5;
-        }
-    }
+       &.touch {
+           opacity: .5;
+       }
+   }
 
-    .product-info {
-        box-sizing: border-box;
-        border-radius: $border-radius-base;
-        padding: 6px $gap-base;
-        margin-bottom: 10px;
-        overflow: visible;
+   .product-info {
+       box-sizing: border-box;
+       border-radius: $border-radius-base;
+       padding: 6px $gap-base;
+       margin-bottom: 10px;
+       overflow: visible;
 
-        &::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: url(../imgs/bg_index_column.png) no-repeat center top;
-            background-size: 100% auto;
-        }
+       &::after {
+           content: "";
+           position: absolute;
+           top: 100%;
+           left: 0;
+           width: 100%;
+           height: 10px;
+           background: url(../imgs/bg_index_column.png) no-repeat center top;
+           background-size: 100% auto;
+       }
 
-        &.touch {
-            opacity: .5;
-        }
-    }
+       &.touch {
+           opacity: .5;
+       }
+   }
 
-    .product-image {
-        @include show;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        margin: 0;
+   .product-image {
+       @include show;
+       position: absolute;
+       right: 0;
+       bottom: 0;
+       margin: 0;
 
-        img {
-            width: 42px;
-            height: 75px;
-            max-width: 42px;
-            max-height: 75px;
-            border-radius: 0;
-        }
-    }
+       img {
+           width: 42px;
+           height: 75px;
+           max-width: 42px;
+           max-height: 75px;
+           border-radius: 0;
+       }
+   }
 
-    .product-content {
-        position: relative;
-    }
+   .product-content {
+       position: relative;
+   }
 
-    .product-title {
-        font-size: $font-size-base;
-        font-weight: $font-weight-base;
-        line-height: 22px;
-        @extend %text-overflow;
-        margin-top: 2px;
-        margin-right: 0;
-    }
+   .product-title {
+       font-size: $font-size-base;
+       font-weight: $font-weight-base;
+       line-height: 22px;
+       @extend %text-overflow;
+       margin-top: 2px;
+       margin-right: 0;
+   }
 
-    .product-label {
-        color: $text-color-base;
-        font-size: $font-size-smaller;
-        line-height: 18px;
-        @extend %text-overflow;
-        margin-top: 0;
-    }
+   .product-label {
+       color: $text-color-base;
+       font-size: $font-size-smaller;
+       line-height: 18px;
+       @extend %text-overflow;
+       margin-top: 0;
+   }
 
-    .product-price {
-        position: static;
-        font-size: $font-size-small;
-        line-height: 20px;
-        margin-top: 2px;
+   .product-price {
+       position: static;
+       font-size: $font-size-small;
+       line-height: 20px;
+       margin-top: 2px;
 
-        b {
-            position: relative;
-            top: 1px;
-            margin-right: 4px;
-        }
-    }
+       b {
+           position: relative;
+           top: 1px;
+           margin-right: 4px;
+       }
+   }
 
-    .dm-list {
-        font-size: 0;
-        margin: 0 4px 4px $gap-main;
-        overflow: hidden;
+   .dm-list {
+       font-size: 0;
+       margin: 0 4px 4px $gap-main;
+       overflow: hidden;
 
-        &-item {
-            display: inline-block;
-            box-sizing: border-box;
-            width: 50%;
-            vertical-align: top;
-            padding-right: $gap-base;
-            padding-bottom: 2px;
-        }
-    }
+       &-item {
+           display: inline-block;
+           box-sizing: border-box;
+           width: 50%;
+           vertical-align: top;
+           padding-right: $gap-base;
+           padding-bottom: 2px;
+       }
+   }
 }
