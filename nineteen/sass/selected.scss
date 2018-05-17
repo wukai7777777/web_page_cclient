@@ -371,73 +371,6 @@
    }
 }
 
-/* card
----------------------------------- */
-.card {
-   background-color: $bg-color-main;
-
-   .dm-column-head {
-       @include hide;
-   }
-
-   .dm-list {
-       @include flex;
-       @include flex-justify(between);
-       padding: 0 14px 16px;
-       overflow: hidden;
-
-       &-item {
-           @include flex-item(0);
-           margin: 0 2px;
-       }
-   }
-
-   .product-info {
-       padding: 0;
-
-       &.touch {
-           opacity: .5;
-       }
-   }
-
-   .product-image {
-       @include show;
-       margin: 0;
-
-       img {
-           width: 80px;
-height: 62px;
-max-width: 80px;
-max-height: 62px;
-           border-radius: 0;
-       }
-
-       @include mq-max-dw(374px) {
- 	img {
-   	width: 68px;
-   	height: 52px;
-   	max-width: 68px;
-   	max-height: 52px;
-   }
-}
-   }
-
-   .product-title {
-       @include hide;
-       @extend %text-overflow;
-       margin-right: 4px;
-   }
-
-   .product-ds {
-       @include hide;
-       color: $text-color-base;
-       font-size: $font-size-small;
-       line-height: 20px;
-       @extend %text-overflow;
-       margin-right: 4px;
-   }
-}
-
 /* youxuan
 ---------------------------------- */
 .youxuan {
@@ -557,4 +490,8 @@ max-height: 62px;
            padding-bottom: 2px;
        }
    }
+}
+
+.touchs{
+    opacity: 0.85;
 }
