@@ -21,6 +21,7 @@
         &::after {
             left: 0;
         }
+        
     }
 
     .product-title {
@@ -49,6 +50,32 @@
                 height: 10px;
                 margin-top: -5px;
             }
+        }
+    }
+
+    .dm-cell-shape {
+        width: 61px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        padding: 4px;
+        background: #F7F7F7;
+        &::before {
+            float: left;
+            content: "";
+            width: 9px;
+            height: 9px;
+            margin: 1px 0 1px;
+            background: url(../imgs/shape_addr.png);
+            background-size: cover;
+        }
+        &-txt{
+            float: left;
+            display: inline-block;
+            font-size: 10px;
+            height: 11px;
+            line-height: 11px;
+            margin-left: 3px;
+            color: #808080;
         }
     }
 }

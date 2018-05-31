@@ -119,32 +119,21 @@
        .big{
            width: 50%;
            .bg-image{
-            //    margin-top: 2.39520958%;
                padding-top: 96.40718562874251%;
-            //    background: url(../imgs/four/1.png) top center no-repeat;
                background-size: 100% 100%;
            }
        }
        .middle{
            width: 50%;
            .bg-image{
-                // margin-top: 2.39520958%;
-            //    background: url(../imgs/four/2.png) top center no-repeat;
                 background-size: 100% 100%;
            }
        }
        .small{
            width: 24.999%;
            .bg-image{
-            //    margin-top: 5.031446540%;+
-            //    padding-top: 105.0314465%;
                 padding-top: 100%;
-            //    background: url(../imgs/four/3.png) top center no-repeat;
                 background-size: 100% 100%;
-                // &.margin-bottom{
-                //     margin-top: 0;
-                //     margin-bottom: 5.031446540%;
-                // }
            }
        }
    }
@@ -164,9 +153,8 @@
 @import "widget/nav";
 /* 小编推荐
 ---------------------------------- */
-.dm-recommend-list{
+.dm-recommend-list {
    padding:0 1.6rem;
-   padding-bottom: 4.8rem;
    background: $white;
    .dm-list{
        .bg-white-shadow{
@@ -210,7 +198,7 @@
                }
                .count-down {
                    position: absolute;
-                   width: 10.4rem;
+                   min-width: 10.4rem;
                    height: 2rem;
                    top: -0.8rem;
                    right: -0.8rem;
@@ -220,6 +208,9 @@
                    overflow: hidden;
                 //    box-shadow: 0 2px 4px 0 rgba(147,9,135,0.50);
                 //    -webkit-box-shadow: 0 2px 4px 0 rgba(147,9,135,0.50);
+                   &.big-width{
+                        min-width: 11.2rem;
+                   }
                    &-box{
                         display: block;
                         height: 1.6rem;
@@ -243,6 +234,7 @@
                        width: 2.3rem;
                        height: 1rem;
                        margin-top: 0.25rem;
+                       margin-right: 0.1rem;
                        background: url(../imgs/count-down-bg.png);
                        background-size: cover;
                    }
@@ -269,27 +261,27 @@
                        }
                    }
                }
-               .tag_chaojianzhi{
-                   background: url(../imgs/tag_cjz.png) top right no-repeat;
-               }
-               .tag_datifenqian{
-                   background: url(../imgs/tag_datfq.png) top right no-repeat;
-               }
-               .tag_guandianbianxian{
-                   background: url(../imgs/tag_gdbx.png) top right no-repeat;
-               }
-               .tag_doumixuetang{
-                   background: url(../imgs/tag_dmxt.png) top right no-repeat;
-               }
-               .tag_gaoxingquanzhi{
-                   background: url(../imgs/tag_gxqz.png) top right no-repeat;
-               }
-               .tag_taobaoke{
-                   background: url(../imgs/tag_tbk.png) top right no-repeat;
-               }
-               .tag_zaixianzhonbao{
-                   background: url(../imgs/tag_zxzb.png) top right no-repeat;
-               }
+            //    .tag_chaojianzhi{
+            //        background: url(../imgs/tag_cjz.png) top right no-repeat;
+            //    }
+            //    .tag_datifenqian{
+            //        background: url(../imgs/tag_datfq.png) top right no-repeat;
+            //    }
+            //    .tag_guandianbianxian{
+            //        background: url(../imgs/tag_gdbx.png) top right no-repeat;
+            //    }
+            //    .tag_doumixuetang{
+            //        background: url(../imgs/tag_dmxt.png) top right no-repeat;
+            //    }
+            //    .tag_gaoxingquanzhi{
+            //        background: url(../imgs/tag_gxqz.png) top right no-repeat;
+            //    }
+            //    .tag_taobaoke{
+            //        background: url(../imgs/tag_tbk.png) top right no-repeat;
+            //    }
+            //    .tag_zaixianzhonbao{
+            //        background: url(../imgs/tag_zxzb.png) top right no-repeat;
+            //    }
                .tag_biaoqian{
                    position: absolute;
                    top: 1.5rem;
@@ -484,6 +476,9 @@
                    }
                }
            }
+       }
+       &-item:nth-last-child(1) {
+            margin-bottom: 0;
        }
        /* 广告运营位推广
 ---------------------------------- */

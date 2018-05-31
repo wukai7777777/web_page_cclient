@@ -1418,7 +1418,7 @@ img {
   padding-left: 22px;
 }
 .input .dm-cell-input .dm-input::before {
-  content: "楼";
+  content: "¥";
   position: absolute;
   top: 50%;
   left: 0;
